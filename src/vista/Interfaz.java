@@ -62,7 +62,6 @@ public class Interfaz {
 		frame.getContentPane().setLayout(gridBagLayout);
 		
 		JPanel panHorario = new JPanel();
-		panHorario.setBackground(Color.WHITE);
 		GridBagConstraints gbc_panHorario = new GridBagConstraints();
 		gbc_panHorario.insets = new Insets(0, 0, 0, 5);
 		gbc_panHorario.fill = GridBagConstraints.BOTH;
@@ -95,6 +94,14 @@ public class Interfaz {
 		
 		JButton btnEliminar = new JButton("Eliminar");
 		panel.add(btnEliminar);
+		
+		JPanel areaTrabajo = new JPanel();
+		areaTrabajo.setBackground(Color.WHITE);
+		GridBagConstraints gbc_areaTrabajo = new GridBagConstraints();
+		gbc_areaTrabajo.fill = GridBagConstraints.BOTH;
+		gbc_areaTrabajo.gridx = 0;
+		gbc_areaTrabajo.gridy = 1;
+		panHorario.add(areaTrabajo, gbc_areaTrabajo);
 		
 		JPanel panEmpleados = new JPanel();
 		GridBagConstraints gbc_panEmpleados = new GridBagConstraints();
