@@ -82,7 +82,7 @@ public class CrearTargeta extends JDialog {
 				pathIcon.setColumns(10);
 			}
 			{
-				JButton btnBuscarIcon = new JButton("New button");
+				JButton btnBuscarIcon = new JButton("Buscar");
 				GridBagConstraints gbc_btnBuscarIcon = new GridBagConstraints();
 				gbc_btnBuscarIcon.fill = GridBagConstraints.HORIZONTAL;
 				gbc_btnBuscarIcon.gridx = 1;
