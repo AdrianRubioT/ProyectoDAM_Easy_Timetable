@@ -117,13 +117,13 @@ public class Interfaz {
 		gbl_panEmpleados.rowWeights = new double[]{0.0, 0.0, 1.0, Double.MIN_VALUE};
 		panEmpleados.setLayout(gbl_panEmpleados);
 		
-		JLabel lblListaDeEmpleados = new JLabel("Lista de empleados");
-		GridBagConstraints gbc_lblListaDeEmpleados = new GridBagConstraints();
-		gbc_lblListaDeEmpleados.insets = new Insets(0, 0, 5, 0);
-		gbc_lblListaDeEmpleados.anchor = GridBagConstraints.NORTH;
-		gbc_lblListaDeEmpleados.gridx = 0;
-		gbc_lblListaDeEmpleados.gridy = 0;
-		panEmpleados.add(lblListaDeEmpleados, gbc_lblListaDeEmpleados);
+		JLabel tituloModulos = new JLabel("Lista de modulos");
+		GridBagConstraints gbc_tituloModulos = new GridBagConstraints();
+		gbc_tituloModulos.insets = new Insets(0, 0, 5, 0);
+		gbc_tituloModulos.anchor = GridBagConstraints.NORTH;
+		gbc_tituloModulos.gridx = 0;
+		gbc_tituloModulos.gridy = 0;
+		panEmpleados.add(tituloModulos, gbc_tituloModulos);
 		
 		JPanel panel_1 = new JPanel();
 		GridBagConstraints gbc_panel_1 = new GridBagConstraints();
@@ -147,26 +147,26 @@ public class Interfaz {
 		gbc_listaEmpleados.gridy = 2;
 		panEmpleados.add(listaEmpleados, gbc_listaEmpleados);
 		
-		JPanel panel_2 = new JPanel();
-		GridBagConstraints gbc_panel_2 = new GridBagConstraints();
-		gbc_panel_2.fill = GridBagConstraints.VERTICAL;
-		gbc_panel_2.gridx = 2;
-		gbc_panel_2.gridy = 0;
-		frame.getContentPane().add(panel_2, gbc_panel_2);
-		GridBagLayout gbl_panel_2 = new GridBagLayout();
-		gbl_panel_2.columnWidths = new int[]{91, 0};
-		gbl_panel_2.rowHeights = new int[]{14, 27, 0, 0};
-		gbl_panel_2.columnWeights = new double[]{1.0, Double.MIN_VALUE};
-		gbl_panel_2.rowWeights = new double[]{0.0, 0.0, 1.0, Double.MIN_VALUE};
-		panel_2.setLayout(gbl_panel_2);
+		JPanel panModulos = new JPanel();
+		GridBagConstraints gbc_panModulos = new GridBagConstraints();
+		gbc_panModulos.fill = GridBagConstraints.VERTICAL;
+		gbc_panModulos.gridx = 2;
+		gbc_panModulos.gridy = 0;
+		frame.getContentPane().add(panModulos, gbc_panModulos);
+		GridBagLayout gbl_panModulos = new GridBagLayout();
+		gbl_panModulos.columnWidths = new int[]{91, 0};
+		gbl_panModulos.rowHeights = new int[]{14, 27, 0, 0};
+		gbl_panModulos.columnWeights = new double[]{1.0, Double.MIN_VALUE};
+		gbl_panModulos.rowWeights = new double[]{0.0, 0.0, 1.0, Double.MIN_VALUE};
+		panModulos.setLayout(gbl_panModulos);
 		
-		JLabel label = new JLabel("Lista de empleados");
-		GridBagConstraints gbc_label = new GridBagConstraints();
-		gbc_label.anchor = GridBagConstraints.NORTH;
-		gbc_label.insets = new Insets(0, 0, 5, 0);
-		gbc_label.gridx = 0;
-		gbc_label.gridy = 0;
-		panel_2.add(label, gbc_label);
+		JLabel tituloEmpleados = new JLabel("Lista de empleados");
+		GridBagConstraints gbc_tituloEmpleados = new GridBagConstraints();
+		gbc_tituloEmpleados.anchor = GridBagConstraints.NORTH;
+		gbc_tituloEmpleados.insets = new Insets(0, 0, 5, 0);
+		gbc_tituloEmpleados.gridx = 0;
+		gbc_tituloEmpleados.gridy = 0;
+		panModulos.add(tituloEmpleados, gbc_tituloEmpleados);
 		
 		JPanel panel_3 = new JPanel();
 		GridBagConstraints gbc_panel_3 = new GridBagConstraints();
@@ -174,7 +174,7 @@ public class Interfaz {
 		gbc_panel_3.insets = new Insets(0, 0, 5, 0);
 		gbc_panel_3.gridx = 0;
 		gbc_panel_3.gridy = 1;
-		panel_2.add(panel_3, gbc_panel_3);
+		panModulos.add(panel_3, gbc_panel_3);
 		panel_3.setLayout(new GridLayout(0, 2, 0, 0));
 		
 		JButton button_2 = new JButton("A\u00F1adir");
@@ -188,7 +188,7 @@ public class Interfaz {
 		gbc_scrollPane.fill = GridBagConstraints.VERTICAL;
 		gbc_scrollPane.gridx = 0;
 		gbc_scrollPane.gridy = 2;
-		panel_2.add(scrollPane, gbc_scrollPane);
+		panModulos.add(scrollPane, gbc_scrollPane);
 	}
 
 }
