@@ -49,7 +49,7 @@ public class Interfaz {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 472, 319);
+		frame.setBounds(100, 100, 542, 362);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JMenuBar menuBar = new JMenuBar();
