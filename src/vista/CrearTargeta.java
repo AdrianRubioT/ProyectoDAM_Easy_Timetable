@@ -5,13 +5,18 @@ import java.awt.FlowLayout;
 
 import javax.swing.JButton;
 import javax.swing.JDialog;
+import javax.swing.JFileChooser;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+import java.awt.event.ActionListener;
+import java.io.File;
+import java.awt.event.ActionEvent;
 
 public class CrearTargeta extends JDialog {
 
@@ -83,6 +88,12 @@ public class CrearTargeta extends JDialog {
 			}
 			{
 				JButton btnBuscarIcon = new JButton("Buscar");
+				btnBuscarIcon.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						String path = mostrarBuscarIcono();
+						pathIcon.setText(path);
+					}
+				});
 				GridBagConstraints gbc_btnBuscarIcon = new GridBagConstraints();
 				gbc_btnBuscarIcon.fill = GridBagConstraints.HORIZONTAL;
 				gbc_btnBuscarIcon.gridx = 1;
@@ -177,6 +188,63 @@ public class CrearTargeta extends JDialog {
 				buttonPane.add(cancelButton);
 			}
 		}
+
+
+
+
+	}
+
+	/**
+	 * muestra el buscador de archivos al usuario 
+	 * @return la ruta del archivo seleccionado por el usuario
+	 */
+	protected String mostrarBuscarIcono() {
+		JFileChooser fileChooser = new JFileChooser("./");
+		int seleccion = fileChooser.showOpenDialog(this);
+
+		if (seleccion == JFileChooser.APPROVE_OPTION)
+		{
+			File fichero = fileChooser.getSelectedFile();
+			return fichero.getAbsolutePath();
+		}else {
+			return "";
+		}
+
+	}
+
+	/**
+	 * @return the lin1
+	 */
+	public String getLin1() {
+		return lin1.getText();
+	}
+
+	/**
+	 * @return the lin2
+	 */
+	public String getLin2() {
+		return lin2.getText();
+	}
+
+	/**
+	 * @return the lin3
+	 */
+	public String getLin3() {
+		return lin3.getText();
+	}
+
+	/**
+	 * @return the lin4
+	 */
+	public String getLin4() {
+		return lin4.getText();
+	}
+
+	/**
+	 * @return the pathIcon
+	 */
+	public String getPathIcon() {
+		return pathIcon.getText();
 	}
 
 }
