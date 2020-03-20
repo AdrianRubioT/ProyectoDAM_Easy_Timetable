@@ -6,6 +6,8 @@ import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import javax.swing.JLabel;
 
+
+//TODO: hacer el icono
 public class Targeta extends JPanel {
 
 
