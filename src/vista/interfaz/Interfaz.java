@@ -15,6 +15,8 @@ import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 import java.awt.GridLayout;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Interfaz {
 
@@ -134,6 +136,15 @@ public class Interfaz {
 		panel_1.setLayout(new GridLayout(0, 2, 0, 0));
 		
 		JButton button = new JButton("A\u00F1adir");
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				//cambiar para no abusar del modal para que no se lance otro proceso
+				CrearTargeta targeta = new CrearTargeta(frame, true);
+				
+				
+			}
+		});
 		panel_1.add(button);
 		
 		JButton button_1 = new JButton("Eliminar");
