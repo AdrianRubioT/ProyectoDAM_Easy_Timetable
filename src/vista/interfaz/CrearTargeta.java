@@ -191,7 +191,7 @@ public class CrearTargeta extends JDialog {
 			}
 		}
 
-		//setVisible(true);
+		setVisible(true);
 
 		
 		
