@@ -6,6 +6,7 @@ import java.awt.FlowLayout;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JFileChooser;
+import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
@@ -28,22 +29,11 @@ public class CrearTargeta extends JDialog {
 	private JTextField pathIcon;
 
 	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		try {
-			CrearTargeta dialog = new CrearTargeta();
-			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-			dialog.setVisible(true);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
-	/**
 	 * Create the dialog.
 	 */
-	public CrearTargeta() {
+	public CrearTargeta(JFrame padre, boolean modal) {
+		super(padre, modal);
+		
 		setBounds(100, 100, 306, 217);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -180,17 +170,31 @@ public class CrearTargeta extends JDialog {
 				JButton okButton = new JButton("OK");
 				okButton.setActionCommand("OK");
 				buttonPane.add(okButton);
+				okButton.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						dispose();
+					}
+				});
+				
 				getRootPane().setDefaultButton(okButton);
 			}
 			{
 				JButton cancelButton = new JButton("Cancel");
 				cancelButton.setActionCommand("Cancel");
+				cancelButton.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						dispose();
+					}
+				});
+				
 				buttonPane.add(cancelButton);
 			}
 		}
 
+		//setVisible(true);
 
-
+		
+		
 
 	}
 
