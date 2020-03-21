@@ -1,4 +1,4 @@
-package vista;
+package vista.elemetos;
 
 import javax.swing.JPanel;
 import java.awt.GridBagLayout;
