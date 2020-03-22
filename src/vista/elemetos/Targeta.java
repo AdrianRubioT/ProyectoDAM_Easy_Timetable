@@ -5,6 +5,10 @@ import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import javax.swing.JLabel;
+import javax.swing.border.BevelBorder;
+import javax.swing.border.CompoundBorder;
+import javax.swing.border.LineBorder;
+import java.awt.Color;
 
 
 //TODO: hacer el icono
@@ -36,6 +40,7 @@ public class Targeta extends JPanel {
 	 * 
 	 */
 	public Targeta(String textlb1, String textlb2, String textlb3, String textlb4) {
+		setBorder(new LineBorder(new Color(0, 0, 0), 2));
 
 
 		GridBagLayout gridBagLayout = new GridBagLayout();
