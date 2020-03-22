@@ -6,6 +6,9 @@ import javax.swing.JFrame;
 import javax.swing.JMenuBar;
 import java.awt.GridBagLayout;
 import javax.swing.JPanel;
+
+import vista.elemetos.Targeta;
+
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import java.awt.Color;
@@ -17,10 +20,13 @@ import javax.swing.JButton;
 import java.awt.GridLayout;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.FlowLayout;
+import java.awt.BorderLayout;
 
 public class Interfaz {
 
 	private JFrame frame;
+	private JPanel listaModulos;
 
 	/**
 	 * Launch the application.
@@ -140,8 +146,9 @@ public class Interfaz {
 			public void actionPerformed(ActionEvent arg0) {
 				
 				//cambiar para no abusar del modal para que no se lance otro proceso
-				CrearTargeta targeta = new CrearTargeta(frame, true);
-				
+				Targeta targeta = new CrearTargeta(frame, true).getTargeta();
+				aniadirTargetaModulos(targeta);
+				System.out.println("aniadida");
 				
 			}
 		});
@@ -150,15 +157,19 @@ public class Interfaz {
 		JButton button_1 = new JButton("Eliminar");
 		panel_1.add(button_1);
 		
-		JPanel listaModulos = new JPanel();
+		listaModulos = new JPanel();
+		listaModulos.setPreferredSize(new Dimension(100, 100));
 		GridBagConstraints gbc_listaModulos = new GridBagConstraints();
-		gbc_listaModulos.fill = GridBagConstraints.BOTH;
+		gbc_listaModulos.anchor = GridBagConstraints.NORTH;
+		gbc_listaModulos.fill = GridBagConstraints.HORIZONTAL;
 		gbc_listaModulos.gridx = 0;
 		gbc_listaModulos.gridy = 2;
 		
 		
 		
 		panModulos.add(listaModulos, gbc_listaModulos);
+		listaModulos.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+		
 		
 		JPanel panEmnpleados = new JPanel();
 		GridBagConstraints gbc_panEmnpleados = new GridBagConstraints();
@@ -203,5 +214,16 @@ public class Interfaz {
 		gbc_listaEmpleados.gridy = 2;
 		panEmnpleados.add(listaEmpleados, gbc_listaEmpleados);
 	}
+	
+	
+	/**
+	 * aniade un objeto targeta a la lista de modulos
+	 */
+	private void aniadirTargetaModulos(Targeta targeta) {
+		listaModulos.add(targeta);
+		listaModulos.revalidate();
+		
+	}
+	
 
 }
