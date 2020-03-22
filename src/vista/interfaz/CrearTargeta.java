@@ -10,6 +10,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import vista.elemetos.Targeta;
+
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
@@ -215,6 +217,17 @@ public class CrearTargeta extends JDialog {
 		}
 
 	}
+	
+	
+	/**
+	 * Devuelve un objeto targeta a partir de la informacion introducida
+	 * en la instancia del objeto
+	 * @return targeta con la informacion ingresada
+	 */
+	public Targeta getTargeta() {
+		return new Targeta( lin1.getText(), lin2.getText(), lin3.getText(), lin4.getText() );
+	}
+	
 
 	/**
 	 * @return the lin1
@@ -251,4 +264,6 @@ public class CrearTargeta extends JDialog {
 		return pathIcon.getText();
 	}
 
+	
+	
 }
