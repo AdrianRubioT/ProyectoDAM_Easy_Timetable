@@ -17,12 +17,12 @@ import java.awt.GridLayout;
 import javax.swing.JScrollPane;
 
 import vista.elemetos.ListaTargetas;
+import javax.swing.JList;
 
 public class Interfaz {
 
 	private JFrame frame;
 	private JPanel listaModulos;
-	private JScrollPane listaEmpleados;
 
 	/**
 	 * Launch the application.
@@ -154,12 +154,12 @@ public class Interfaz {
 		JButton button_3 = new JButton("Eliminar");
 		panel_3.add(button_3);
 		
-		listaEmpleados = new JScrollPane();
-		GridBagConstraints gbc_listaEmpleados = new GridBagConstraints();
-		gbc_listaEmpleados.fill = GridBagConstraints.BOTH;
-		gbc_listaEmpleados.gridx = 0;
-		gbc_listaEmpleados.gridy = 2;
-		panEmnpleados.add(listaEmpleados, gbc_listaEmpleados);
+		JList list = new JList();
+		GridBagConstraints gbc_list = new GridBagConstraints();
+		gbc_list.fill = GridBagConstraints.BOTH;
+		gbc_list.gridx = 0;
+		gbc_list.gridy = 2;
+		panEmnpleados.add(list, gbc_list);
 	}
 	
 	
