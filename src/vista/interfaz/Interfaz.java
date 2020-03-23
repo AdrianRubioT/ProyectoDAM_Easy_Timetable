@@ -7,26 +7,22 @@ import javax.swing.JMenuBar;
 import java.awt.GridBagLayout;
 import javax.swing.JPanel;
 
-import vista.elemetos.Targeta;
-
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import java.awt.Color;
-import java.awt.Dimension;
-
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 import java.awt.GridLayout;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import java.awt.FlowLayout;
-import java.awt.BorderLayout;
+import javax.swing.JScrollPane;
+
+import vista.elemetos.ListaTargetas;
 
 public class Interfaz {
 
 	private JFrame frame;
 	private JPanel listaModulos;
+	private JScrollPane listaEmpleados;
 
 	/**
 	 * Launch the application.
@@ -110,65 +106,16 @@ public class Interfaz {
 		gbc_areaTrabajo.gridy = 1;
 		panHorario.add(areaTrabajo, gbc_areaTrabajo);
 		
-		JPanel panModulos = new JPanel();
+		
+		JPanel panModulos = ListaTargetas.aListaTargetas("modulos", frame);
+		
+		
 		GridBagConstraints gbc_panModulos = new GridBagConstraints();
 		gbc_panModulos.insets = new Insets(0, 0, 0, 5);
 		gbc_panModulos.fill = GridBagConstraints.VERTICAL;
 		gbc_panModulos.gridx = 1;
 		gbc_panModulos.gridy = 0;
-		frame.getContentPane().add(panModulos, gbc_panModulos);
-		GridBagLayout gbl_panModulos = new GridBagLayout();
-		gbl_panModulos.columnWidths = new int[]{91, 0};
-		gbl_panModulos.rowHeights = new int[]{14, 27, 0, 0};
-		gbl_panModulos.columnWeights = new double[]{1.0, Double.MIN_VALUE};
-		gbl_panModulos.rowWeights = new double[]{0.0, 0.0, 1.0, Double.MIN_VALUE};
-		panModulos.setLayout(gbl_panModulos);
-		
-		JLabel tituloModulos = new JLabel("Lista de modulos");
-		GridBagConstraints gbc_tituloModulos = new GridBagConstraints();
-		gbc_tituloModulos.insets = new Insets(0, 0, 5, 0);
-		gbc_tituloModulos.anchor = GridBagConstraints.NORTH;
-		gbc_tituloModulos.gridx = 0;
-		gbc_tituloModulos.gridy = 0;
-		panModulos.add(tituloModulos, gbc_tituloModulos);
-		
-		JPanel panel_1 = new JPanel();
-		GridBagConstraints gbc_panel_1 = new GridBagConstraints();
-		gbc_panel_1.insets = new Insets(0, 0, 5, 0);
-		gbc_panel_1.fill = GridBagConstraints.VERTICAL;
-		gbc_panel_1.gridx = 0;
-		gbc_panel_1.gridy = 1;
-		panModulos.add(panel_1, gbc_panel_1);
-		panel_1.setLayout(new GridLayout(0, 2, 0, 0));
-		
-		JButton button = new JButton("A\u00F1adir");
-		button.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				
-				//cambiar para no abusar del modal para que no se lance otro proceso
-				Targeta targeta = new CrearTargeta(frame, true).getTargeta();
-				aniadirTargetaModulos(targeta);
-				System.out.println("aniadida");
-				
-			}
-		});
-		panel_1.add(button);
-		
-		JButton button_1 = new JButton("Eliminar");
-		panel_1.add(button_1);
-		
-		listaModulos = new JPanel();
-		listaModulos.setPreferredSize(new Dimension(100, 100));
-		GridBagConstraints gbc_listaModulos = new GridBagConstraints();
-		gbc_listaModulos.anchor = GridBagConstraints.NORTH;
-		gbc_listaModulos.fill = GridBagConstraints.HORIZONTAL;
-		gbc_listaModulos.gridx = 0;
-		gbc_listaModulos.gridy = 2;
-		
-		
-		
-		panModulos.add(listaModulos, gbc_listaModulos);
-		listaModulos.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+		frame.getRootPane().add(panModulos, gbc_panModulos);
 		
 		
 		JPanel panEmnpleados = new JPanel();
@@ -207,7 +154,7 @@ public class Interfaz {
 		JButton button_3 = new JButton("Eliminar");
 		panel_3.add(button_3);
 		
-		JPanel listaEmpleados = new JPanel();
+		listaEmpleados = new JScrollPane();
 		GridBagConstraints gbc_listaEmpleados = new GridBagConstraints();
 		gbc_listaEmpleados.fill = GridBagConstraints.BOTH;
 		gbc_listaEmpleados.gridx = 0;
@@ -216,14 +163,7 @@ public class Interfaz {
 	}
 	
 	
-	/**
-	 * aniade un objeto targeta a la lista de modulos
-	 */
-	private void aniadirTargetaModulos(Targeta targeta) {
-		listaModulos.add(targeta);
-		listaModulos.revalidate();
-		
-	}
+
 	
 
 }

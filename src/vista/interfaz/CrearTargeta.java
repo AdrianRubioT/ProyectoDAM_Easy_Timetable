@@ -230,28 +230,28 @@ public class CrearTargeta extends JDialog {
 	
 
 	/**
-	 * @return the lin1
+	 * @return the lin1 contenido
 	 */
 	public String getLin1() {
 		return lin1.getText();
 	}
 
 	/**
-	 * @return the lin2
+	 * @return the lin2 contenido
 	 */
 	public String getLin2() {
 		return lin2.getText();
 	}
 
 	/**
-	 * @return the lin3
+	 * @return the lin3 contenido
 	 */
 	public String getLin3() {
 		return lin3.getText();
 	}
 
 	/**
-	 * @return the lin4
+	 * @return the lin4 contenido
 	 */
 	public String getLin4() {
 		return lin4.getText();
