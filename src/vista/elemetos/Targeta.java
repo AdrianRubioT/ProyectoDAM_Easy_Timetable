@@ -70,48 +70,44 @@ public class Targeta extends JPanel {
 		panDescripcion.setLayout(gbl_panDescripcion);
 
 
-		if (!textlb1.equals("")) {
-			JLabel lb1 = new JLabel("");
-			GridBagConstraints gbc_lb1 = new GridBagConstraints();
-			gbc_lb1.anchor = GridBagConstraints.NORTHWEST;
-			gbc_lb1.insets = new Insets(0, 0, 5, 5);
-			gbc_lb1.gridx = 0;
-			gbc_lb1.gridy = 0;
-			panDescripcion.add(lb1, gbc_lb1);
-		}
+
+		JLabel lb1 = new JLabel(textlb1);
+		GridBagConstraints gbc_lb1 = new GridBagConstraints();
+		gbc_lb1.anchor = GridBagConstraints.NORTHWEST;
+		gbc_lb1.insets = new Insets(0, 0, 5, 5);
+		gbc_lb1.gridx = 0;
+		gbc_lb1.gridy = 0;
+		panDescripcion.add(lb1, gbc_lb1);
 
 
-		if (!textlb1.equals("")) {
-			JLabel lb2 = new JLabel("");
-			GridBagConstraints gbc_lb2 = new GridBagConstraints();
-			gbc_lb2.insets = new Insets(0, 0, 5, 5);
-			gbc_lb2.anchor = GridBagConstraints.NORTHWEST;
-			gbc_lb2.gridx = 0;
-			gbc_lb2.gridy = 1;
-			panDescripcion.add(lb2, gbc_lb2);
-		}
 
 
-		if (!textlb1.equals("")) {
-			JLabel lb3 = new JLabel("");
-			GridBagConstraints gbc_lb3 = new GridBagConstraints();
-			gbc_lb3.anchor = GridBagConstraints.SOUTHWEST;
-			gbc_lb3.insets = new Insets(0, 0, 5, 5);
-			gbc_lb3.gridx = 0;
-			gbc_lb3.gridy = 2;
-			panDescripcion.add(lb3, gbc_lb3);
-		}
+		JLabel lb2 = new JLabel(textlb2);
+		GridBagConstraints gbc_lb2 = new GridBagConstraints();
+		gbc_lb2.insets = new Insets(0, 0, 5, 5);
+		gbc_lb2.anchor = GridBagConstraints.NORTHWEST;
+		gbc_lb2.gridx = 0;
+		gbc_lb2.gridy = 1;
+		panDescripcion.add(lb2, gbc_lb2);
 
 
-		if (!textlb1.equals("")) {
-			JLabel lb4 = new JLabel("");
-			GridBagConstraints gbc_lb4 = new GridBagConstraints();
-			gbc_lb4.anchor = GridBagConstraints.WEST;
-			gbc_lb4.insets = new Insets(0, 0, 0, 5);
-			gbc_lb4.gridx = 0;
-			gbc_lb4.gridy = 3;
-			panDescripcion.add(lb4, gbc_lb4);
-		}
+		JLabel lb3 = new JLabel(textlb3);
+		GridBagConstraints gbc_lb3 = new GridBagConstraints();
+		gbc_lb3.anchor = GridBagConstraints.SOUTHWEST;
+		gbc_lb3.insets = new Insets(0, 0, 5, 5);
+		gbc_lb3.gridx = 0;
+		gbc_lb3.gridy = 2;
+		panDescripcion.add(lb3, gbc_lb3);
+
+
+		JLabel lb4 = new JLabel(textlb4);
+		GridBagConstraints gbc_lb4 = new GridBagConstraints();
+		gbc_lb4.anchor = GridBagConstraints.WEST;
+		gbc_lb4.insets = new Insets(0, 0, 0, 5);
+		gbc_lb4.gridx = 0;
+		gbc_lb4.gridy = 3;
+		panDescripcion.add(lb4, gbc_lb4);
+
 
 
 	}
