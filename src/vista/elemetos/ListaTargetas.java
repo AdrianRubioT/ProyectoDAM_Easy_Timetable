@@ -1,7 +1,6 @@
 package vista.elemetos;
 
 import java.awt.Dimension;
-import java.awt.FlowLayout;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
@@ -15,6 +14,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import vista.interfaz.CrearTargeta;
+import javax.swing.JScrollPane;
 
 /**
  * JPanel con un titulo, y botones para añadir o eliminar
@@ -23,34 +23,28 @@ import vista.interfaz.CrearTargeta;
  *
  */
 public class ListaTargetas extends JPanel {
-
-	
-	
-	
+	private JScrollPane scrollLista;
+	private JPanel lista;
 	
 	/**
 	 * inicializa la clase con el 
 	 * @param titulo
 	 */
-	public static JPanel aListaTargetas(String titulo, JFrame framePadre) {
-		JPanel padre = new JPanel();
-		
-		JPanel lista = new JPanel();
+	public ListaTargetas(String titulo, JFrame framePadre) {
 		
 		GridBagLayout gbl_panModulos = new GridBagLayout();
 		gbl_panModulos.columnWidths = new int[]{91, 0};
 		gbl_panModulos.rowHeights = new int[]{14, 27, 0, 0};
 		gbl_panModulos.columnWeights = new double[]{1.0, Double.MIN_VALUE};
 		gbl_panModulos.rowWeights = new double[]{0.0, 0.0, 1.0, Double.MIN_VALUE};
-		padre.setLayout(gbl_panModulos);
+		setLayout(gbl_panModulos);
 		
 		JLabel tituloModulos = new JLabel(titulo);
 		GridBagConstraints gbc_tituloModulos = new GridBagConstraints();
 		gbc_tituloModulos.insets = new Insets(0, 0, 5, 0);
-		gbc_tituloModulos.anchor = GridBagConstraints.NORTH;
 		gbc_tituloModulos.gridx = 0;
 		gbc_tituloModulos.gridy = 0;
-		padre.add(tituloModulos, gbc_tituloModulos);
+		add(tituloModulos, gbc_tituloModulos);
 		
 		JPanel panel_1 = new JPanel();
 		GridBagConstraints gbc_panel_1 = new GridBagConstraints();
@@ -58,7 +52,7 @@ public class ListaTargetas extends JPanel {
 		gbc_panel_1.fill = GridBagConstraints.VERTICAL;
 		gbc_panel_1.gridx = 0;
 		gbc_panel_1.gridy = 1;
-		padre.add(panel_1, gbc_panel_1);
+		add(panel_1, gbc_panel_1);
 		panel_1.setLayout(new GridLayout(0, 2, 0, 0));
 		
 		JButton button = new JButton("A\u00F1adir");
@@ -69,7 +63,8 @@ public class ListaTargetas extends JPanel {
 				Targeta targeta = new CrearTargeta(framePadre, true).getTargeta();
 
 				lista.add(targeta);
-				lista.revalidate();
+				//scrollLista.revalidate();
+				scrollLista.updateUI();
 				
 				System.out.println("aniadida");
 				
@@ -80,27 +75,29 @@ public class ListaTargetas extends JPanel {
 		JButton button_1 = new JButton("Eliminar");
 		panel_1.add(button_1);
 		
+		scrollLista = new JScrollPane();
+		GridBagConstraints gbc_scrollLista = new GridBagConstraints();
+		gbc_scrollLista.fill = GridBagConstraints.BOTH;
+		gbc_scrollLista.gridx = 0;
+		gbc_scrollLista.gridy = 2;
+		add(scrollLista, gbc_scrollLista);
 		
-		lista.setPreferredSize(new Dimension(100, 100));
-		GridBagConstraints gbc_lista = new GridBagConstraints();
-		gbc_lista.fill = GridBagConstraints.BOTH;
-		gbc_lista.gridx = 0;
-		gbc_lista.gridy = 2;
+		lista = new JPanel();
+		
+		// con preferredSiza coloca los elemetos en vertical pero no muestra el scroll
+		lista.setPreferredSize(new Dimension(scrollLista.getWidth(), 0));
+		//lista.setPreferredSize(scrollLista.getSize());
+		
+		scrollLista.setViewportView(lista);
 		
 		
-		
-		padre.add(lista, gbc_lista);
-		lista.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
-		
-		return padre;
 	}
 	
 	/**
 	 * aniade un objeto targeta a la lista de modulos
 	 */
-	private void aniadirTargetaModulos(Targeta targeta) {
-		//lista.add(targeta);
-		//lista.revalidate();
+	private void aniadirTargeta(Targeta targeta) {
+		
 		
 	}
 	
