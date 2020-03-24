@@ -60,7 +60,7 @@ public class Interfaz {
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[]{0, 111, 105, 0};
 		gridBagLayout.rowHeights = new int[]{0, 0};
-		gridBagLayout.columnWeights = new double[]{1.0, 0.0, 0.0, Double.MIN_VALUE};
+		gridBagLayout.columnWeights = new double[]{1.0, 1.0, 0.0, Double.MIN_VALUE};
 		gridBagLayout.rowWeights = new double[]{1.0, Double.MIN_VALUE};
 		frame.getContentPane().setLayout(gridBagLayout);
 		
@@ -107,15 +107,15 @@ public class Interfaz {
 		panHorario.add(areaTrabajo, gbc_areaTrabajo);
 		
 		
-		JPanel panModulos = ListaTargetas.aListaTargetas("modulos", frame);
+		ListaTargetas panModulos = new ListaTargetas("modulos", frame);
 		
-		
+		//JPanel panModulos = new JPanel();
 		GridBagConstraints gbc_panModulos = new GridBagConstraints();
 		gbc_panModulos.insets = new Insets(0, 0, 0, 5);
-		gbc_panModulos.fill = GridBagConstraints.VERTICAL;
+		gbc_panModulos.fill = GridBagConstraints.BOTH;
 		gbc_panModulos.gridx = 1;
 		gbc_panModulos.gridy = 0;
-		frame.getRootPane().add(panModulos, gbc_panModulos);
+		frame.getContentPane().add(panModulos, gbc_panModulos);
 		
 		
 		JPanel panEmnpleados = new JPanel();
