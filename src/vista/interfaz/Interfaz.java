@@ -21,7 +21,6 @@ import vista.elemetos.ListaTargetas;
 public class Interfaz {
 
 	private JFrame frame;
-	private JPanel listaModulos;
 	private JScrollPane listaEmpleados;
 
 	/**
