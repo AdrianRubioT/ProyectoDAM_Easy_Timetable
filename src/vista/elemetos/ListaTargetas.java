@@ -61,13 +61,8 @@ public class ListaTargetas extends JPanel {
 				
 				//cambiar para no abusar del modal para que no se lance otro proceso
 				Targeta targeta = new CrearTargeta(framePadre, true).getTargeta();
-
-				lista.add(targeta);
-				//scrollLista.revalidate();
-				scrollLista.updateUI();
-				
-				System.out.println("aniadida");
-				
+				aniadirTargeta(targeta);
+			
 			}
 		});
 		panel_1.add(button);
@@ -94,10 +89,16 @@ public class ListaTargetas extends JPanel {
 	}
 	
 	/**
-	 * aniade un objeto targeta a la lista de modulos
+	 * aniade un objeto targeta al jpanel lista y llama a 
+	 * scrollLista.updateUI();
+	 * 
 	 */
 	private void aniadirTargeta(Targeta targeta) {
+		lista.add(targeta);
+		//scrollLista.revalidate();
+		scrollLista.updateUI();
 		
+		System.out.println("aniadida");
 		
 	}
 	
