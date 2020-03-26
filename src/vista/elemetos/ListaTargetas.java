@@ -26,11 +26,17 @@ public class ListaTargetas extends JPanel {
 	private JScrollPane scrollLista;
 	private JPanel lista;
 	
+	private ControlRadioButon controlRadio;
+	
+	
 	/**
 	 * inicializa la clase con el 
 	 * @param titulo
 	 */
 	public ListaTargetas(String titulo, JFrame framePadre) {
+		
+		controlRadio = new ControlRadioButon();
+		
 		
 		GridBagLayout gbl_panModulos = new GridBagLayout();
 		gbl_panModulos.columnWidths = new int[]{91, 0};
@@ -60,7 +66,7 @@ public class ListaTargetas extends JPanel {
 			public void actionPerformed(ActionEvent arg0) {
 				
 				//cambiar para no abusar del modal para que no se lance otro proceso
-				Targeta targeta = new CrearTargeta(framePadre, true).getTargeta();
+				Targeta targeta = new CrearTargeta(framePadre, true, controlRadio).getTargeta();
 				aniadirTargeta(targeta);
 			
 			}
