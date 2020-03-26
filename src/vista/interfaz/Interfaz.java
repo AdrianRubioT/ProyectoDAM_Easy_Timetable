@@ -42,7 +42,7 @@ public class Interfaz {
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[]{0, 111, 105, 0};
 		gridBagLayout.rowHeights = new int[]{0, 0};
-		gridBagLayout.columnWeights = new double[]{1.0, 1.0, 0.0, Double.MIN_VALUE};
+		gridBagLayout.columnWeights = new double[]{1.0, 1.0, 1.0, Double.MIN_VALUE};
 		gridBagLayout.rowWeights = new double[]{1.0, Double.MIN_VALUE};
 		frame.getContentPane().setLayout(gridBagLayout);
 		
@@ -91,7 +91,7 @@ public class Interfaz {
 		
 		ListaTargetas panModulos = new ListaTargetas("modulos", frame);
 		
-		//JPanel panModulos = new JPanel();
+		
 		GridBagConstraints gbc_panModulos = new GridBagConstraints();
 		gbc_panModulos.insets = new Insets(0, 0, 0, 5);
 		gbc_panModulos.fill = GridBagConstraints.BOTH;
@@ -99,51 +99,14 @@ public class Interfaz {
 		gbc_panModulos.gridy = 0;
 		frame.getContentPane().add(panModulos, gbc_panModulos);
 		
-		
-		JPanel panEmnpleados = new JPanel();
-		GridBagConstraints gbc_panEmnpleados = new GridBagConstraints();
-		gbc_panEmnpleados.fill = GridBagConstraints.VERTICAL;
-		gbc_panEmnpleados.gridx = 2;
-		gbc_panEmnpleados.gridy = 0;
-		frame.getContentPane().add(panEmnpleados, gbc_panEmnpleados);
-		GridBagLayout gbl_panEmnpleados = new GridBagLayout();
-		gbl_panEmnpleados.columnWidths = new int[]{91, 0};
-		gbl_panEmnpleados.rowHeights = new int[]{14, 27, 0, 0};
-		gbl_panEmnpleados.columnWeights = new double[]{1.0, Double.MIN_VALUE};
-		gbl_panEmnpleados.rowWeights = new double[]{0.0, 0.0, 1.0, Double.MIN_VALUE};
-		panEmnpleados.setLayout(gbl_panEmnpleados);
-		
-		JLabel tituloEmpleados = new JLabel("Lista de empleados");
-		GridBagConstraints gbc_tituloEmpleados = new GridBagConstraints();
-		gbc_tituloEmpleados.anchor = GridBagConstraints.NORTH;
-		gbc_tituloEmpleados.insets = new Insets(0, 0, 5, 0);
-		gbc_tituloEmpleados.gridx = 0;
-		gbc_tituloEmpleados.gridy = 0;
-		panEmnpleados.add(tituloEmpleados, gbc_tituloEmpleados);
-		
-		JPanel panel_3 = new JPanel();
-		GridBagConstraints gbc_panel_3 = new GridBagConstraints();
-		gbc_panel_3.fill = GridBagConstraints.VERTICAL;
-		gbc_panel_3.insets = new Insets(0, 0, 5, 0);
-		gbc_panel_3.gridx = 0;
-		gbc_panel_3.gridy = 1;
-		panEmnpleados.add(panel_3, gbc_panel_3);
-		panel_3.setLayout(new GridLayout(0, 2, 0, 0));
-		
-		JButton button_2 = new JButton("A\u00F1adir");
-		panel_3.add(button_2);
-		
-		JButton button_3 = new JButton("Eliminar");
-		panel_3.add(button_3);
-		
-		listaEmpleados = new JScrollPane();
-		GridBagConstraints gbc_listaEmpleados = new GridBagConstraints();
-		gbc_listaEmpleados.fill = GridBagConstraints.BOTH;
-		gbc_listaEmpleados.gridx = 0;
-		gbc_listaEmpleados.gridy = 2;
-		panEmnpleados.add(listaEmpleados, gbc_listaEmpleados);
-		
-		
+		ListaTargetas panEmpleados = new ListaTargetas("Empleados", frame);
+		//JPanel panEmpleados = new JPanel();
+		GridBagConstraints gbc_panEmpleados = new GridBagConstraints();
+		gbc_panEmpleados.fill = GridBagConstraints.BOTH;
+		gbc_panEmpleados.gridx = 2;
+		gbc_panEmpleados.gridy = 0;
+		frame.getContentPane().add(panEmpleados, gbc_panEmpleados);
+
 		
 		
 		frame.setVisible(true);
