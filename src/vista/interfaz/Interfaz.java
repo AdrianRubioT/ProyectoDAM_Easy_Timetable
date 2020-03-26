@@ -1,7 +1,5 @@
 package vista.interfaz;
 
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JMenuBar;
 import java.awt.GridBagLayout;
@@ -23,21 +21,6 @@ public class Interfaz {
 	private JFrame frame;
 	private JScrollPane listaEmpleados;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Interfaz window = new Interfaz();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	/**
 	 * Create the application.
@@ -159,6 +142,11 @@ public class Interfaz {
 		gbc_listaEmpleados.gridx = 0;
 		gbc_listaEmpleados.gridy = 2;
 		panEmnpleados.add(listaEmpleados, gbc_listaEmpleados);
+		
+		
+		
+		
+		frame.setVisible(true);
 	}
 	
 	
