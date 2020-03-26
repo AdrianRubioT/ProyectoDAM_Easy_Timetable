@@ -13,19 +13,21 @@ public class ControlRadioButon {
 
 	ButtonGroup group = new ButtonGroup();
 	
+	/**
+	 * inicializa la clase con un buttonGroup
+	 */
 	public ControlRadioButon() {
-		// TODO Auto-generated constructor stub
+		
 	}
 	
 	
 	/**
-	 * metodo que genera un radiobuton asignado a un grupo
-	 * @param grupo grupo al que asignarlo
-	 * @param labelradio etiqueta que acompaña al radiobuton
+	 * metodo que genera un radiobuton asignado al grupo de la misma instancia
+	 * @param labelradio etiqueta que acompaña al radiobuton, si se indica 
 	 * @param accion accion a guardar en setActionCommand
 	 * @return radiobutton con grupo y etiqueta
 	 */
-	public JRadioButton crearRadioButton(String grupo, String labelradio, String accion) {
+	public JRadioButton crearRadioButton(String labelradio, String accion) {
 		
 		JRadioButton radio = new JRadioButton();
 		if ( !labelradio.equals("") ) {
