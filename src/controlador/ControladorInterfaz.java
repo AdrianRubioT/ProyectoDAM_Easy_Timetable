@@ -1,6 +1,5 @@
 package controlador;
 
-import vista.elemetos.ControlRadioButon;
 import vista.interfaz.Interfaz;
 
 /**
