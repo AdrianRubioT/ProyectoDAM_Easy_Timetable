@@ -7,22 +7,23 @@ import java.awt.Insets;
 import javax.swing.JLabel;
 import javax.swing.border.LineBorder;
 import java.awt.Color;
+import javax.swing.JRadioButton;
 
 
 //TODO: hacer el icono
 public class Targeta extends JPanel {
 
 
-	public Targeta(String textlb1) {
-		this(textlb1, "","","");
+	public Targeta(String textlb1, ControlRadioButon controlRadio) {
+		this(textlb1, "","","", controlRadio);
 	}
 
-	public Targeta(String textlb1, String textlb2) {
-		this(textlb1, textlb2, "", "");
+	public Targeta(String textlb1, String textlb2, ControlRadioButon controlRadio) {
+		this(textlb1, textlb2, "", "", controlRadio);
 	}
 
-	public Targeta(String textlb1, String textlb2, String textlb3) {
-		this(textlb1, textlb2, textlb3, "");
+	public Targeta(String textlb1, String textlb2, String textlb3, ControlRadioButon controlRadio) {
+		this(textlb1, textlb2, textlb3, "", controlRadio);
 	}
 
 
@@ -37,7 +38,7 @@ public class Targeta extends JPanel {
 	 * @wbp.parser.constructor
 	 * 
 	 */
-	public Targeta(String textlb1, String textlb2, String textlb3, String textlb4) {
+	public Targeta(String textlb1, String textlb2, String textlb3, String textlb4, ControlRadioButon controlRadio) {
 		setBorder(new LineBorder(new Color(0, 0, 0), 2));
 
 
@@ -48,13 +49,19 @@ public class Targeta extends JPanel {
 		gridBagLayout.rowWeights = new double[]{1.0, Double.MIN_VALUE};
 		setLayout(gridBagLayout);
 
-		JPanel panIcon = new JPanel();
-		GridBagConstraints gbc_panIcon = new GridBagConstraints();
-		gbc_panIcon.insets = new Insets(0, 0, 0, 5);
-		gbc_panIcon.fill = GridBagConstraints.BOTH;
-		gbc_panIcon.gridx = 0;
-		gbc_panIcon.gridy = 0;
-		add(panIcon, gbc_panIcon);
+		JPanel panRadioButton = new JPanel();
+		GridBagConstraints gbc_panRadioButton = new GridBagConstraints();
+		gbc_panRadioButton.insets = new Insets(0, 0, 0, 5);
+		gbc_panRadioButton.fill = GridBagConstraints.BOTH;
+		gbc_panRadioButton.gridx = 0;
+		gbc_panRadioButton.gridy = 0;
+		add(panRadioButton, gbc_panRadioButton);
+		
+
+		JRadioButton radiobutton = controlRadio.crearRadioButton("Seleccionado", "hola mundo desde targeta");
+		panRadioButton.add(radiobutton);
+		
+
 
 		JPanel panDescripcion = new JPanel();
 		GridBagConstraints gbc_panDescripcion = new GridBagConstraints();
