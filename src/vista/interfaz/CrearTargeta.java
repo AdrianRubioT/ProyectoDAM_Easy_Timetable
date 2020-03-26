@@ -10,6 +10,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import vista.elemetos.ControlRadioButon;
 import vista.elemetos.Targeta;
 
 import java.awt.GridBagLayout;
@@ -30,11 +31,19 @@ public class CrearTargeta extends JDialog {
 	private JTextField lin4;
 	private JTextField pathIcon;
 
+	ControlRadioButon controlRadio;
+	
+	
 	/**
 	 * Create the dialog.
+	 * @param controlRadio 
 	 */
-	public CrearTargeta(JFrame padre, boolean modal) {
+	public CrearTargeta(JFrame padre, boolean modal, ControlRadioButon controlRadio) {
 		super(padre, modal);
+		
+		this.controlRadio = controlRadio;
+		
+		
 		
 		setBounds(100, 100, 306, 217);
 		getContentPane().setLayout(new BorderLayout());
@@ -225,7 +234,7 @@ public class CrearTargeta extends JDialog {
 	 * @return targeta con la informacion ingresada
 	 */
 	public Targeta getTargeta() {
-		return new Targeta( lin1.getText(), lin2.getText(), lin3.getText(), lin4.getText() );
+		return new Targeta( lin1.getText(), lin2.getText(), lin3.getText(), lin4.getText(), controlRadio );
 	}
 	
 
