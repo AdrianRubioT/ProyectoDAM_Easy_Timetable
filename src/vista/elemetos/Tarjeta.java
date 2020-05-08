@@ -11,18 +11,18 @@ import javax.swing.JRadioButton;
 
 
 //TODO: hacer el icono
-public class Targeta extends JPanel {
+public class Tarjeta extends JPanel {
 
 
-	public Targeta(String textlb1, ControlRadioButon controlRadio) {
+	public Tarjeta(String textlb1, ControlRadioButon controlRadio) {
 		this(textlb1, "","","", controlRadio);
 	}
 
-	public Targeta(String textlb1, String textlb2, ControlRadioButon controlRadio) {
+	public Tarjeta(String textlb1, String textlb2, ControlRadioButon controlRadio) {
 		this(textlb1, textlb2, "", "", controlRadio);
 	}
 
-	public Targeta(String textlb1, String textlb2, String textlb3, ControlRadioButon controlRadio) {
+	public Tarjeta(String textlb1, String textlb2, String textlb3, ControlRadioButon controlRadio) {
 		this(textlb1, textlb2, textlb3, "", controlRadio);
 	}
 
@@ -38,7 +38,7 @@ public class Targeta extends JPanel {
 	 * @wbp.parser.constructor
 	 * 
 	 */
-	public Targeta(String textlb1, String textlb2, String textlb3, String textlb4, ControlRadioButon controlRadio) {
+	public Tarjeta(String textlb1, String textlb2, String textlb3, String textlb4, ControlRadioButon controlRadio) {
 		setBorder(new LineBorder(new Color(0, 0, 0), 2));
 
 

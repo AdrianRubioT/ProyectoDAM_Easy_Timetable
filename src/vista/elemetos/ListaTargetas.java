@@ -13,11 +13,11 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import vista.interfaz.CrearTargeta;
+import vista.interfaz.CrearTarjeta;
 import javax.swing.JScrollPane;
 
 /**
- * JPanel con un titulo, y botones para añadir o eliminar
+ * JPanel con un titulo, y botones para aï¿½adir o eliminar
  * elementos en una lista interna que se muestra 
  * @author Adrian
  *
@@ -66,7 +66,7 @@ public class ListaTargetas extends JPanel {
 			public void actionPerformed(ActionEvent arg0) {
 				
 				//cambiar para no abusar del modal para que no se lance otro proceso
-				Targeta targeta = new CrearTargeta(framePadre, true, controlRadio).getTargeta();
+				Tarjeta targeta = new CrearTarjeta(framePadre, true, controlRadio).getTargeta();
 				aniadirTargeta(targeta);
 			
 			}
@@ -99,7 +99,7 @@ public class ListaTargetas extends JPanel {
 	 * scrollLista.updateUI();
 	 * 
 	 */
-	private void aniadirTargeta(Targeta targeta) {
+	private void aniadirTargeta(Tarjeta targeta) {
 		lista.add(targeta);
 		//scrollLista.revalidate();
 		scrollLista.updateUI();
