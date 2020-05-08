@@ -9,17 +9,18 @@ import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import java.awt.Color;
 import javax.swing.JComboBox;
+import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.JButton;
-import java.awt.GridLayout;
 import javax.swing.JScrollPane;
 
 import vista.elemetos.ListaTargetas;
+import javax.swing.JTabbedPane;
 
 public class Interfaz {
 
 	private JFrame frame;
-	private JScrollPane listaEmpleados;
+	
 
 
 	/**
@@ -34,15 +35,15 @@ public class Interfaz {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 542, 362);
+		frame.setBounds(100, 100, 645, 414);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JMenuBar menuBar = new JMenuBar();
 		frame.setJMenuBar(menuBar);
 		GridBagLayout gridBagLayout = new GridBagLayout();
-		gridBagLayout.columnWidths = new int[]{0, 111, 105, 0};
+		gridBagLayout.columnWidths = new int[]{0, 100, 0};
 		gridBagLayout.rowHeights = new int[]{0, 0};
-		gridBagLayout.columnWeights = new double[]{1.0, 1.0, 1.0, Double.MIN_VALUE};
+		gridBagLayout.columnWeights = new double[]{1.0, 1.0, Double.MIN_VALUE};
 		gridBagLayout.rowWeights = new double[]{1.0, Double.MIN_VALUE};
 		frame.getContentPane().setLayout(gridBagLayout);
 		
@@ -88,26 +89,27 @@ public class Interfaz {
 		gbc_areaTrabajo.gridy = 1;
 		panHorario.add(areaTrabajo, gbc_areaTrabajo);
 		
+		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
+		GridBagConstraints gbc_tabbedPane = new GridBagConstraints();
+		gbc_tabbedPane.fill = GridBagConstraints.BOTH;
+		gbc_tabbedPane.gridx = 1;
+		gbc_tabbedPane.gridy = 0;
+		frame.getContentPane().add(tabbedPane, gbc_tabbedPane);
 		
-		ListaTargetas panModulos = new ListaTargetas("modulos", frame);
 		
+		JComponent tabModulos = new ListaTargetas("Asignaturas", frame);
+		tabbedPane.addTab("Asignaturas", tabModulos);
 		
-		GridBagConstraints gbc_panModulos = new GridBagConstraints();
-		gbc_panModulos.insets = new Insets(0, 0, 0, 5);
-		gbc_panModulos.fill = GridBagConstraints.BOTH;
-		gbc_panModulos.gridx = 1;
-		gbc_panModulos.gridy = 0;
-		frame.getContentPane().add(panModulos, gbc_panModulos);
-		
-		ListaTargetas panEmpleados = new ListaTargetas("Empleados", frame);
-		//JPanel panEmpleados = new JPanel();
-		GridBagConstraints gbc_panEmpleados = new GridBagConstraints();
-		gbc_panEmpleados.fill = GridBagConstraints.BOTH;
-		gbc_panEmpleados.gridx = 2;
-		gbc_panEmpleados.gridy = 0;
-		frame.getContentPane().add(panEmpleados, gbc_panEmpleados);
+		JComponent tabEmpleados = new ListaTargetas("Empleados", frame);
+		tabbedPane.addTab("Empleados", tabEmpleados);
 
+		JComponent tabHabitaciones= new ListaTargetas("Habitaciones", frame);
+		tabbedPane.addTab("Habitaciones", tabHabitaciones);
 		
+		JComponent tabAlumnos= new ListaTargetas("Alumnos", frame);
+		tabbedPane.addTab("Alumnos", tabAlumnos);
+		
+       		
 		
 		frame.setVisible(true);
 	}
