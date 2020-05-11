@@ -37,6 +37,6 @@
  6/5/2020 10:00 - 11:00 + 12:00 - 13:30 + 16:30	- 20:00 Repasar las fases del proyecto, Primer diagrama de objetos y analizando los elementos de la interfaz
  7/5/2020 10:30 - 13:15	+ 16:30 - 20:00 = 6.25H	Repaso y ampliacion: aniadido nuevo riesgo laboral
  8/5/2020  9:30 - 11:00 + 12:00 - 12:30 + 17:00	- 20:00 3Hrepasado para presentar documentacion, 2H programando
-11/5/2020  16:30 - 17:20
+11/5/2020 11:00 + 11:30 - 16:30 - 17:15 + 19:00 - 20:00 = 2.25H	0.5Reunion clase  1.75H plantilla para diagrama de grantt en excell , 	Dentista, compra, y medico... poco animo
 
 
