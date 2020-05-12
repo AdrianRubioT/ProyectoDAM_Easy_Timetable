@@ -14,7 +14,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
-import vista.ventanas.CrearTarjeta;
+import vista.ventanas.InputPopup;
 
 /**
  * JPanel con un titulo, y botones para a�adir o eliminar
@@ -28,6 +28,7 @@ public class ListaTargetas extends JPanel {
 	
 	private ControlRadioButon controlRadio;
 	
+	private String titulo;
 	
 	/**
 	 * inicializa la clase con el 
@@ -36,6 +37,7 @@ public class ListaTargetas extends JPanel {
 	public ListaTargetas(String titulo, JFrame framePadre) {
 		
 		controlRadio = new ControlRadioButon();
+		this.titulo = titulo;
 		
 		
 		GridBagLayout gbl_panModulos = new GridBagLayout();
@@ -65,10 +67,27 @@ public class ListaTargetas extends JPanel {
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
-				//cambiar para no abusar del modal para que no se lance otro proceso
-				Tarjeta targeta = new CrearTarjeta(framePadre, true, controlRadio).getTargeta();
-				aniadirTargeta(targeta);
-			
+				
+				
+				//TODO encontrar una solucin mejor que este swich case aqui
+				switch (titulo) {
+				case "Habitaciones":
+					String[] inputs = {"hola", "mundo", "2"};
+					InputPopup inputsVentana = new InputPopup(framePadre, true, inputs);
+					String[] entradas = inputsVentana.getData();
+					for (String input : entradas ) {
+						System.out.println(input);
+						
+					}
+					
+					break;
+
+				default:
+					System.out.println("--------ERROR:Titulo no encontrado");
+					break;
+				}
+				
+				
 			}
 		});
 		panel_1.add(button);
