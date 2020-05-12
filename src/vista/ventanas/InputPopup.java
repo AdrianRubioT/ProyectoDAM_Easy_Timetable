@@ -30,6 +30,7 @@ public class InputPopup extends JDialog {
 	private final JPanel contentPanel = new JPanel();
 	private ArrayList<JTextField> colInputs = new ArrayList<JTextField>();
 	
+	public boolean isAcepted = false;
 	
 	/**
 	 * Create the dialog.
@@ -63,6 +64,7 @@ public class InputPopup extends JDialog {
 				buttonPane.add(okButton);
 				okButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
+						isAcepted = true;
 						dispose();
 					}
 				});
@@ -74,6 +76,7 @@ public class InputPopup extends JDialog {
 				cancelButton.setActionCommand("Cancel");
 				cancelButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
+						isAcepted = false;
 						dispose();
 					}
 				});
