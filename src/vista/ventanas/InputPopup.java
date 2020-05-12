@@ -5,7 +5,6 @@ import java.awt.FlowLayout;
 
 import javax.swing.JButton;
 import javax.swing.JDialog;
-import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -16,7 +15,6 @@ import java.awt.Insets;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import java.awt.event.ActionListener;
-import java.io.File;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 
@@ -24,6 +22,7 @@ import java.awt.event.ActionEvent;
  * Crea un popup para que el usuario ingrese los datos.
  * El popup contendra tantos JLabel y JTextField como parametro se le ayan pasado en el constructor
  * @author adrian
+ * @version 1
  *
  */
 public class InputPopup extends JDialog {
@@ -38,10 +37,6 @@ public class InputPopup extends JDialog {
 	 */
 	public InputPopup(JFrame padre, boolean modal, String[] inputs) {
 		super(padre, modal);
-		
-		
-		
-		
 		
 		setBounds(100, 100, 306, 217);
 		getContentPane().setLayout(new BorderLayout());
@@ -92,7 +87,8 @@ public class InputPopup extends JDialog {
 
 	
 	/**
-	 * Crea tantos JTextfield como inputs ayan y lo agrega a colInputs
+	 * Crea tantos JTextfield como inputs hayan y lo agrega a colInputs ademas de
+	 * agregarlos a la intefaz
 	 * @param inputs 
 	 */
 	private void crearInputs(String[] inputs) {
@@ -100,8 +96,8 @@ public class InputPopup extends JDialog {
 		for (String input : inputs) {
 			
 			
-			JTextField a = new JTextField();
-			colInputs.add( a );
+			//JTextField a = new JTextField();
+			colInputs.add( new JTextField() );
 			
 			JLabel lblLinea_3 = new JLabel(input);
 			GridBagConstraints gbc_lblLinea_3 = new GridBagConstraints();
@@ -122,16 +118,20 @@ public class InputPopup extends JDialog {
 		
 	}
 	
-	
-
-	
 	/**
-	 * devuelve el contenido introducido por el usuario en los campos 
+	 * Recoge los valores de los inputs introducido por el usuario en 
+	 * un array de String. 
 	 * @return array con la informacion introducida en el mismo orden que se inicializo esta clase
 	 */
 	public String[] getData() {
-		return null;
 		
+		String[] inputData = new String[colInputs.size()]; 
+		
+		for (int i = 0; i < inputData.length; i++) {
+			inputData[ i ] = colInputs.get( i ).getText();
+		}
+		
+		return inputData;
 	}
 	
 	
