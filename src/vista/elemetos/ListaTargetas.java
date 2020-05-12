@@ -74,11 +74,17 @@ public class ListaTargetas extends JPanel {
 				case "Habitaciones":
 					String[] inputs = {"hola", "mundo", "2"};
 					InputPopup inputsVentana = new InputPopup(framePadre, true, inputs);
-					String[] entradas = inputsVentana.getData();
+					
+					//si el usuario a pulsado ok o intro
+					if (inputsVentana.isAcepted) {
+						
+					}
+					
+					/*String[] entradas = inputsVentana.getData();
 					for (String input : entradas ) {
 						System.out.println(input);
 						
-					}
+					}*/
 					
 					break;
 
@@ -123,7 +129,7 @@ public class ListaTargetas extends JPanel {
 		//scrollLista.revalidate();
 		scrollLista.updateUI();
 		
-		System.out.println("aniadida");
+		//System.out.println("aniadida");
 		
 	}
 	
