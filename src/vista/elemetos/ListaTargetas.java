@@ -12,9 +12,9 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-
-import vista.interfaz.CrearTarjeta;
 import javax.swing.JScrollPane;
+
+import vista.ventanas.CrearTarjeta;
 
 /**
  * JPanel con un titulo, y botones para a�adir o eliminar
