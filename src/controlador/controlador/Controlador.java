@@ -25,8 +25,11 @@ public class Controlador implements AniadirListado {
 	 * 
 	 */
 	@Override
-	public void onAddObject() {
-		System.out.println("hola evento");
+	public void onAddObject(String[] hola) {
+		//System.out.println(hola);
+		for (String string : hola) {
+			System.out.println(string);
+		}
 		
 	}
 	
