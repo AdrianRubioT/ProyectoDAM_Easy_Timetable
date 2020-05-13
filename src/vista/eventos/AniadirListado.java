@@ -1,5 +1,5 @@
 package vista.eventos;
 
 public interface AniadirListado {
-	void onAddObject();
+	void onAddObject(String[] data);
 }
