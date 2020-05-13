@@ -1,4 +1,4 @@
-package controlador;
+package controlador.objetos;
 
 public class Habitacion {
 
