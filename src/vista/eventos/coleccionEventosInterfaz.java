@@ -21,7 +21,7 @@ public class coleccionEventosInterfaz {
 	 * aniade el parametro a l alista de listenerListado
 	 * @param toAdd clase que sera llamada cuando se lance el evento
 	 */
-	public static void addListener(AniadirListado toAdd) {
+	public static void addListenerAniadirObjeto(AniadirListado toAdd) {
 		listenerAniadirObjeto.add(toAdd);
 	}
 	/**
