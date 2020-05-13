@@ -1,8 +1,8 @@
-package controlador;
+package vista.controlador;
 
 import javax.swing.JFrame;
 
-import excepciones.UsuarioCancel;
+import vista.excepciones.UsuarioCancel;
 import vista.interfaz.Interfaz;
 import vista.ventanas.InputPopup;
 

@@ -14,8 +14,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
-import controlador.ControladorInterfaz;
-import excepciones.UsuarioCancel;
+import vista.controlador.ControladorInterfaz;
+import vista.excepciones.UsuarioCancel;
 
 
 /**

@@ -1,4 +1,4 @@
-package excepciones;
+package vista.excepciones;
 
 
 /**
