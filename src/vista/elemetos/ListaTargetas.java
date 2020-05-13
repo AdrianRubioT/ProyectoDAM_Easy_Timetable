@@ -79,7 +79,7 @@ public class ListaTargetas extends JPanel {
 					
 					try {
 						String[] inputs = ControladorInterfaz.abrirInputPopup(framePadre, campos);
-						ColeccionEventosInterfaz.triggerAniadirObjeto();
+						ColeccionEventosInterfaz.triggerAniadirObjeto(inputs);
 					} catch (UsuarioCancel e) {
 						//e.printStackTrace();
 					}
