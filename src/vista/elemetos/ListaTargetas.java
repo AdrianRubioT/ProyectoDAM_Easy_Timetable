@@ -72,8 +72,8 @@ public class ListaTargetas extends JPanel {
 				//TODO encontrar una solucin mejor que este swich case aqui
 				switch (titulo) {
 				case "Habitaciones":
-					String[] inputs = {"hola", "mundo", "2"};
-					InputPopup inputsVentana = new InputPopup(framePadre, true, inputs);
+					String[] inputsFields = {"hola", "mundo", "2"};
+					InputPopup inputsVentana = new InputPopup(framePadre, true, inputsFields);
 					
 					//si el usuario a pulsado ok o intro
 					if (inputsVentana.isAcepted) {
