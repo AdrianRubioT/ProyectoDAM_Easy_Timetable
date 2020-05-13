@@ -113,6 +113,13 @@ public class Interfaz {
 		
 		frame.setVisible(true);
 	}
+
+	/**
+	 * @return the frame
+	 */
+	public JFrame getFrame() {
+		return frame;
+	}
 	
 	
 
