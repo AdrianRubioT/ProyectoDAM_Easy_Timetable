@@ -33,10 +33,14 @@ public class InputPopup extends JDialog {
 	public boolean isAcepted = false;
 	
 	/**
-	 * Create the dialog.
-	 * @param controlRadio 
+	 * Crea un dialogo dinamico con JTextField y JLabels como elementos del array se le pasen.
+	 * El texto de los JLabel es el correspondiente a la posicion del array  
+	 * @param padre Jframe padre para ser modal 
+	 * @param modal modal o no sobre ventana padre
+	 * @param campos lista de JTextfields y JLabel que apareceran en la interfaz. 
+	 *
 	 */
-	public InputPopup(JFrame padre, boolean modal, String[] inputs) {
+	public InputPopup(JFrame padre, boolean modal, String[] campos) {
 		super(padre, modal);
 		
 		setBounds(100, 100, 306, 217);
@@ -50,7 +54,7 @@ public class InputPopup extends JDialog {
 		gbl_contentPanel.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 		contentPanel.setLayout(gbl_contentPanel);
 
-		crearInputs(inputs);
+		crearInputs(campos);
 		
 		
 		
