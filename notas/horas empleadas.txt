@@ -40,5 +40,7 @@
 11/5/2020 11:00 + 11:30 - 16:30 - 17:15 + 19:00 - 20:00 = 2.25H	0.5Reunion clase  1.75H plantilla para diagrama de grantt en excell , 	Dentista, compra, y medico... poco animo
 12/5/2020 10:00 - 11:45 + 16:30 - 20:30 = 5.75 	1.75H pensando como crear añadir los 4 objetos principales y listarlos 16:45 - 18:30 desarrollando la insercion de datos de un objeto 18:30 - 20:30 pensando como inicializar la clase habitacion 
 
+13/5/2020 10:00 - 13:00 + 16:30	+ 20:00 = 6.5H	3H pensando como hacer llegar los datos de la listaTarjetas al controlador y ampliando el diagrama de objetos 3.5Hdesarrollando codigo
+
 
 
