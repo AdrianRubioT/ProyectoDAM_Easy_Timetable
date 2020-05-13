@@ -1,7 +1,5 @@
 package controlador;
 
-import javax.swing.JFrame;
-
 public class Habitacion {
 
 	private String habitacion;
@@ -14,21 +12,6 @@ public class Habitacion {
 		// TODO Auto-generated constructor stub
 	}
 	
-
-	/**
-	 * Muestra una ventana para ingresar los datos que contendra el objeto
-	 * @param padre
-	 */
-	public Habitacion(JFrame padre) {
-		super();
-		
-		
-		
-	}
-
-
-
-
 
 	/**
 	 * @return the habitacion
