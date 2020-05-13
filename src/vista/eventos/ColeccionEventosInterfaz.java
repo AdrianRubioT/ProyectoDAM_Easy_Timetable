@@ -8,7 +8,7 @@ import java.util.List;
  * @author adrian
  *
  */
-public class coleccionEventosInterfaz {
+public class ColeccionEventosInterfaz {
 
 	//Evento AniadirObjeto
 	//Evento cuando en la clase ListaTargetas se pulsa aniadir, esta clase manda la informacion
