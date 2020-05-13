@@ -15,6 +15,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
 import vista.controlador.ControladorInterfaz;
+import vista.eventos.ColeccionEventosInterfaz;
 import vista.excepciones.UsuarioCancel;
 
 
@@ -78,7 +79,7 @@ public class ListaTargetas extends JPanel {
 					
 					try {
 						String[] inputs = ControladorInterfaz.abrirInputPopup(framePadre, campos);
-						
+						ColeccionEventosInterfaz.triggerAniadirObjeto();
 					} catch (UsuarioCancel e) {
 						//e.printStackTrace();
 					}
