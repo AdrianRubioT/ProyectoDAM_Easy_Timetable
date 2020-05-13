@@ -14,7 +14,9 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
-import vista.ventanas.InputPopup;
+import controlador.ControladorInterfaz;
+import excepciones.UsuarioCancel;
+
 
 /**
  * JPanel con un titulo, y botones para a�adir o eliminar
@@ -69,22 +71,18 @@ public class ListaTargetas extends JPanel {
 				
 				
 				
-				//TODO encontrar una solucin mejor que este swich case aqui
+				//TODO encontrar una solucion mejor que este swich case aqui
 				switch (titulo) {
 				case "Habitaciones":
-					String[] inputsFields = {"hola", "mundo", "2"};
-					InputPopup inputsVentana = new InputPopup(framePadre, true, inputsFields);
+					String[] campos = {"hola", "mundo", "2"};
 					
-					//si el usuario a pulsado ok o intro
-					if (inputsVentana.isAcepted) {
+					try {
+						String[] inputs = ControladorInterfaz.abrirInputPopup(framePadre, campos);
 						
+					} catch (UsuarioCancel e) {
+						//e.printStackTrace();
 					}
 					
-					/*String[] entradas = inputsVentana.getData();
-					for (String input : entradas ) {
-						System.out.println(input);
-						
-					}*/
 					
 					break;
 
