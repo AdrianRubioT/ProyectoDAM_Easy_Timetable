@@ -27,9 +27,9 @@ public class ColeccionEventosInterfaz {
 	/**
 	 * trigger para el evento AniadirObjeto
 	 */
-	public static void triggerAniadirObjeto() {
+	public static void triggerAniadirObjeto(String[] data) {
 		for (AniadirListado hl : listenerAniadirObjeto) {
-			hl.onAddObject();
+			hl.onAddObject(data);
 		}
 	}
 
