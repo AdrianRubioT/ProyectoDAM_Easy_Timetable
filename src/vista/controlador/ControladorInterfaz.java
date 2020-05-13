@@ -14,16 +14,14 @@ import vista.ventanas.InputPopup;
 public class ControladorInterfaz {
 
 	Interfaz interfaz = new Interfaz();
-	
-	
-	
+
+
 	public ControladorInterfaz() {
 
-	
+
 	}
-	
-	
-	
+
+
 	/**
 	 * Muestra la clase InputPopup al usuario para que la rellene como modal.
 	 * @param campos campos a rellenar por el usuario.
@@ -32,16 +30,16 @@ public class ControladorInterfaz {
 	 */
 	//TODO: pasar visibilidad a pakage
 	public static String[] abrirInputPopup(JFrame ventana,  String[] campos)throws UsuarioCancel{
-		
+
 		InputPopup inputsVentana = new InputPopup(ventana, true, campos);
-		
+
 		//si el usuario a pulsado ok o intro
 		if (inputsVentana.isAcepted) {
 			return inputsVentana.getData();
 		}else {
 			throw new UsuarioCancel();
 		}
-		
+
 	}
 
 }
