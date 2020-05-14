@@ -7,6 +7,8 @@ import java.awt.GridLayout;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -76,9 +78,11 @@ public class ListaTargetas extends JPanel {
 				switch (titulo) {
 				case "Habitaciones":
 					String[] campos = {"hola", "mundo", "2"};
+					Map<String, Object> inputs = new HashMap<String, Object>();
+					inputs.put("ListaTargeta", this);
 					
 					try {
-						String[] inputs = ControladorInterfaz.abrirInputPopup(framePadre, campos);
+						inputs.put("Datos", ControladorInterfaz.abrirInputPopup(framePadre, campos) ); 
 						ColeccionEventosInterfaz.triggerAniadirObjeto(inputs);
 					} catch (UsuarioCancel e) {
 						//e.printStackTrace();

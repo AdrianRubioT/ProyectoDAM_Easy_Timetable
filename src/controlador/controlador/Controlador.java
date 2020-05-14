@@ -1,5 +1,8 @@
 package controlador.controlador;
 
+import java.util.ArrayList;
+import java.util.Map;
+
 import controlador.objetos.Habitacion;
 import vista.eventos.AniadirListado;
 import vista.eventos.ColeccionEventosInterfaz;
@@ -11,7 +14,7 @@ import vista.eventos.ColeccionEventosInterfaz;
  */
 public class Controlador implements AniadirListado {
 
-	Habitacion[] colHabitaciones;
+	ArrayList<Habitacion> colHabitaciones = new ArrayList<Habitacion>();
 	
 	/**
 	 * Iniciliza el controlador
@@ -22,18 +25,30 @@ public class Controlador implements AniadirListado {
 	}
 
 	/**
-	 * 
+	 * Genera los objetos Habitacion, docente, grupoAlumnos y asignatura
+	 * segun los datos del evento y llama a ListarTargeta para que lo muestre en la interfaz 
 	 */
 	@Override
-	public void onAddObject(String[] hola) {
-		//System.out.println(hola);
-		for (String string : hola) {
-			System.out.println(string);
+	public void onAddObject(Map<String, Object> data){
+		
+		for (Map.Entry<String, Object> entry : data.entrySet()) {
+		    System.out.println(
+		        String.format("llave: %s, valor: %s", entry.getKey(), entry.getValue())
+		    );
 		}
 		
 	}
 	
 	
+	/**
+	 * Inicializa objeto habitacion y lo aniade a la coleccion de habitacion
+	 * @param habitacion
+	 */
+	private void CrearHabitacion(String habitacion) {
+		Habitacion sala = new Habitacion(habitacion); 
+		
+	}
+
 	
 	
 	

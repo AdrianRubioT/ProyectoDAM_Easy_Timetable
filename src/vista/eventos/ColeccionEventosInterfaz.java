@@ -2,6 +2,7 @@ package vista.eventos;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Clase para coleccionar los eventos y los triggers 
@@ -27,7 +28,7 @@ public class ColeccionEventosInterfaz {
 	/**
 	 * trigger para el evento AniadirObjeto
 	 */
-	public static void triggerAniadirObjeto(String[] data) {
+	public static void triggerAniadirObjeto(Map<String, Object> data) {
 		for (AniadirListado hl : listenerAniadirObjeto) {
 			hl.onAddObject(data);
 		}
