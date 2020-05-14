@@ -7,6 +7,7 @@ import controlador.objetos.Habitacion;
 import vista.elemetos.ListaTarjetas;
 import vista.eventos.AniadirListado;
 import vista.eventos.ColeccionEventosInterfaz;
+import vista.interfaz.Interfaz;
 
 /**
  * Clase para controlar y manejar los objetos a emplear por el proyecto
@@ -42,8 +43,11 @@ public class Controlador implements AniadirListado {
 		
 		switch ( data.get("ListaTarjeta")[0] ) {
 		case "Habitaciones":
+			//Crear objeto Habitacion, y recojer el ultimo ingresado
+			//TODO: modificar para obtener la habitacion en CrearHabitacion?
 			CrearHabitacion( (String[]) data.get("Datos") );
 			colHabitaciones.get( colHabitaciones.size() -1 );
+			
 			break;
 
 		default:
