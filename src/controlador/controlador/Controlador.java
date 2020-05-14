@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Map;
 
 import controlador.objetos.Habitacion;
+import vista.elemetos.ListaTargetas;
 import vista.eventos.AniadirListado;
 import vista.eventos.ColeccionEventosInterfaz;
 
@@ -31,10 +32,20 @@ public class Controlador implements AniadirListado {
 	@Override
 	public void onAddObject(Map<String, Object> data){
 		
-		for (Map.Entry<String, Object> entry : data.entrySet()) {
-		    System.out.println(
-		        String.format("llave: %s, valor: %s", entry.getKey(), entry.getValue())
-		    );
+		/*
+		String[] p = (String[])data.get("Datos");
+		for (String string : p) {
+			System.out.println(string);
+		}*/
+		
+		switch ( ((ListaTargetas) data.get("ListaTarjeta")).getTitulo() ) {
+		case "Habitaciones":
+			CrearHabitacion( (String[]) data.get("Datos") );
+			
+			break;
+
+		default:
+			break;
 		}
 		
 	}
@@ -42,11 +53,10 @@ public class Controlador implements AniadirListado {
 	
 	/**
 	 * Inicializa objeto habitacion y lo aniade a la coleccion de habitacion
-	 * @param habitacion
+	 * @param datos
 	 */
-	private void CrearHabitacion(String habitacion) {
-		Habitacion sala = new Habitacion(habitacion); 
-		
+	private void CrearHabitacion(String[] datos) {
+		colHabitaciones.add( new Habitacion(datos[1]) );
 	}
 
 	
