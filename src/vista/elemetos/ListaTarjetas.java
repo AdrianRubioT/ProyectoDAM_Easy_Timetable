@@ -27,7 +27,7 @@ import vista.excepciones.UsuarioCancel;
  * @author Adrian
  *
  */
-public class ListaTargetas extends JPanel {
+public class ListaTarjetas extends JPanel {
 	private JScrollPane scrollLista;
 	private JPanel lista;
 	
@@ -39,7 +39,7 @@ public class ListaTargetas extends JPanel {
 	 * inicializa la clase con el 
 	 * @param titulo
 	 */
-	public ListaTargetas(String titulo, JFrame framePadre) {
+	public ListaTarjetas(String titulo, JFrame framePadre) {
 		super();
 		
 		controlRadio = new ControlRadioButon();

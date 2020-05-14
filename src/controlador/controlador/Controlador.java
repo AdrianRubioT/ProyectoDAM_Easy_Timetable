@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Map;
 
 import controlador.objetos.Habitacion;
-import vista.elemetos.ListaTargetas;
+import vista.elemetos.ListaTarjetas;
 import vista.eventos.AniadirListado;
 import vista.eventos.ColeccionEventosInterfaz;
 

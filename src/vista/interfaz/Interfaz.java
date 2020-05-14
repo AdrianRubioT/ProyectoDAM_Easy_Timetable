@@ -14,7 +14,7 @@ import javax.swing.JLabel;
 import javax.swing.JButton;
 import javax.swing.JScrollPane;
 
-import vista.elemetos.ListaTargetas;
+import vista.elemetos.ListaTarjetas;
 import javax.swing.JTabbedPane;
 
 public class Interfaz {
@@ -97,16 +97,16 @@ public class Interfaz {
 		frame.getContentPane().add(tabbedPane, gbc_tabbedPane);
 		
 		
-		JComponent tabModulos = new ListaTargetas("Asignaturas", frame);
+		JComponent tabModulos = new ListaTarjetas("Asignaturas", frame);
 		tabbedPane.addTab("Asignaturas", tabModulos);
 		
-		JComponent tabEmpleados = new ListaTargetas("Empleados", frame);
+		JComponent tabEmpleados = new ListaTarjetas("Empleados", frame);
 		tabbedPane.addTab("Empleados", tabEmpleados);
 
-		JComponent tabHabitaciones= new ListaTargetas("Habitaciones", frame);
+		JComponent tabHabitaciones= new ListaTarjetas("Habitaciones", frame);
 		tabbedPane.addTab("Habitaciones", tabHabitaciones);
 		
-		JComponent tabAlumnos= new ListaTargetas("Alumnos", frame);
+		JComponent tabAlumnos= new ListaTarjetas("Alumnos", frame);
 		tabbedPane.addTab("Alumnos", tabAlumnos);
 		
        		
