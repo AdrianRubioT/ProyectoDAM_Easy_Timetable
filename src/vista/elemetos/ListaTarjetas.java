@@ -1,5 +1,6 @@
 package vista.elemetos;
 
+import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -128,7 +129,7 @@ public class ListaTarjetas extends JPanel {
 	 * scrollLista.updateUI();
 	 * 
 	 */
-	private void aniadirTargeta(Tarjeta targeta) {
+	public void aniadirTargeta(InfoPanel targeta) {
 		lista.add(targeta);
 		//scrollLista.revalidate();
 		scrollLista.updateUI();
@@ -144,6 +145,19 @@ public class ListaTarjetas extends JPanel {
 		return titulo;
 	}
 	
+	
+	/**
+	 * Aniade el objeto a la lista indicada y lo muestra en la lista
+	 * @param listaDestino lista donde mostrar el objeto
+	 * @param objeto objeto a mostrar
+	 */
+	public void aniadirObjeto(Object objeto) {
+		lista.add( (InfoPanel) objeto );
+		//scrollLista.revalidate();
+		scrollLista.updateUI();
+		
+		//System.out.println("aniadida");
+	}
 	
 	
 }
