@@ -23,7 +23,7 @@ public class ControlRadioButon {
 	
 	/**
 	 * metodo que genera un radiobuton asignado al grupo de la misma instancia
-	 * @param labelradio etiqueta que acompaña al radiobuton, si se indica 
+	 * @param labelradio etiqueta que acompaï¿½a al radiobuton, si se indica 
 	 * @param accion accion a guardar en setActionCommand
 	 * @return radiobutton con grupo y etiqueta
 	 */
@@ -31,7 +31,7 @@ public class ControlRadioButon {
 		
 		JRadioButton radio = new JRadioButton();
 		if ( !labelradio.equals("") ) {
-			radio.setLabel(labelradio);
+			radio.setText(labelradio);
 		}
 		radio.setActionCommand(accion);
 		
