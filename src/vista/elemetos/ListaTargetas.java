@@ -40,6 +40,7 @@ public class ListaTargetas extends JPanel {
 	 * @param titulo
 	 */
 	public ListaTargetas(String titulo, JFrame framePadre) {
+		super();
 		
 		controlRadio = new ControlRadioButon();
 		this.titulo = titulo;
@@ -78,8 +79,8 @@ public class ListaTargetas extends JPanel {
 				switch (titulo) {
 				case "Habitaciones":
 					String[] campos = {"hola", "mundo", "2"};
-					Map<String, Object> inputs = new HashMap<String, Object>();
-					inputs.put("ListaTarjeta", this);
+					Map<String, String[]> inputs = new HashMap<String, String[]>();
+					inputs.put("ListaTarjeta", new String[] { titulo } );
 					
 					try {
 						inputs.put("Datos", ControladorInterfaz.abrirInputPopup(framePadre, campos) ); 

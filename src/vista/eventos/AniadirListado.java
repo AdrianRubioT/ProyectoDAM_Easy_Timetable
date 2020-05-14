@@ -4,5 +4,5 @@ import java.util.Map;
 
 public interface AniadirListado {
 
-	void onAddObject(Map<String, Object> data);
+	void onAddObject(Map<String, String[]> data);
 }

@@ -30,7 +30,7 @@ public class Controlador implements AniadirListado {
 	 * segun los datos del evento y llama a ListarTargeta para que lo muestre en la interfaz 
 	 */
 	@Override
-	public void onAddObject(Map<String, Object> data){
+	public void onAddObject(Map<String, String[]> data){
 		
 		/*
 		String[] p = (String[])data.get("Datos");
@@ -38,10 +38,12 @@ public class Controlador implements AniadirListado {
 			System.out.println(string);
 		}*/
 		
-		switch ( ((ListaTargetas) data.get("ListaTarjeta")).getTitulo() ) {
+		System.out.println(data.get("ListaTarjeta")[0]);
+		
+		switch ( data.get("ListaTarjeta")[0] ) {
 		case "Habitaciones":
 			CrearHabitacion( (String[]) data.get("Datos") );
-			
+			colHabitaciones.get( colHabitaciones.size() -1 );
 			break;
 
 		default:
