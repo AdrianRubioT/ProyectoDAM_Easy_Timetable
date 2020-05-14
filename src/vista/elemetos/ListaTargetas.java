@@ -79,7 +79,7 @@ public class ListaTargetas extends JPanel {
 				case "Habitaciones":
 					String[] campos = {"hola", "mundo", "2"};
 					Map<String, Object> inputs = new HashMap<String, Object>();
-					inputs.put("ListaTargeta", this);
+					inputs.put("ListaTarjeta", this);
 					
 					try {
 						inputs.put("Datos", ControladorInterfaz.abrirInputPopup(framePadre, campos) ); 
@@ -135,6 +135,14 @@ public class ListaTargetas extends JPanel {
 		//System.out.println("aniadida");
 		
 	}
+
+	/**
+	 * @return the titulo
+	 */
+	public String getTitulo() {
+		return titulo;
+	}
+	
 	
 	
 }
