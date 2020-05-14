@@ -12,6 +12,13 @@ public class Habitacion {
 		// TODO Auto-generated constructor stub
 	}
 	
+	/**
+	 * Inicializa el objeto con codido habitacion
+	 * @param codHabitacion nombre de la habitacion
+	 */
+	public Habitacion(String codHabitacion) {
+		// TODO Auto-generated constructor stub
+	}
 
 	/**
 	 * @return the habitacion
