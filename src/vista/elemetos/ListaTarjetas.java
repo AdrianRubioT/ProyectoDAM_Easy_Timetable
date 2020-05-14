@@ -1,6 +1,5 @@
 package vista.elemetos;
 
-import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -151,8 +150,8 @@ public class ListaTarjetas extends JPanel {
 	 * @param listaDestino lista donde mostrar el objeto
 	 * @param objeto objeto a mostrar
 	 */
-	public void aniadirObjeto(Object objeto) {
-		lista.add( (InfoPanel) objeto );
+	public void aniadirObjeto(InfoPanel objeto) {
+		lista.add( objeto );
 		//scrollLista.revalidate();
 		scrollLista.updateUI();
 		
