@@ -21,10 +21,10 @@ import javax.swing.JTabbedPane;
 public class Interfaz {
 
 	private JFrame frame;
-	private JComponent tabModulos;
-	private JComponent tabEmpleados;
+	private JComponent tabAsignatura;
+	private JComponent tabDocente;
 	private JComponent tabHabitaciones;
-	private JComponent tabAlumnos;
+	private JComponent tabGrupoAlumnos;
 
 
 
@@ -102,17 +102,17 @@ public class Interfaz {
 		frame.getContentPane().add(tabbedPane, gbc_tabbedPane);
 
 
-		tabModulos = new ListaTarjetas("Asignaturas", frame);
-		tabbedPane.addTab("Asignaturas", tabModulos);
+		tabAsignatura = new ListaTarjetas("Asignaturas", frame);
+		tabbedPane.addTab("Asignaturas", tabAsignatura);
 
-		tabEmpleados = new ListaTarjetas("Empleados", frame);
-		tabbedPane.addTab("Empleados", tabEmpleados);
+		tabDocente = new ListaTarjetas("Docente", frame);
+		tabbedPane.addTab("Docente", tabDocente);
 
 		tabHabitaciones= new ListaTarjetas("Habitaciones", frame);
 		tabbedPane.addTab("Habitaciones", tabHabitaciones);
 
-		tabAlumnos= new ListaTarjetas("Alumnos", frame);
-		tabbedPane.addTab("Alumnos", tabAlumnos);
+		tabGrupoAlumnos= new ListaTarjetas("GrupoAlumnos", frame);
+		tabbedPane.addTab("GrupoAlumnos", tabGrupoAlumnos);
 
 
 
@@ -138,19 +138,20 @@ public class Interfaz {
 			((ListaTarjetas)tabHabitaciones).aniadirTargeta(objeto);
 			
 			break;
-		case "Modulos":
+		case "Asignaturas":
+			((ListaTarjetas)tabAsignatura).aniadirTargeta(objeto);
 
 			break;
-		case "Empleados":
-
+		case "Docente":
+			((ListaTarjetas)tabDocente).aniadirTargeta(objeto);
 			break;
-		case "Alumnos":
-
+		case "GrupoAlumnos":
+			((ListaTarjetas)tabGrupoAlumnos).aniadirTargeta(objeto);
 			break;
 
 
 		default:
-			System.out.println("ListaTargeta not found");
+			System.out.println("clase interfaz:  parametro ListaTargeta not found");
 			break;
 		}
 
