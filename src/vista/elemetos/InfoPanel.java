@@ -6,6 +6,9 @@ import javax.swing.JRadioButton;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
 import javax.swing.JLabel;
 import javax.swing.border.LineBorder;
 import java.awt.Color;
@@ -45,8 +48,6 @@ public class InfoPanel extends JPanel {
 		gridBagLayout.rowWeights = new double[]{1.0, Double.MIN_VALUE};
 		setLayout(gridBagLayout);
 
-		//JRadioButton radiobutton = controlRadio.crearRadioButton("Seleccionado", "hola mundo desde targeta");
-		//panRadioButton.add(radiobutton);
 
 		
 		
@@ -109,14 +110,19 @@ public class InfoPanel extends JPanel {
 			panDescripcion.add( clave, gbc_lin4);
 			
 		}
+		
+		
+		
 	}
 
 	/**
 	 * Aniade radiobutton a panRadioButton
 	 * @param radioButton
 	 */
-	public void AgregarRadioButton(JRadioButton radioButton) {
+	public void agregarRadioButton(JRadioButton radioButton) {
 		panRadioButton.add(radioButton);
 	}
+	
+	
 	
 }

@@ -14,6 +14,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
 
 import controlador.objetos.Asignatura;
@@ -34,10 +35,11 @@ public class ListaTarjetas extends JPanel {
 	private JScrollPane scrollLista;
 	private JPanel lista;
 
-	private ControlRadioButon controlRadio;
+	private ControlRadioButon controlRadio = new ControlRadioButon();
 
 	private String titulo;
 
+	
 	/**
 	 * inicializa la clase con el 
 	 * @param titulo
@@ -158,6 +160,15 @@ public class ListaTarjetas extends JPanel {
 		panel_1.add(button);
 
 		JButton button_1 = new JButton("Eliminar");
+		button_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				//Requiere un trycach si esta vacio
+				String t = controlRadio.getSelected().getActionCommand();
+				System.out.println(t);
+				
+			}
+		});
 		panel_1.add(button_1);
 
 		scrollLista = new JScrollPane();
@@ -184,7 +195,11 @@ public class ListaTarjetas extends JPanel {
 	 * 
 	 */
 	public void aniadirTargeta(InfoPanel targeta) {
+		JRadioButton radiobutton = controlRadio.crearRadioButton("Seleccionado", "hola mundo ");
+		targeta.agregarRadioButton( radiobutton );
+		
 		lista.add(targeta);
+		
 		//scrollLista.revalidate();
 		scrollLista.updateUI();
 
