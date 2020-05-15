@@ -200,18 +200,7 @@ public class ListaTarjetas extends JPanel {
 	}
 
 
-	/**
-	 * Aniade el objeto a la lista indicada y lo muestra en la lista
-	 * @param listaDestino lista donde mostrar el objeto
-	 * @param objeto objeto a mostrar
-	 */
-	public void aniadirObjeto(InfoPanel objeto) {
-		lista.add( objeto );
-		//scrollLista.revalidate();
-		scrollLista.updateUI();
 
-		//System.out.println("aniadida");
-	}
 
 
 }
