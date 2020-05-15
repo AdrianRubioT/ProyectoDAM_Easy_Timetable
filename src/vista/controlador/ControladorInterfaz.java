@@ -2,6 +2,7 @@ package vista.controlador;
 
 import javax.swing.JFrame;
 
+import vista.elemetos.InfoPanel;
 import vista.excepciones.UsuarioCancel;
 import vista.interfaz.Interfaz;
 import vista.ventanas.InputPopup;
@@ -13,7 +14,7 @@ import vista.ventanas.InputPopup;
  */
 public class ControladorInterfaz {
 
-	Interfaz interfaz = new Interfaz();
+	public static Interfaz interfaz = new Interfaz();
 
 
 	public ControladorInterfaz() {
@@ -40,6 +41,16 @@ public class ControladorInterfaz {
 			throw new UsuarioCancel();
 		}
 
+	}
+	
+	
+	/**
+	 * metodo de llama a aniadir targeta de la interfaz
+	 * @param listaTarjeta indica a que ListaTarjetas aniadir objeto 
+	 * @param objeto objeto que extiende infopanel 
+	 */
+	public void aniadirTargetaInterfaz(String listaTarjeta, InfoPanel objeto) {
+		interfaz.aniadirObjetoListatarjeta(listaTarjeta, objeto);
 	}
 
 }
