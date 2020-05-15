@@ -1,6 +1,8 @@
 package vista.elemetos;
 
 import javax.swing.JPanel;
+import javax.swing.JRadioButton;
+
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
@@ -107,8 +109,14 @@ public class InfoPanel extends JPanel {
 			panDescripcion.add( clave, gbc_lin4);
 			
 		}
-
-
 	}
 
+	/**
+	 * Aniade radiobutton a panRadioButton
+	 * @param radioButton
+	 */
+	public void AgregarRadioButton(JRadioButton radioButton) {
+		panRadioButton.add(radioButton);
+	}
+	
 }
