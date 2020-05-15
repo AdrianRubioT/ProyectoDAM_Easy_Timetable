@@ -1,6 +1,8 @@
 package controlador.objetos;
 
-public class Habitacion {
+import vista.elemetos.InfoPanel;
+
+public class Habitacion extends InfoPanel{
 
 	private String habitacion;
 	
@@ -9,7 +11,7 @@ public class Habitacion {
 	 * Genera objeto Habitacion sin valores
 	 */
 	public Habitacion() {
-		// TODO Auto-generated constructor stub
+		this("");
 	}
 	
 	/**
@@ -17,7 +19,7 @@ public class Habitacion {
 	 * @param codHabitacion nombre de la habitacion
 	 */
 	public Habitacion(String codHabitacion) {
-		// TODO Auto-generated constructor stub
+		super("Habitacion", new String[] {"Habitacion"}, new String[] {codHabitacion});
 	}
 
 	/**
