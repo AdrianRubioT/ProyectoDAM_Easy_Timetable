@@ -88,7 +88,7 @@ public class InfoPanel extends JPanel {
 		
 		//etiquetas
 		for (int i = 0; i < etiquetas.length; i++) {
-			System.out.println(etiquetas[i]);
+			//System.out.println(etiquetas[i]);
 			JLabel clave = new JLabel( etiquetas[i]);
 			GridBagConstraints gbc_lblLinea_3 = new GridBagConstraints();
 			gbc_lblLinea_3.insets = new Insets(0, 0, 0, 5);
@@ -98,7 +98,7 @@ public class InfoPanel extends JPanel {
 		}
 
 		for (int i = 0; i < data.length; i++) {
-			System.out.println(data[i]);
+			//System.out.println(data[i]);
 			JLabel clave = new JLabel( data[i]);
 			GridBagConstraints gbc_lin4 = new GridBagConstraints();
 			gbc_lin4.fill = GridBagConstraints.HORIZONTAL;
