@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Map;
 
 import controlador.objetos.Habitacion;
+import vista.controlador.ControladorInterfaz;
 import vista.elemetos.ListaTarjetas;
 import vista.eventos.AniadirListado;
 import vista.eventos.ColeccionEventosInterfaz;
@@ -47,7 +48,7 @@ public class Controlador implements AniadirListado {
 			//TODO: modificar para obtener la habitacion en CrearHabitacion?
 			CrearHabitacion( (String[]) data.get("Datos") );
 			colHabitaciones.get( colHabitaciones.size() -1 );
-			
+			ControladorInterfaz.interfaz.aniadirObjetoListatarjeta("Habitaciones", colHabitaciones.get( colHabitaciones.size() -1 ));
 			break;
 
 		default:
