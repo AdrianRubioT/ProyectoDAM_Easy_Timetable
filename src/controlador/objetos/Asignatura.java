@@ -7,18 +7,18 @@ import vista.elemetos.InfoPanel;
  * @author adrian
  *
  */
-public class Asignaturas extends InfoPanel{
+public class Asignatura extends InfoPanel{
 
 	public static String[] campos = {"Nombre"};
 	private String Nombre;
 	
 	
 	
-	public Asignaturas() {
+	public Asignatura() {
 		this("");
 	}
 	
-	public Asignaturas(String nombre) {
+	public Asignatura(String nombre) {
 		super("Asignatura", campos, new String[]{nombre});
 		this.Nombre = nombre;
 	}
@@ -34,7 +34,7 @@ public class Asignaturas extends InfoPanel{
 	 * @param campos the campos to set
 	 */
 	public static void setCampos(String[] campos) {
-		Asignaturas.campos = campos;
+		Asignatura.campos = campos;
 	}
 
 	/**
