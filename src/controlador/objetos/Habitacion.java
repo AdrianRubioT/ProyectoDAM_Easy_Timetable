@@ -11,7 +11,7 @@ import vista.elemetos.InfoPanel;
 public class Habitacion extends InfoPanel{
 
 	private String habitacion;
-	
+	public static String[] campos = {"Habitacion"};
 	
 	/**
 	 * Genera objeto Habitacion sin valores
@@ -25,7 +25,7 @@ public class Habitacion extends InfoPanel{
 	 * @param codHabitacion nombre de la habitacion
 	 */
 	public Habitacion(String codHabitacion) {
-		super("Habitacion", new String[] {"Habitacion"}, new String[] {codHabitacion});
+		super("Habitacion", campos, new String[] {codHabitacion});
 	}
 
 	/**
