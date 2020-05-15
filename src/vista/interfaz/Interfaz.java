@@ -135,7 +135,7 @@ public class Interfaz {
 
 		switch (listaTarjeta) {
 		case "Habitaciones":
-			((ListaTarjetas)tabHabitaciones).aniadirObjeto(objeto);
+			((ListaTarjetas)tabHabitaciones).aniadirTargeta(objeto);
 			
 			break;
 		case "Modulos":
