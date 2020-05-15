@@ -2,6 +2,12 @@ package controlador.objetos;
 
 import vista.elemetos.InfoPanel;
 
+/**
+ * Clase para contener la informacion de una habitacion
+ * extienda a InfoPanel para que este la muestre la informacion
+ * @author adrian
+ *
+ */
 public class Habitacion extends InfoPanel{
 
 	private String habitacion;
