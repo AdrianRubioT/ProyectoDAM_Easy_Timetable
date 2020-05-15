@@ -1,6 +1,7 @@
 package vista.elemetos;
 
 import javax.swing.ButtonGroup;
+import javax.swing.ButtonModel;
 import javax.swing.JRadioButton;
 
 /**
@@ -26,6 +27,7 @@ public class ControlRadioButon {
 	 * @param labelradio etiqueta que acompa�a al radiobuton, si se indica 
 	 * @param accion accion a guardar en setActionCommand
 	 * @return radiobutton con grupo y etiqueta
+	 * @wbp.parser.entryPoint
 	 */
 	public JRadioButton crearRadioButton(String labelradio, String accion) {
 		
@@ -39,6 +41,13 @@ public class ControlRadioButon {
 		
 		return radio;
 		
+	}
+	
+	/**
+	 * @wbp.parser.entryPoint
+	 */
+	public ButtonModel getSelected() {
+		return group.getSelection();
 	}
 	
 }
