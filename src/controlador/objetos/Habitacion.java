@@ -1,5 +1,8 @@
 package controlador.objetos;
 
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
 import vista.elemetos.InfoPanel;
 
 /**
@@ -26,6 +29,14 @@ public class Habitacion extends InfoPanel{
 	 */
 	public Habitacion(String codHabitacion) {
 		super("Habitacion", campos, new String[] {codHabitacion});
+		
+		addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				System.out.println("click"+ "  Color:" + getBackground().toString());
+				System.out.println(e);
+			}
+		});
 	}
 
 	/**
