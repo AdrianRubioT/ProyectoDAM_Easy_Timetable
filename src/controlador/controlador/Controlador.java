@@ -45,7 +45,6 @@ public class Controlador implements AniadirListado {
 		case "Habitaciones":
 			//TODO: modificar para obtener la habitacion en CrearHabitacion?
 			CrearHabitacion( (String[]) data.get("Datos") );
-			colHabitaciones.get( colHabitaciones.size() -1 );
 			ControladorInterfaz.interfaz.aniadirObjetoListatarjeta(
 					"Habitaciones", 
 					colHabitaciones.get( 
@@ -55,8 +54,7 @@ public class Controlador implements AniadirListado {
 
 		case "Asignaturas":
 			//TODO: modificar para obtener la habitacion en CrearHabitacion?
-			CrearDocente( (String[]) data.get("Datos") );
-			colAsignaturas.get( colAsignaturas.size() -1 );
+			CrearAsignatura( (String[]) data.get("Datos") );
 			ControladorInterfaz.interfaz.aniadirObjetoListatarjeta(
 					"Asignaturas", 
 					colAsignaturas.get( 
@@ -68,7 +66,6 @@ public class Controlador implements AniadirListado {
 		case "Docente":
 			//TODO: modificar para obtener la habitacion en CrearHabitacion?
 			CrearDocente( (String[]) data.get("Datos") );
-			colDocente.get( colDocente.size() -1 );
 			ControladorInterfaz.interfaz.aniadirObjetoListatarjeta(
 					"Docente", 
 					colDocente.get( 
@@ -79,7 +76,6 @@ public class Controlador implements AniadirListado {
 		case "GrupoAlumnos":
 			//TODO: modificar para obtener la habitacion en CrearHabitacion?
 			CrearGrupoAlumnos( (String[]) data.get("Datos") );
-			//colGrupoAlumnos.get( colGrupoAlumnos.size() -1 );
 			ControladorInterfaz.interfaz.aniadirObjetoListatarjeta(
 					"GrupoAlumnos", 
 					colGrupoAlumnos.get( 
