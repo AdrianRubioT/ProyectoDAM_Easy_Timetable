@@ -9,18 +9,19 @@ import vista.elemetos.InfoPanel;
  */
 public class Docente extends InfoPanel{
 
-	public static String[] campos = {"Nombre", "Apellidos1", "Apellidos2"};
+	public static String[] campos = {"Nombre", "Apellidos1", "Apellidos2", "especialidad"};
 	private Persona docente;
-	
+	private String especialidad;
 	
 	public Docente() {
-		this("", "", "");
+		this("", "", "", "");
 	}
 	
 	
-	public Docente(String nombre,String apellido1, String apellido2) {
-		super("Docente", campos, new String[]{nombre, apellido1, apellido2});
+	public Docente(String nombre,String apellido1, String apellido2, String especialidad) {
+		super("Docente", campos, new String[]{nombre, apellido1, apellido2, especialidad});
 		this.docente = new Persona(nombre, apellido1, apellido2); 
+		this.especialidad = especialidad;
 	}
 
 	/**
@@ -61,6 +62,23 @@ public class Docente extends InfoPanel{
 	public String getApellidos2() {
 		return docente.getApellidos2();
 	}
+
+
+	/**
+	 * @return the especialidad
+	 */
+	public String getEspecialidad() {
+		return especialidad;
+	}
+
+
+	/**
+	 * @param especialidad the especialidad to set
+	 */
+	public void setEspecialidad(String especialidad) {
+		this.especialidad = especialidad;
+	}
+	
 	
 	
 }
