@@ -75,7 +75,7 @@ public class ListaTarjetas extends JPanel {
 		JButton button = new JButton("A\u00F1adir");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				System.out.println(titulo);
+				//System.out.println(titulo);
 
 				Map<String, String[]> inputs = new HashMap<String, String[]>();
 				
