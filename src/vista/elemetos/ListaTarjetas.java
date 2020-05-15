@@ -78,7 +78,7 @@ public class ListaTarjetas extends JPanel {
 				//TODO encontrar una solucion mejor que este swich case aqui
 				switch (titulo) {
 				case "Habitaciones":
-					String[] campos = {"hola", "mundo", "2"};
+					String[] campos = {"Habitacion"};
 					Map<String, String[]> inputs = new HashMap<String, String[]>();
 					inputs.put("ListaTarjeta", new String[] { titulo } );
 					
