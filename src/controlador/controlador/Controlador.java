@@ -48,8 +48,14 @@ public class Controlador implements AniadirListado {
 			//TODO: modificar para obtener la habitacion en CrearHabitacion?
 			CrearHabitacion( (String[]) data.get("Datos") );
 			colHabitaciones.get( colHabitaciones.size() -1 );
-			ControladorInterfaz.interfaz.aniadirObjetoListatarjeta("Habitaciones", colHabitaciones.get( colHabitaciones.size() -1 ));
+			ControladorInterfaz.interfaz.aniadirObjetoListatarjeta(
+					"Habitaciones", 
+					colHabitaciones.get( 
+							colHabitaciones.size() -1 )
+					);
 			break;
+			
+			
 
 		default:
 			break;
@@ -63,7 +69,7 @@ public class Controlador implements AniadirListado {
 	 * @param datos
 	 */
 	private void CrearHabitacion(String[] datos) {
-		colHabitaciones.add( new Habitacion(datos[1]) );
+		colHabitaciones.add( new Habitacion(datos[0]) );
 	}
 
 	
