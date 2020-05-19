@@ -44,4 +44,8 @@
 14/5/2020 11:15 - 13:00 + 16:30 - 20:00 = 5.25H	1.75H desarrollando la parte de instanciar el objeto habitacion en el controlador y como mostrarlo
 15/5/2020  9:30 - 13:30 + 16:30 - 20:30 = 8H	8H desarrollando codigo para listar objetos en la interfaz
 18/5/2020 10:30 - 11:40 + 12:10 - 13:20 + 14:30 - 16:00	+ 18:00 - 20:00 = 6H 1H Pensando lo que he hecho mal en el desarrollo. 0.5HReunion clase 2.5Hbuscando y probando plugins para diseñar en UML, 2H desarrollando diagrama de objetos
+19/5/2020 total: 7H
+	10:30 - 11:15 desarrollar diagrama clases 
+	11:15 - 14:00 devolver portatil a la empresa (Autobuses de 1 hora)
+	16:30 - 20:00 desarrollar diagrama clases y busqueda e investigacion de las clases a usar
 
