@@ -49,9 +49,13 @@
 	11:15 - 14:00 devolver portatil a la empresa (Autobuses de 1 hora)
 	16:30 - 20:00 desarrollar diagrama clases y busqueda e investigacion de las clases a usar
 
-20/5/2020
+20/5/2020 total: 4H
 	16:30 - 17:30 desarrollar diagrama clases
 	17:30 - 19:30 desarrollando estructura XML
-	19:30 - 20:30 desarrollondo diagrama ER
+	19:30 - 20:30 desarrollando diagrama ER
+
+21/5/2020 total 5.25
+	10:00 - 12:30 desarrollando diagrama ER
+	17:00 - 19:45 desarrollando diagrama ER
 
 
