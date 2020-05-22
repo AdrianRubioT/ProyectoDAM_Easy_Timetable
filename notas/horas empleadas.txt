@@ -54,8 +54,13 @@
 	17:30 - 19:30 desarrollando estructura XML
 	19:30 - 20:30 desarrollando diagrama ER
 
-21/5/2020 total 5.25
+21/5/2020 total 5.25H
 	10:00 - 12:30 desarrollando diagrama ER
 	17:00 - 19:45 desarrollando diagrama ER
 
-
+22/5/2020 total 7H
+	 8:45 - 11:00 desarrollando diagrama ER
+	11:00 - 11:30 videos del patron dao
+	11:30 - 12:15 desarrollando diagrama ER
+	16:45 - 19:00 desarrollando diagrama ER y treggers
+	19:00 - 20:00 buscando driver SQLite. 
