@@ -14,7 +14,7 @@ import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 
 import PorColocar.AreaTrabajo;
-import vista.elementos.ListaTarjetas;
+import vista.elementos.ListaTargetas.ListaTarjetas;
 
 /**
  * Clase para montar la interfaz principal y su componentes
