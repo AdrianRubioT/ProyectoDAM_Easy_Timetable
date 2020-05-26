@@ -1,0 +1,1 @@
+sqlite-jdbc	https://repo1.maven.org/maven2/org/xerial/sqlite-jdbc/3.31.1/
