@@ -65,11 +65,19 @@
 	16:45 - 19:00 desarrollando diagrama ER y treggers
 	19:00 - 20:00 buscando driver SQLite. 
 
-25/5/2020 7.5
+25/5/2020 total 7.5
 	 8:30 -  9:00 recordando y centrandome en lo ultimo que iva ha hacer
 	 9:00 -  9:50 reunion clase
 	10:15 - 10:30 proyecto de pruebas para una base de datos
 	10:30 - 12:00 desarrollando diagrama clases para relacionar los objetos con el horario
 	12:30 - 13:00 desarrollando diagrama clases para relacionar los objetos con el horario
 	16:30 - 20:30 desarrollando diagrama clases para relacionar los objetos con el horario, desarrollando la clase para la permanencia de datos y desarrollando e investigando para el desarrollo de la interfaz
+
+26/5/2020 total 6H
+	10:15 - 10:20 ajuste configuracion monitor
+	10:20 - 10:40 realizar pruebas para obtener el objeto que ha lanzado el evento
+	10:40 - 12:15 desarrollar diagrama clases, parte de ListaTargetas e interfaz
+	12:15 - 13:00 desarrollar diagrama clases, parte de ListaTargetas e interfaz
+	16:45 - 18:00 desarrollar diagrama clases, parte de ListaTargetas e interfaz
+	18:40 - 20:30 pasando diagrama de clases a codigo
 		
