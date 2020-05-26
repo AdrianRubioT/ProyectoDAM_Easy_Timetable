@@ -1,4 +1,7 @@
 package PorColocar;
+
+import modelo.objetos.Slot;
+
 /**
  * clase principal para gestionar y conetern las cosas necesarias para el horari
  * o
