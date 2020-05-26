@@ -1,4 +1,4 @@
-package PorColocar;
+package modelo.objetos;
 /**
  * Clases con las propiedades de una sala 
  * @author
@@ -7,32 +7,28 @@ package PorColocar;
 public class Habitacion {
 	private String codigoHabitacion;
 
-	public Habitacion() {
-		
-	}
-
-	/**
-	 * @param nombreHab
-	 * @return void
-	 */
-	public void Habitacion(String nombreHab) {
-		// TODO Auto-generated method stub
-	}
-
 	/**
 	 * @param codigoHabitacion
-	 * @return Void
 	 */
-	public Void setCodigoHabitacion( codigoHabitacion) {
-		// TODO Auto-generated method stub
+	public Habitacion(String codigoHabitacion) {
+		this.codigoHabitacion = codigoHabitacion;
 	}
 
 	/**
-	 * @return String
+	 * @return the codigoHabitacion
 	 */
 	public String getCodigoHabitacion() {
-		// TODO Auto-generated method stub
+		return codigoHabitacion;
 	}
+
+	/**
+	 * @param codigoHabitacion the codigoHabitacion to set
+	 */
+	public void setCodigoHabitacion(String codigoHabitacion) {
+		this.codigoHabitacion = codigoHabitacion;
+	}
+
+	
 
 }
 

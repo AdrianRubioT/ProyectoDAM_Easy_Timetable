@@ -1,15 +1,17 @@
-package PorColocar;
+package modelo.objetos;
+
 /**
  * Clase para coleccionar los momentos en el horario
  * @author
  *
  */
 public class Slot {
-	public IntervaloTiempo intervalo;
-	public Habitacion habitacion;
-	public Asignatura asignatura;
-	public Docentes docentes;
-	public GrupoAlumnos grupoAlumnos;
+	
+	private IntervaloTiempo intervalo;
+	private Habitacion habitacion;
+	private Asignatura asignatura;
+	private Docente docentes;
+	private GrupoAlumnos grupoAlumnos;
 
 	public Slot() {
 		
@@ -25,86 +27,94 @@ public class Slot {
 
 	/**
 	 * metodo para determinar el orden de los intervalos de los slots.
-comprueba
-	 *  que la esta instancia suceda antes que la instancia del parametro
-Return
-	 *  true si el parametro va antes que esta instancia.
-throw NoInterval si no
-	 *  hay intervalo
+	 * comprueba que la esta instancia suceda antes que la instancia del parametro 
+	 * Return
+	 *   true si el parametro va antes que esta instancia.
+	 *   throw NoInterval si no hay intervalo
 	 * @param slot
 	 * @return Boolean
 	 */
 	public Boolean antesDe(Slot slot) {
-		// TODO Auto-generated method stub
+		// TODO: por hacer
+		return false;
 	}
 
+	
+	//getters y setters
 	/**
-	 * @param intervaloTiempo
-	 * @return void
+	 * @return the intervalo
 	 */
-	public void setIntervaloTiempo(IntervaloTiempo intervaloTiempo) {
-		// TODO Auto-generated method stub
+	public IntervaloTiempo getIntervalo() {
+		return intervalo;
 	}
 
 	/**
-	 * @return IntervaloTiempo
+	 * @param intervalo the intervalo to set
 	 */
-	public IntervaloTiempo getIntervaloTiempo() {
-		// TODO Auto-generated method stub
+	public void setIntervalo(IntervaloTiempo intervalo) {
+		this.intervalo = intervalo;
 	}
 
 	/**
-	 * @param habitacion
-	 * @return void
-	 */
-	public void setHabitacion(Habitacion habitacion) {
-		// TODO Auto-generated method stub
-	}
-
-	/**
-	 * @return Habitacion
+	 * @return the habitacion
 	 */
 	public Habitacion getHabitacion() {
-		// TODO Auto-generated method stub
+		return habitacion;
 	}
 
 	/**
-	 * @param asignatura
-	 * @return Void
+	 * @param habitacion the habitacion to set
 	 */
-	public Void setAsignatura(Asignatura asignatura) {
-		// TODO Auto-generated method stub
+	public void setHabitacion(Habitacion habitacion) {
+		this.habitacion = habitacion;
 	}
 
 	/**
-	 * @return Asignatura
+	 * @return the asignatura
 	 */
 	public Asignatura getAsignatura() {
-		// TODO Auto-generated method stub
+		return asignatura;
 	}
 
 	/**
-	 * @param docente
-	 * @return Docente
+	 * @param asignatura the asignatura to set
 	 */
-	public Docente setDocente(Docente docente) {
-		// TODO Auto-generated method stub
+	public void setAsignatura(Asignatura asignatura) {
+		this.asignatura = asignatura;
 	}
 
 	/**
-	 * @return Docente
+	 * @return the docentes
 	 */
-	public Docente getDocente() {
-		// TODO Auto-generated method stub
+	public Docente getDocentes() {
+		return docentes;
 	}
 
 	/**
-	 * @param grupoAlumnos
-	 * @return Void
+	 * @param docentes the docentes to set
 	 */
-	public Void setGrupoAlumnos(GrupoAlumnos grupoAlumnos) {
-		// TODO Auto-generated method stub
+	public void setDocentes(Docente docentes) {
+		this.docentes = docentes;
 	}
+
+	/**
+	 * @return the grupoAlumnos
+	 */
+	public GrupoAlumnos getGrupoAlumnos() {
+		return grupoAlumnos;
+	}
+
+	/**
+	 * @param grupoAlumnos the grupoAlumnos to set
+	 */
+	public void setGrupoAlumnos(GrupoAlumnos grupoAlumnos) {
+		this.grupoAlumnos = grupoAlumnos;
+	}
+
+	
+	
+	
+	
 
 }
 

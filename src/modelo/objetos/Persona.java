@@ -1,72 +1,69 @@
-package PorColocar;
+package modelo.objetos;
 /**
  * Definir los atributos comunes a Docente y Alumno
  * @author
  *
  */
-public class Persona {
+public abstract class  Persona {
 	private String nombre;
-	private Stirng apellido1;
+	private String apellido1;
 	private String apellido2;
-
-	public Persona() {
-		
-	}
-
+	
 	/**
 	 * @param nombre
 	 * @param apellido1
 	 * @param apellido2
-	 * @return void
 	 */
-	public void Persona(string nombre, String apellido1, Stirng apellido2) {
-		// TODO Auto-generated method stub
+	public Persona(String nombre, String apellido1, String apellido2) {
+		super();
+		this.nombre = nombre;
+		this.apellido1 = apellido1;
+		this.apellido2 = apellido2;
 	}
 
 	/**
-	 * @param nombre
-	 * @return Void
-	 */
-	public Void setNombre(String nombre) {
-		// TODO Auto-generated method stub
-	}
-
-	/**
-	 * @return String
+	 * @return the nombre
 	 */
 	public String getNombre() {
-		// TODO Auto-generated method stub
+		return nombre;
 	}
 
 	/**
-	 * @param Apellido1
-	 * @return Void
+	 * @param nombre the nombre to set
 	 */
-	public Void setApellido1(String Apellido1) {
-		// TODO Auto-generated method stub
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
 
 	/**
-	 * @return String
+	 * @return the apellido1
 	 */
 	public String getApellido1() {
-		// TODO Auto-generated method stub
+		return apellido1;
 	}
 
 	/**
-	 * @param apellido2
-	 * @return Void
+	 * @param apellido1 the apellido1 to set
 	 */
-	public Void setApellido2(String apellido2) {
-		// TODO Auto-generated method stub
+	public void setApellido1(String apellido1) {
+		this.apellido1 = apellido1;
 	}
 
 	/**
-	 * @return String
+	 * @return the apellido2
 	 */
 	public String getApellido2() {
-		// TODO Auto-generated method stub
+		return apellido2;
 	}
+
+	/**
+	 * @param apellido2 the apellido2 to set
+	 */
+	public void setApellido2(String apellido2) {
+		this.apellido2 = apellido2;
+	}
+
+	
 
 }
 

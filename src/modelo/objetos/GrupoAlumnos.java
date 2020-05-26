@@ -1,100 +1,76 @@
-package PorColocar;
+package modelo.objetos;
+
+import java.util.ArrayList;
+
 /**
  * Coleccion de alumnos que realizan un curso 
  * @author
  *
  */
 public class GrupoAlumnos {
-	private ArrayList<Persona> alumnos;
+	private ArrayList<Alumno> alumnos;
 	private String nombreCurso;
 	private String nombreGrupo;
 
-	public GrupoAlumnos() {
-		
-	}
-
-	/**
-	 * Crea una instancia de esta clase
-	 * @param curso
-	 * @return void
-	 */
-	public void GrupoAlumnos(String curso) {
-		// TODO Auto-generated method stub
-	}
-
-	/**
-	 * devuelve un listado con los alumnos añadidos
-	 * @return Alumno[]
-	 */
-	public Alumno[] listarAlumnos() {
-		// TODO Auto-generated method stub
-	}
-
-	/**
-	 * devuelve el numero de alumnos aniadidos
-	 * @return int
-	 */
-	public int getCantidadAlumnos() {
-		// TODO Auto-generated method stub
-	}
-
-	/**
-	 * Aniade un alumno a alumnos
-	 * @param alumno
-	 * @return Void
-	 */
-	public Void aniadirAlumno(Alumno alumno) {
-		// TODO Auto-generated method stub
-	}
-
-	/**
-	 * elimina el alumno si se encuentra en la lista, return true if success
-	 * @param alumno
-	 * @return Boolean
-	 */
-	public Boolean eliminarAlumno(Alumno alumno) {
-		// TODO Auto-generated method stub
-	}
-
-	/**
-	 * elimina el alumno si se encuentra en la lista mediante el nia, return tru
-	 * e if success
-	 * @param nia
-	 * @return Boolean
-	 */
-	public Boolean eliminarAlumno(String nia) {
-		// TODO Auto-generated method stub
-	}
 
 	/**
 	 * @param nombreCurso
-	 * @return Void
+	 * @param nombreGrupo
 	 */
-	public Void setNombreCurso(String nombreCurso) {
-		// TODO Auto-generated method stub
+	public GrupoAlumnos(String nombreCurso, String nombreGrupo) {
+		this.nombreCurso = nombreCurso;
+		this.nombreGrupo = nombreGrupo;
 	}
 
+
 	/**
-	 * @return String
+	 * @return the alumnos
+	 */
+	public ArrayList<Alumno> getAlumnos() {
+		return alumnos;
+	}
+
+
+	/**
+	 * @param alumnos the alumnos to set
+	 */
+	public void setAlumnos(ArrayList<Alumno> alumnos) {
+		this.alumnos = alumnos;
+	}
+
+
+	/**
+	 * @return the nombreCurso
 	 */
 	public String getNombreCurso() {
-		// TODO Auto-generated method stub
+		return nombreCurso;
 	}
 
+
 	/**
-	 * @param nombreGrupo
-	 * @return Void
+	 * @param nombreCurso the nombreCurso to set
 	 */
-	public Void setNombreGrupo(String nombreGrupo) {
-		// TODO Auto-generated method stub
+	public void setNombreCurso(String nombreCurso) {
+		this.nombreCurso = nombreCurso;
 	}
 
+
 	/**
-	 * @return String
+	 * @return the nombreGrupo
 	 */
 	public String getNombreGrupo() {
-		// TODO Auto-generated method stub
+		return nombreGrupo;
 	}
+
+
+	/**
+	 * @param nombreGrupo the nombreGrupo to set
+	 */
+	public void setNombreGrupo(String nombreGrupo) {
+		this.nombreGrupo = nombreGrupo;
+	}
+
+
 
 }
 

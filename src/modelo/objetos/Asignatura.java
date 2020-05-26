@@ -1,38 +1,36 @@
-package PorColocar;
+package modelo.objetos;
 /**
  * Clase con las propiedades de una asignatura
  * @author
  *
  */
 public class Asignatura {
+	
 	private String nombre;
 
-	public Asignatura() {
-		
-	}
-
 	/**
 	 * @param nombre
-	 * @return void
 	 */
-	public void Asignatura(String nombre) {
-		// TODO Auto-generated method stub
+	public Asignatura(String nombre) {
+		this.nombre = nombre;
 	}
 
 	/**
-	 * @param nombre
-	 * @return Void
-	 */
-	public Void setNombre(String nombre) {
-		// TODO Auto-generated method stub
-	}
-
-	/**
-	 * @return String
+	 * @return the nombre
 	 */
 	public String getNombre() {
-		// TODO Auto-generated method stub
+		return nombre;
 	}
+
+	/**
+	 * @param nombre the nombre to set
+	 */
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	
+
 
 }
 

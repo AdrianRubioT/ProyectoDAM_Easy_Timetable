@@ -2,11 +2,11 @@ package Controlador;
 
 import java.util.ArrayList;
 
-import PorColocar.Asignatura;
-import PorColocar.ControaldorBD;
-import PorColocar.Docente;
-import PorColocar.GrupoAlumnos;
-import PorColocar.Habitacion;
+import modelo.ControaldorBD;
+import modelo.objetos.Asignatura;
+import modelo.objetos.Docente;
+import modelo.objetos.GrupoAlumnos;
+import modelo.objetos.Habitacion;
 import vista.InterfazPrincipal;
 
 /**

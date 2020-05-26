@@ -1,42 +1,41 @@
-package PorColocar;
+package modelo.objetos;
+
 /**
  * Clase con las propiedades y caracteristicas de un docente
  * @author
  *
  */
 public class Docente extends Persona {
-	private Persona docente;
 	private String especialidad;
-
-	public Docente() {
-		
-	}
 
 	/**
 	 * @param nombre
 	 * @param apellido1
 	 * @param apellido2
 	 * @param especialidad
-	 * @return void
 	 */
-	public void Docente(String nombre, String apellido1, String apellido2, String especialidad) {
-		// TODO Auto-generated method stub
+	public Docente(String nombre, String apellido1, String apellido2, String especialidad) {
+		super(nombre, apellido1, apellido2);
+		this.especialidad = especialidad;
 	}
 
 	/**
-	 * @param especialidad
-	 * @return void
-	 */
-	public void setEspecialidad(String especialidad) {
-		// TODO Auto-generated method stub
-	}
-
-	/**
-	 * @return String
+	 * @return the especialidad
 	 */
 	public String getEspecialidad() {
-		// TODO Auto-generated method stub
+		return especialidad;
 	}
+
+	/**
+	 * @param especialidad the especialidad to set
+	 */
+	public void setEspecialidad(String especialidad) {
+		this.especialidad = especialidad;
+	}
+
+	
+	
+
 
 }
 

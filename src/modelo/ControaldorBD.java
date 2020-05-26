@@ -1,17 +1,26 @@
-package PorColocar;
+package modelo;
+
+import java.sql.Connection;
+import java.util.ArrayList;
+
+import modelo.objetos.Asignatura;
+import modelo.objetos.Docente;
+import modelo.objetos.GrupoAlumnos;
+import modelo.objetos.Habitacion;
+import modelo.objetos.Slot;
+
 /**
- * Clase que se encarga de la permanencia de los datos en la base de datos SQLit
- * e
+ * Clase que se encarga de la permanencia de los datos en la base de datos SQLite
  * @author
  *
  */
+//TODO: implementar metodos
 public class ControaldorBD {
-	/**
-	 * url de la conecxion a la BD
+	/** url de la conecxion a la BD
 	 */
 	private String url;
-	/**
-	 * conecxion con la BD Inicialmente para SQLite
+	
+	/** conecxion con la BD Inicialmente para SQLite
 	 */
 	private Connection conecxion;
 
@@ -21,19 +30,17 @@ public class ControaldorBD {
 
 	/**
 	 * intancia la clase
-
 	 * @param url
-	 * @return void
 	 */
-	public void ControaldorBD(String url) {
+	public ControaldorBD(String url) {
 		// TODO Auto-generated method stub
 	}
 
 	/**
 	 * Genera la estructura de la BD
-	 * @return Void
+	 * @return void
 	 */
-	private Void crearEstructuraBD() {
+	private void crearEstructuraBD() {
 		// TODO Auto-generated method stub
 	}
 
@@ -47,40 +54,41 @@ public class ControaldorBD {
 
 	/**
 	 * @param asignatura
-	 * @return Void
+	 * @return void
 	 */
-	public Void addAsignatura(Asignatura asignatura) {
+	public void addAsignatura(Asignatura asignatura) {
 		// TODO Auto-generated method stub
 	}
 
 	/**
 	 * @param docente
-	 * @return Void
+	 * @return void
 	 */
-	public Void addDocente(Docente docente) {
+	public void addDocente(Docente docente) {
 		// TODO Auto-generated method stub
 	}
 
 	/**
 	 * @param grupoAlumnos
-	 * @return Void
+	 * @return void
 	 */
-	public Void addGrupoAlumno(GrupoAlumnos grupoAlumnos) {
+	public void addGrupoAlumno(GrupoAlumnos grupoAlumnos) {
 		// TODO Auto-generated method stub
 	}
 
 	/**
 	 * inserta una instancia de habitacion en la BD
-	 * @return Void
+	 * @return void
 	 */
-	public Void addSlot() {
+	public void addSlot() {
 		// TODO Auto-generated method stub
 	}
 
 	/**
 	 * @return ArrayList<Habitaciones>
 	 */
-	public ArrayList<Habitaciones> obtenerListaHabitaciones() {
+	public ArrayList<Habitacion> obtenerListaHabitaciones() {
+		return null;
 		// TODO Auto-generated method stub
 	}
 
@@ -88,13 +96,15 @@ public class ControaldorBD {
 	 * @return ArrayList<Asignatura>
 	 */
 	public ArrayList<Asignatura> obtenerListaAsignaturas() {
+		return null;
 		// TODO Auto-generated method stub
 	}
 
 	/**
 	 * @return ArrayList<Docentes>
 	 */
-	public ArrayList<Docentes> obtenerListaDocentes() {
+	public ArrayList<Docente> obtenerListaDocentes() {
+		return null;
 		// TODO Auto-generated method stub
 	}
 
@@ -102,6 +112,7 @@ public class ControaldorBD {
 	 * @return ArrayList<GrupoAlumnos>
 	 */
 	public ArrayList<GrupoAlumnos> obtenerListaGrupoAlumnos() {
+		return null;
 		// TODO Auto-generated method stub
 	}
 
@@ -113,6 +124,7 @@ Return: array list co
 	 * @return ArrayList<Slot>
 	 */
 	public ArrayList<Slot> obtenerListaSlot() {
+		return null;
 		// TODO Auto-generated method stub
 	}
 
@@ -120,7 +132,8 @@ Return: array list co
 	 * @param habitacion
 	 * @return ArrayList<Slots>
 	 */
-	public ArrayList<Slots> obtenerListaSlot(Habitacion habitacion) {
+	public ArrayList<Slot> obtenerListaSlot(Habitacion habitacion) {
+		return null;
 		// TODO Auto-generated method stub
 	}
 
@@ -129,6 +142,7 @@ Return: array list co
 	 * @return ArrayList<Slot>
 	 */
 	public ArrayList<Slot> obtenerListaSlot(Asignatura asignatura) {
+		return null;
 		// TODO Auto-generated method stub
 	}
 
@@ -137,6 +151,7 @@ Return: array list co
 	 * @return ArrayList<Docente>
 	 */
 	public ArrayList<Docente> obtenerListaSlot(Docente docente) {
+		return null;
 		// TODO Auto-generated method stub
 	}
 
@@ -145,85 +160,74 @@ Return: array list co
 	 * @param grupoAlumnos
 	 * @return ArrayList<Slots>
 	 */
-	public ArrayList<Slots> obtenerListaSlot(GrupoALumnos grupoAlumnos) {
+	public ArrayList<Slot> obtenerListaSlot(GrupoAlumnos grupoAlumnos) {
+		return null;
 		// TODO Auto-generated method stub
 	}
 
 	/**
 	 * @param habitacion
-	 * @return Void
 	 */
-	public Void updateHabitacion(Habitacion habitacion) {
+	public void updateHabitacion(Habitacion habitacion) {
 		// TODO Auto-generated method stub
 	}
 
 	/**
 	 * @param asignatura
-	 * @return Void
 	 */
-	public Void UpdateAsignatura(Asignatura asignatura) {
+	public void UpdateAsignatura(Asignatura asignatura) {
 		// TODO Auto-generated method stub
 	}
 
 	/**
 	 * @param docente
-	 * @return Void
 	 */
-	public Void updateDocente(Docente docente) {
+	public void updateDocente(Docente docente) {
 		// TODO Auto-generated method stub
 	}
 
-	/**
-	 * @return Void
-	 */
-	public Void updateGrupoAlumnos() {
+
+	public void updateGrupoAlumnos() {
 		// TODO Auto-generated method stub
 	}
 
 	/**
 	 * Actualiza el objeto en la BD
-	 * @return Void
 	 */
-	public Void updateSlot() {
+	public void updateSlot() {
 		// TODO Auto-generated method stub
 	}
 
 	/**
 	 * @param habitacion
-	 * @return Void
 	 */
-	public Void eliminarHabitacion(Habitacion habitacion) {
+	public void eliminarHabitacion(Habitacion habitacion) {
 		// TODO Auto-generated method stub
 	}
 
 	/**
 	 * @param asignatura
-	 * @return Void
 	 */
-	public Void eliminaAsignatura(Asignatura asignatura) {
+	public void eliminaAsignatura(Asignatura asignatura) {
 		// TODO Auto-generated method stub
 	}
 
 	/**
 	 * @param docente
-	 * @return Void
 	 */
-	public Void eliminarDocente(Void docente) {
+	public void eliminarDocente(Docente docente) {
+		// TODO Auto-generated method stub
+	}
+
+
+	public void eliminarGrupoAlumnos() {
 		// TODO Auto-generated method stub
 	}
 
 	/**
-	 * @return Void
+	 * elimina el GrupoAlumnos de la BD
 	 */
-	public Void eliminarGrupoAlumnos() {
-		// TODO Auto-generated method stub
-	}
-
-	/**
-	 * elimina el GrupoAlumnos  de la BD
-	 * @return Void
-	 */
-	public Void eliminarSlot() {
+	public void eliminarSlot() {
 		// TODO Auto-generated method stub
 	}
 
