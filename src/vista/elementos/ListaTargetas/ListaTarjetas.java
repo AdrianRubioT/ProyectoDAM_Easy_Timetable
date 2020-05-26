@@ -1,4 +1,4 @@
-package vista.elementos;
+package vista.elementos.ListaTargetas;
 
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
