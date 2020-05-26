@@ -3,9 +3,11 @@ package Controlador;
 import java.util.ArrayList;
 
 import PorColocar.Asignatura;
+import PorColocar.ControaldorBD;
 import PorColocar.Docente;
 import PorColocar.GrupoAlumnos;
 import PorColocar.Habitacion;
+import vista.InterfazPrincipal;
 
 /**
  * 
@@ -21,6 +23,9 @@ public class Controlador {
 	private ArrayList<Docente> listaDocente;
 	private ArrayList<GrupoAlumnos> listaGruposAlumnos;
 
+	//private ControaldorBD controladorBD = new ControaldorBD();
+	private InterfazPrincipal interfazPrincipal = new InterfazPrincipal();
+	
 	public Controlador() {
 		
 	}
