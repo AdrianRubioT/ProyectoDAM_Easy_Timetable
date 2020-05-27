@@ -3,6 +3,7 @@ package modelo;
 import java.sql.Connection;
 import java.util.ArrayList;
 
+import modelo.BD.conecxiones.Conexion;
 import modelo.objetos.Asignatura;
 import modelo.objetos.Docente;
 import modelo.objetos.GrupoAlumnos;
@@ -16,18 +17,34 @@ import modelo.objetos.Slot;
  */
 //TODO: implementar metodos
 public class ControaldorBD {
-	/** url de la conecxion a la BD
-	 */
-	private String url;
 	
 	/** conecxion con la BD Inicialmente para SQLite
 	 */
-	private Connection conecxion;
+	private Connection conexion;
 
+	
 	public ControaldorBD() {
 		
 	}
 
+	/**
+	 * inicia la conexion con la BD tipo SQLite
+	 * @param url path a la base de datos
+	 * @param existe boolean para crear la estructura si la BD es creada 
+	 * al conectar @see {@link Conexion}
+	 */
+	public void conecta(String url, boolean existe) {
+		//establecer la nueva conecxion
+		this.conexion = new Conexion().getConection(url);
+		System.out.println("Conectado");
+		
+		//crear la estructura de la BD
+		if (!existe) {
+			System.out.println("Creando estructura");
+			//crearEstructuraBD
+		}
+	}
+	
 	/**
 	 * intancia la clase
 	 * @param url
