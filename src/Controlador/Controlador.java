@@ -1,5 +1,7 @@
 package Controlador;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.File;
 import java.util.ArrayList;
 
@@ -10,6 +12,10 @@ import modelo.objetos.Docente;
 import modelo.objetos.GrupoAlumnos;
 import modelo.objetos.Habitacion;
 import vista.InterfazPrincipal;
+import vista.elementos.ListaTargetas.InfoPanel;
+import vista.elementos.ListaTargetas.ListaTarjetas;
+import vista.elementos.ListaTargetas.PassInfoData;
+import vista.interfaces.popup.InputPopup;
 
 /**
  * 
@@ -43,10 +49,14 @@ public class Controlador {
 
 	/**
 	 * Crea objeto Asignatura y lo lista en colAsignatura
-	 * @param datos
+	 * @param datos datos que contendra la asignatura
+	 * @return objeto asignatura con los datos
 	 */
-	private void crearAsignatura(String[] datos) {
-		// TODO Auto-generated method stub
+	private Asignatura crearAsignatura(String[] datos) {
+		Asignatura asignatura = new Asignatura(datos[0]);
+		listaAsignatura.add(asignatura);
+		return asignatura;
+	
 	}
 
 	/**
@@ -91,6 +101,34 @@ public class Controlador {
 
 
 	}
+	
+	/**
+	 * metodo para el evento de crear un objeto InfoPanel, con sus valores,
+	 * lo añade a la lista correspondiente y lo devuelve
+	 * @param comando 
+	 */
+	public PassInfoData crearObjetoTargeta(String comando){
+		
+		//System.out.println(comando);
+		String[]datos;
+		
+		switch (comando) {
+		case "aniadirAsignaturas":
+			
+			datos = new InputPopup(interfazPrincipal, true, Asignatura.campos).getData();
+			Asignatura objeto = crearAsignatura(datos);
+			return objeto;
+			//break;
+
+		default:
+			System.out.println("Comando no encontrado: " + comando);
+			break;
+		}
+		
+		return null;
+		
+	}
+	
 
 }
 
