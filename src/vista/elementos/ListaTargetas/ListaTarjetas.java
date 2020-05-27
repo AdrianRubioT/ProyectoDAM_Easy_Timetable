@@ -10,6 +10,11 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
+import Controlador.Controlador;
+
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
 /**
  * Clase para listar los objetos Habitacion, Clase, docente y grupo alumno
  * @author
@@ -17,7 +22,7 @@ import javax.swing.JScrollPane;
  */
 public class ListaTarjetas extends JPanel{
 	
-	public String titulo;
+	private String titulo;
 	
 	
 	private JButton botonAniadir;
@@ -26,16 +31,16 @@ public class ListaTarjetas extends JPanel{
 
 	private JPanel lista;
 
+	private Controlador controlador;
 
 	/**
 	 * @param titulo
-	 * @return void
 	 */
-	public ListaTarjetas(String titulo) {
+	public ListaTarjetas(String titulo, Controlador controlador) {
 		super();
-
+		
 		this.titulo = titulo;
-
+		this.controlador =  controlador;
 
 		GridBagLayout gbl_panModulos = new GridBagLayout();
 		gbl_panModulos.columnWidths = new int[]{91, 0};
@@ -61,6 +66,13 @@ public class ListaTarjetas extends JPanel{
 		panel_1.setLayout(new GridLayout(0, 2, 0, 0));
 
 		botonAniadir = new JButton("A\u00F1adir");
+		botonAniadir.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				PassInfoData Object = controlador.crearObjetoTargeta( arg0.getActionCommand() );
+				aniadir(Object);
+			}
+		});
+		botonAniadir.setActionCommand("aniadir" + titulo);
 		panel_1.add(botonAniadir);
 
 		botonEliminar = new JButton("Eliminar");
@@ -84,11 +96,11 @@ public class ListaTarjetas extends JPanel{
 	}
 
 	/**
-	 * evento para iniciar el evento de aniadir un item a la lista
-	 * @return void
+	 * metodo que añade un objeto al Jpanel Lista
+	 * @param object objeto a aniadir
 	 */
-	public void aniadir() {
-		// TODO Auto-generated method stub
+	public void aniadir(PassInfoData object) {
+		
 	}
 
 	/**
@@ -99,5 +111,22 @@ public class ListaTarjetas extends JPanel{
 		// TODO Auto-generated method stub
 	}
 
+	
+	/**
+	 * @return the titulo
+	 */
+	public String getTitulo() {
+		return titulo;
+	}
+
+	/**
+	 * @param titulo the titulo to set
+	 */
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+
+	
+	
 }
 
