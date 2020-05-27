@@ -13,57 +13,75 @@ import javax.swing.JMenuBar;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 
+import Controlador.Controlador;
 import PorColocar.AreaTrabajo;
 import vista.elementos.ListaTargetas.ListaTarjetas;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 /**
  * Clase para montar la interfaz principal y su componentes
  * @author
  *
  */
-public class InterfazPrincipal {
-	
-	private JFrame frame;
+public class InterfazPrincipal extends JFrame {
 	
 	
-	/**
-	 * listados para mostrar en la interfaz
-	 */
+	
+	private Controlador controlador;
+	
+	//listados para mostrar en la interfaz
 	private ListaTarjetas listaHabitaciones;
 	private ListaTarjetas listaAsiganturas;
 	private ListaTarjetas listaDocentes;
 	private ListaTarjetas listaAlumnos;
 	
+	//componentes de la interfaz
 	private AreaTrabajo areaTrabajo;
 	private ListaTarjetas tabAsignatura;
 	private ListaTarjetas tabDocente;
 	private ListaTarjetas tabHabitaciones;
 	private ListaTarjetas tabGrupoAlumnos;
 
+	
 	/**
 	 * @wbp.parser.entryPoint
 	 */
-	public InterfazPrincipal() {
+	public InterfazPrincipal(Controlador controlador) {
+		this.controlador = controlador;
 		initialize();
-		frame.setVisible(true);
+		//setVisible(true);
 	}
 	
 	/**
-	 * Initialize the contents of the frame.
+	 * Initialize the contents of the frame
 	 */
 	private void initialize() {
-		frame = new JFrame();
-		frame.setBounds(100, 100, 645, 414);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		setBounds(100, 100, 645, 414);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		JMenuBar menuBar = new JMenuBar();
-		frame.setJMenuBar(menuBar);
+		setJMenuBar(menuBar);
+		
+		JMenu mnArchivo = new JMenu("Archivo");
+		menuBar.add(mnArchivo);
+		
+		JMenuItem mntmNuevo = new JMenuItem("Nuevo");
+		mntmNuevo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				controlador.NuevoHorario();
+			}
+		});
+		mnArchivo.add(mntmNuevo);
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[]{0, 100, 0};
 		gridBagLayout.rowHeights = new int[]{0, 0};
 		gridBagLayout.columnWeights = new double[]{1.0, 1.0, Double.MIN_VALUE};
 		gridBagLayout.rowWeights = new double[]{1.0, Double.MIN_VALUE};
-		frame.getContentPane().setLayout(gridBagLayout);
+		getContentPane().setLayout(gridBagLayout);
 
 		JPanel panHorario = new JPanel();
 		GridBagConstraints gbc_panHorario = new GridBagConstraints();
@@ -71,7 +89,7 @@ public class InterfazPrincipal {
 		gbc_panHorario.fill = GridBagConstraints.BOTH;
 		gbc_panHorario.gridx = 0;
 		gbc_panHorario.gridy = 0;
-		frame.getContentPane().add(panHorario, gbc_panHorario);
+		getContentPane().add(panHorario, gbc_panHorario);
 		GridBagLayout gbl_panHorario = new GridBagLayout();
 		gbl_panHorario.columnWidths = new int[]{0, 0};
 		gbl_panHorario.rowHeights = new int[]{0, 0, 0};
@@ -112,7 +130,7 @@ public class InterfazPrincipal {
 		gbc_tabbedPane.fill = GridBagConstraints.BOTH;
 		gbc_tabbedPane.gridx = 1;
 		gbc_tabbedPane.gridy = 0;
-		frame.getContentPane().add(tabbedPane, gbc_tabbedPane);
+		getContentPane().add(tabbedPane, gbc_tabbedPane);
 
 
 		tabAsignatura = new ListaTarjetas("Asignaturas");
@@ -129,7 +147,7 @@ public class InterfazPrincipal {
 
 
 
-		frame.setVisible(true);
+		setVisible(true);
 	}
 
 	
