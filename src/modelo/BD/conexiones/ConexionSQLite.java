@@ -92,7 +92,7 @@ public class ConexionSQLite {
 				"	minutoFin integer CHECK( minutoFin >= 0 AND minutoFin <=59)\n" + 
 				"	);";
 		// SQL statement for creating a new table
-		String tablaOcurren = "CREATE TABLE Ocurren(\n" + 
+		String tablaOcurren = "CREATE TABLE Ocurre(\n" + 
 				"	ID_Ocurren integer PRIMARY KEY,\n" + 
 				"	ID_Habitacion integer,\n" + 
 				"	ID_Asignatura  integer,\n" + 
@@ -104,6 +104,114 @@ public class ConexionSQLite {
 				"	FOREIGN KEY(ID_GrupoAlumnos) REFERENCES 							GrupoAlumnos(ID_GrupoAlumnos)ON DELETE CASCADE\n" + 
 				"	);";
 
+		//Triggers
+		String triggerInSolaHab = "CREATE TRIGGER checkInsertSolapamientoHabitacion \n" + 
+				"		BEFORE INSERT ON Ocurre\n" + 
+				"	BEGIN\n" + 
+				"		SELECT RAISE(ABORT, 'Ya existe esta habitacion en este intervalo')\n" + 
+				"		WHERE\n" + 
+				"			EXISTS(\n" + 
+				"				SELECT IntervaloTiempo\n" + 
+				"				FROM \n" + 
+				"					Ocurre \n" + 
+				"				WHERE\n" + 
+				"					NEW.ID_Habitacion = Ocurre.ID_Habitacion);\n" + 
+				"	END;";
+	
+		String triggerUpSolaHab = "CREATE TRIGGER checkUpdateSolapamientoHabitacion \n" + 
+				"		BEFORE UPDATE ON Ocurre\n" + 
+				"	BEGIN\n" + 
+				"		SELECT RAISE(ABORT, 'Ya existe esta habitacion en este intervalo')\n" + 
+				"		WHERE\n" + 
+				"			EXISTS(\n" + 
+				"				SELECT IntervaloTiempo\n" + 
+				"				FROM \n" + 
+				"					Ocurre \n" + 
+				"				WHERE\n" + 
+				"					NEW.ID_Habitacion = Ocurre.ID_Habitacion);\n" + 
+				"	END;";
+
+		String triggerInSolaAsig = "CREATE TRIGGER checkInsertSolapamientoAsignatura\n" + 
+				"		BEFORE INSERT ON Ocurre\n" + 
+				"	BEGIN\n" + 
+				"		SELECT RAISE(ABORT, 'Ya existe esta Asignatura en este intervalo')\n" + 
+				"		WHERE\n" + 
+				"			EXISTS(\n" + 
+				"				SELECT IntervaloTiempo\n" + 
+				"				FROM \n" + 
+				"					Ocurre \n" + 
+				"				WHERE\n" + 
+				"					NEW.ID_Asignatura= Ocurre.ID_Asignatura);\n" + 
+				"	END;";
+
+		String triggerUpSolaAsig = "CREATE TRIGGER checkUpdateSolapamientoAsignatura\n" + 
+				"		BEFORE UPDATE ON Ocurre\n" + 
+				"	BEGIN\n" + 
+				"		SELECT RAISE(ABORT, 'Ya existe esta asignatura en este intervalo')\n" + 
+				"		WHERE\n" + 
+				"			EXISTS(\n" + 
+				"				SELECT IntervaloTiempo\n" + 
+				"				FROM \n" + 
+				"					Ocurre \n" + 
+				"				WHERE\n" + 
+				"					NEW.ID_Asignatura = Ocurre.ID_Asignatura);\n" + 
+				"	END;";
+
+		String triggerInSolaDoc = "CREATE TRIGGER checkInsertSolapamientoDocente\n" + 
+				"		BEFORE INSERT ON Ocurre\n" + 
+				"	BEGIN\n" + 
+				"		SELECT RAISE(ABORT, 'Ya existe esta Asignatura en este intervalo')\n" + 
+				"		WHERE\n" + 
+				"			EXISTS(\n" + 
+				"				SELECT IntervaloTiempo\n" + 
+				"				FROM \n" + 
+				"					Ocurre \n" + 
+				"				WHERE\n" + 
+				"					NEW.ID_Docente= Ocurre.ID_Docente);\n" + 
+				"	END;";
+
+		String triggerUpSolaDoc ="CREATE TRIGGER checkUpdateSolapamientoDocente\n" + 
+				"		BEFORE UPDATE ON Ocurre\n" + 
+				"	BEGIN\n" + 
+				"		SELECT RAISE(ABORT, 'Ya existe esta asignatura en este intervalo')\n" + 
+				"		WHERE\n" + 
+				"			EXISTS(\n" + 
+				"				SELECT IntervaloTiempo\n" + 
+				"				FROM \n" + 
+				"					Ocurre \n" + 
+				"				WHERE\n" + 
+				"					NEW.ID_Docente = Ocurre.ID_Docente);\n" + 
+				"	END;";
+	
+
+		String triggerInSolaGrupoAlum = "CREATE TRIGGER checkInsertSolapamientoGrupoAlumnos\n" + 
+				"		BEFORE INSERT ON Ocurre\n" + 
+				"	BEGIN\n" + 
+				"		SELECT RAISE(ABORT, 'Ya existe esta Asignatura en este intervalo')\n" + 
+				"		WHERE\n" + 
+				"			EXISTS(\n" + 
+				"				SELECT IntervaloTiempo\n" + 
+				"				FROM \n" + 
+				"					Ocurre \n" + 
+				"				WHERE\n" + 
+				"					NEW.ID_GrupoAlumnos= Ocurre.ID_GrupoAlumnos);\n" + 
+				"	END;";
+	
+		String triggerUpSolaGrupoAlum = "	CREATE TRIGGER checkUpdateSolapamientoGrupoAlumnos\n" + 
+				"		BEFORE UPDATE ON Ocurre\n" + 
+				"	BEGIN\n" + 
+				"		SELECT RAISE(ABORT, 'Ya existe esta asignatura en este intervalo')\n" + 
+				"		WHERE\n" + 
+				"			EXISTS(\n" + 
+				"				SELECT IntervaloTiempo\n" + 
+				"				FROM \n" + 
+				"					Ocurre \n" + 
+				"				WHERE\n" + 
+				"					NEW.ID_GrupoAlumnos = Ocurre.ID_GrupoAlumnos);\n" + 
+				"	END;\n";
+
+		
+		
 		try {
 			connSQLite.setAutoCommit(false);
 			
@@ -115,11 +223,19 @@ public class ConexionSQLite {
 			stmt.execute(tablaDocente);
 			stmt.execute(tablaIntervaloTiempo);
 			stmt.execute(tablaOcurren);
-
+			
+			stmt.execute(triggerInSolaHab);
+			stmt.execute(triggerUpSolaHab);
+			stmt.execute(triggerInSolaAsig);
+			stmt.execute(triggerUpSolaAsig);
+			stmt.execute(triggerInSolaDoc);
+			stmt.execute(triggerUpSolaDoc);
+			stmt.execute(triggerInSolaGrupoAlum);
+			stmt.execute(triggerUpSolaGrupoAlum);
+			
+			
 			connSQLite.commit();
 			connSQLite.setAutoCommit(true);
-			
-			
 			
 		} catch (SQLException e) {
 			System.out.println("este bloque");
