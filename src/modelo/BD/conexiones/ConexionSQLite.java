@@ -1,4 +1,4 @@
-package modelo.BD.conecxiones;
+package modelo.BD.conexiones;
 
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
@@ -10,7 +10,7 @@ import java.sql.SQLException;
  * @author
  *
  */
-public class Conexion {
+public class ConexionSQLite {
 
 	/**
 	 * Establebe la conexion con una BD SQLite
@@ -42,17 +42,6 @@ public class Conexion {
 		
 	}
 
-	/**
-	 * genera una conecxion con el archivo de datos SQLite de la ruta
-Si el arch
-	 * ivo no existe el driver lo genera automaticamente
-	 * @param pathFile
-	 * @return Connection
-	 */
-	public Connection getConection(String pathFile) {
-		return null;
-		// TODO Auto-generated method stub
-	}
 
 }
 
