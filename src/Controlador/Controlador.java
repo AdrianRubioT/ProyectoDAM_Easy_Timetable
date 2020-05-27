@@ -71,7 +71,7 @@ public class Controlador {
 	 */
 	public void NuevoHorario() {
 
-		JFileChooser fileChooser = new JFileChooser("./");
+		JFileChooser fileChooser = new JFileChooser("./prueba");
 
 		//mostrar el dialogo para seleccionar la carpeta
 		int seleccion = fileChooser.showSaveDialog( interfazPrincipal );
