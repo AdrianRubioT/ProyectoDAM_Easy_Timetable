@@ -133,16 +133,16 @@ public class InterfazPrincipal extends JFrame {
 		getContentPane().add(tabbedPane, gbc_tabbedPane);
 
 
-		tabAsignatura = new ListaTarjetas("Asignaturas");
+		tabAsignatura = new ListaTarjetas("Asignaturas", controlador);
 		tabbedPane.addTab("Asignaturas", tabAsignatura);
 
-		tabDocente = new ListaTarjetas("Docente");
+		tabDocente = new ListaTarjetas("Docente", controlador);
 		tabbedPane.addTab("Docente", tabDocente);
 
-		tabHabitaciones = new ListaTarjetas("Habitaciones");
+		tabHabitaciones = new ListaTarjetas("Habitaciones", controlador);
 		tabbedPane.addTab("Habitaciones", tabHabitaciones);
 
-		tabGrupoAlumnos = new ListaTarjetas("GrupoAlumnos");
+		tabGrupoAlumnos = new ListaTarjetas("GrupoAlumnos", controlador);
 		tabbedPane.addTab("GrupoAlumnos", tabGrupoAlumnos);
 
 
