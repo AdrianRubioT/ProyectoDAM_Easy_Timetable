@@ -1,4 +1,7 @@
-package PorColocar;
+package modelo.BD.conecxiones;
+
+import java.sql.Connection;
+
 /**
  * Clase para servir una conexion de una BD SQLite
  * @author
@@ -17,7 +20,8 @@ Si el arch
 	 * @param pathFile
 	 * @return Connection
 	 */
-	public Connection getConection(Stirng pathFile) {
+	public Connection getConection(String pathFile) {
+		return null;
 		// TODO Auto-generated method stub
 	}
 

@@ -4,7 +4,7 @@ package vista.elementos.ListaTargetas;
  * @author
  *
  */
-public interface PassInfodata {
+public interface PassInfoData {
 
 	/**
 	 * metodo para obtener un listado de los nombre de los campos

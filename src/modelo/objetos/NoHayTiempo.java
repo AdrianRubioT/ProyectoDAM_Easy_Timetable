@@ -1,14 +1,11 @@
-package PorColocar;
+package modelo.objetos;
 /**
  * excepcion para indicar que no se ha encontrado la clase IntervaloTiempo
  * @author
  *
  */
-public class NoHayTiempo {
+public class NoHayTiempo extends Exception {
 
-	public NoHayTiempo() {
-		
-	}
 
 }
 

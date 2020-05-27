@@ -1,4 +1,9 @@
-package PorColocar;
+package vista.elementos.ListaTargetas;
+
+import java.util.ArrayList;
+
+import javax.swing.JLabel;
+
 /**
  * Pequeño JPanel con JLabels indicando las claves y sus valores
  * @author
@@ -8,11 +13,11 @@ public class InfoPanel {
 	/**
 	 * coleccion de JLabels generadas
 	 */
-	private ArrayList<JLabels> claves;
+	private ArrayList<JLabel> claves;
 	/**
 	 * coleccion de los valores para las claves
 	 */
-	private ArrayList<JLabels> valores;
+	private ArrayList<JLabel> valores;
 
 	public InfoPanel() {
 		
