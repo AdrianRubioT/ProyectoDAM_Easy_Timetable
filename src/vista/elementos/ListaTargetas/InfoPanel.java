@@ -24,8 +24,8 @@ public class InfoPanel {
 	}
 
 	/**
-	 * extrae del parametro objeto la informacion para crear los pares de JLabel
-	 * s clave-valor
+	 * extrae del parametro objeto la informacion para crear los pares de JLabels
+	 * clave-valor
 	 * @param objeto
 	 * @return void
 	 */
