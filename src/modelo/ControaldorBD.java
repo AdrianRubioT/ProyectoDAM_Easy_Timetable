@@ -40,8 +40,7 @@ public class ControaldorBD {
 		
 		//crear la estructura de la BD
 		if (!existe) {
-			System.out.println("Creando estructura");
-			//crearEstructuraBD
+			crearEstructuraBD();
 		}
 	}
 	
@@ -54,11 +53,12 @@ public class ControaldorBD {
 	}
 
 	/**
-	 * Genera la estructura de la BD
-	 * @return void
+	 * llama al conector adecuado para que genere la estructura de la BD
+	 * Por el momento solo esta SQLite
 	 */
 	private void crearEstructuraBD() {
-		// TODO Auto-generated method stub
+		//System.out.println("Creando estructura");
+		ConexionSQLite.crearEstructura(conexion);
 	}
 
 	/**
