@@ -1,5 +1,7 @@
 package modelo.objetos;
 
+import vista.elementos.ListaTargetas.PassInfoData;
+
 /**
  * define las caracteristicas de un alumno
  * @author
@@ -14,6 +16,9 @@ public class Alumno extends Persona {
 	 * Numero Identificacion Escolar
 	 */
 	private String nia;
+	
+	//public static String[]campos = {"nombre","apellido1","apellido2","curso","NIA"}; 
+
 	
 	/**
 	 * @param nombre
@@ -52,6 +57,26 @@ public class Alumno extends Persona {
 	public void setNia(String nia) {
 		this.nia = nia;
 	}
+
+	//TODO: descomentar cuando se necesite
+//	/**
+//	 * devuelve el atributo campos
+//	 * @see PassInfoData
+//	 */
+//	@Override
+//	public String[] getKeys() {
+//		return campos;
+//	}
+//
+//	/**
+//	 * devuelve los valores de los atributos de la clase
+//	 * @see PassInfoData
+//	 */
+//	@Override
+//	public String[] getValues() {
+//		String[] toReturn = {nombre, apellido1, apellido2, curso, nia}; 
+//		return toReturn;
+//	}
 
 	
 
