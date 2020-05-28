@@ -1,6 +1,7 @@
 package vista.elementos.ListaTargetas;
 
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
@@ -10,11 +11,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 
 /**
  * Pequeño JPanel con JLabels indicando las claves y sus valores
@@ -34,6 +32,14 @@ public class InfoPanel extends JPanel {
 
 
 		public InfoPanel(PassInfoData objeto) {
+			addMouseListener(new MouseAdapter() {
+				@Override
+				public void mouseClicked(MouseEvent e) {
+					//obtener la instancia que proboca el evento
+					InfoPanel a = (InfoPanel) e.getSource();
+					//... crear codigo
+				}
+			});
 			//TODO: quitar mas adelante es muy feo
 			setBorder(new LineBorder(new Color(0, 0, 0), 2));
 
@@ -42,19 +48,11 @@ public class InfoPanel extends JPanel {
 			GridBagLayout gridBagLayout = new GridBagLayout();
 			gridBagLayout.columnWidths = new int[]{81, 0, 0};
 			gridBagLayout.rowHeights = new int[]{0, 0};
-			gridBagLayout.columnWeights = new double[]{0.0, 1.0, Double.MIN_VALUE};
-			gridBagLayout.rowWeights = new double[]{1.0, Double.MIN_VALUE};
+			gridBagLayout.columnWeights = new double[]{};
+			gridBagLayout.rowWeights = new double[]{};
 			setLayout(gridBagLayout);
 
 
-			//panDescripcion = new JPanel();
-
-
-//			GridBagConstraints gbc_panDescripcion = new GridBagConstraints();
-//			gbc_panDescripcion.fill = GridBagConstraints.BOTH;
-//			gbc_panDescripcion.gridx = 1;
-//			gbc_panDescripcion.gridy = 0;
-//			add(panDescripcion, gbc_panDescripcion);
 			GridBagLayout gbl_panDescripcion = new GridBagLayout();
 			gbl_panDescripcion.columnWidths = new int[]{0};
 			gbl_panDescripcion.rowHeights = new int[]{0};
@@ -103,21 +101,6 @@ public class InfoPanel extends JPanel {
 			}
 
 		}
-
-		public void chivato(MouseEvent e) {
-			InfoPanel a = (InfoPanel) e.getSource();
-
-			System.out.println( a.getValores().get(0).getText() );
-		}
-
-		/**
-		 * @return the valores
-		 */
-		public ArrayList<JLabel> getValores() {
-			return valores;
-		}
-
-
 
 
 
