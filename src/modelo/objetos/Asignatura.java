@@ -1,5 +1,6 @@
 package modelo.objetos;
 
+import vista.elementos.ListaTargetas.InfoPanel;
 import vista.elementos.ListaTargetas.PassInfoData;
 
 /**
@@ -7,7 +8,7 @@ import vista.elementos.ListaTargetas.PassInfoData;
  * @author
  *
  */
-public class Asignatura implements PassInfoData{
+public class Asignatura extends InfoPanel implements PassInfoData{
 	
 	private String nombre;
 	
@@ -20,9 +21,16 @@ public class Asignatura implements PassInfoData{
 	 * @param nombre
 	 */
 	public Asignatura(String nombre) {
-		this.nombre = nombre;
+		super(campos);
+		this.setNombre(nombre);
+		actualizaSuper();
 	}
 
+	private void actualizaSuper() {
+		String[] valores = {this.nombre};
+		actualizaValores(valores);
+	}
+	
 	/**
 	 * @return the nombre
 	 */
