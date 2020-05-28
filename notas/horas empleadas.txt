@@ -87,8 +87,8 @@
 	16:30 - 19:00 creando la BD y su estructura
 	19:00 - 20:30 desarrollando evento de aniadir objetos al listado
 
-28/5/2020
+28/5/2020 total 5.5
 	10:40 - 12:30 desarrollando evento de aniadir objetos al listado
 	16:45 - 18:15 tratando de saber en que infopanel se ha hecho click
-	18:15 - pensando como realizar el seleccionado y como borrar la instancia
+	18:15 - 20:30 pensando como realizar el seleccionado y como borrar la instancia
 
