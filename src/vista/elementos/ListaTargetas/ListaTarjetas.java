@@ -99,13 +99,16 @@ public class ListaTarjetas extends JPanel{
 	 * metodo que añade un objeto al Jpanel Lista
 	 * @param object objeto a aniadir
 	 */
-	public void aniadir(PassInfoData object) {
+	public void aniadir(PassInfoData objeto) {
+		InfoPanel infoPanel = new InfoPanel(objeto);
+		lista.add(infoPanel);
 		
+		//scrollLista.revalidate();
+		lista.updateUI();
 	}
 
 	/**
 	 * evento para iniciar el evento de borrar un item de la lista
-	 * @return void
 	 */
 	public void eliminar() {
 		// TODO Auto-generated method stub
