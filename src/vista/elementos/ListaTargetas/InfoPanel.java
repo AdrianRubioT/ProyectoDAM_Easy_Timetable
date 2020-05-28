@@ -19,20 +19,13 @@ import java.awt.event.MouseEvent;
  *
  */
 public class InfoPanel extends JPanel {
+
+	private ArrayList<JLabel> labelKey = new ArrayList<JLabel>();
+	private ArrayList<JLabel> labelValue= new ArrayList<JLabel>();
 	
-	/**
-	 * coleccion de JLabels generadas
-	 */
 	
-	private ArrayList<JLabel> claves;
-	/**
-	 * coleccion de los valores para las claves
-	 */
-	private ArrayList<JLabel> valores;
-
-
-
-		public InfoPanel(PassInfoData objeto) {
+		public InfoPanel(String[] campos) {
+			
 			addMouseListener(new MouseAdapter() {
 				@Override
 				public void mouseClicked(MouseEvent e) {
@@ -62,7 +55,7 @@ public class InfoPanel extends JPanel {
 			setLayout(gbl_panDescripcion);
 
 
-			addInfoObject(objeto);
+			creteJLabels(campos);
 
 
 		}
@@ -70,41 +63,54 @@ public class InfoPanel extends JPanel {
 		/**
 		 * extrae del parametro objeto la informacion para crear los pares de JLabels
 		 * clave-valor
-		 * @param objeto
+		 * @param campos
 		 * @return void
 		 */
-		public void addInfoObject(PassInfoData objeto) {
+		public void creteJLabels(String[] campos) {
 
-			String[] etiquetas = objeto.getKeys();
-			String[] claves = objeto.getValues();
-
-			//etiquetas
-			for (int i = 0; i < etiquetas.length; i++) {
-				//System.out.println(etiquetas[i]);
-				JLabel JPKey = new JLabel( etiquetas[i]);
+			//Key
+			for (int i = 0; i < campos.length; i++) {
+				JLabel jlKey = new JLabel( campos[i]);
+				//guardar el JLabel en la lista
+				labelKey.add(jlKey);
 				GridBagConstraints gbc_lblLinea_3 = new GridBagConstraints();
 				gbc_lblLinea_3.insets = new Insets(0, 0, 0, 5);
 				gbc_lblLinea_3.gridx = 0;
 				gbc_lblLinea_3.gridy = i;
-				add(JPKey, gbc_lblLinea_3);
+				add(jlKey, gbc_lblLinea_3);
 			}
-
-
-			for (int i = 0; i < claves.length; i++) {
-				//System.out.println(data[i]);
-				JLabel JPValue = new JLabel( claves[i]);
+			
+			//Value
+			for (int i = 0; i < campos.length; i++) {
+				JLabel jlValue = new JLabel();
+				labelValue.add(jlValue);
 				GridBagConstraints gbc_lin4 = new GridBagConstraints();
 				gbc_lin4.fill = GridBagConstraints.HORIZONTAL;
 				gbc_lin4.gridx = 1;
 				gbc_lin4.gridy = i;
-				add( JPValue, gbc_lin4);
+				add( jlValue, gbc_lin4);
 
 			}
 
+
+
 		}
+		
 
 
-
+		
+		/**
+		 * metodo para actualizar los JLabels con los valores
+		 * @param newValores array con los nuevos valores, tiene que 
+		 * estar en el mismo orden y longitud que labelKey 
+		 */
+		public void actualizaValores(String[] newValores) {
+			
+			for (int i = 0; i < newValores.length; i++) {
+				labelValue.get(i).setText(newValores[i]);
+			}
+			
+		}
 	
 }
 

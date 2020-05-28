@@ -68,7 +68,7 @@ public class ListaTarjetas extends JPanel{
 		botonAniadir = new JButton("A\u00F1adir");
 		botonAniadir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				PassInfoData Object = controlador.crearObjetoTargeta( arg0.getActionCommand() );
+				InfoPanel Object = (InfoPanel)controlador.crearObjetoTargeta( arg0.getActionCommand() );
 				aniadir(Object);
 			}
 		});
@@ -99,9 +99,9 @@ public class ListaTarjetas extends JPanel{
 	 * metodo que añade un objeto al Jpanel Lista
 	 * @param object objeto a aniadir
 	 */
-	public void aniadir(PassInfoData objeto) {
-		InfoPanel infoPanel = new InfoPanel(objeto);
-		lista.add(infoPanel);
+	public void aniadir(InfoPanel object) {
+		//InfoPanel infoPanel = new InfoPanel(object);
+		lista.add(object);
 		
 		//scrollLista.revalidate();
 		lista.updateUI();
