@@ -81,10 +81,14 @@
 	16:45 - 18:00 desarrollar diagrama clases, parte de ListaTargetas e interfaz
 	18:40 - 20:30 pasando diagrama de clases a codigo
 
-27/5/2020 total 
+27/5/2020 total 5.25
 	 9:45 - 10:20 pasando diagrama de clases a codigo
 	10:20 - 11:00 desarrollando evento de crear nueva gestion de horario
 	16:30 - 19:00 creando la BD y su estructura
 	19:00 - 20:30 desarrollando evento de aniadir objetos al listado
 
+28/5/2020
+	10:40 - 12:30 desarrollando evento de aniadir objetos al listado
+	16:45 - 18:15 tratando de saber en que infopanel se ha hecho click
+	18:15 - pensando como realizar el seleccionado y como borrar la instancia
 
