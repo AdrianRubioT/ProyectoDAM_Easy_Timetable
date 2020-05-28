@@ -2,15 +2,19 @@ package modelo.objetos;
 
 import java.util.ArrayList;
 
+import vista.elementos.ListaTargetas.PassInfoData;
+
 /**
  * Coleccion de alumnos que realizan un curso 
  * @author
  *
  */
-public class GrupoAlumnos {
+public class GrupoAlumnos implements PassInfoData{
 	private ArrayList<Alumno> alumnos;
 	private String nombreCurso;
 	private String nombreGrupo;
+
+	public static String[]campos = {"nombreCurso", "nombreGrupo"}; 
 
 
 	/**
@@ -68,6 +72,30 @@ public class GrupoAlumnos {
 	 */
 	public void setNombreGrupo(String nombreGrupo) {
 		this.nombreGrupo = nombreGrupo;
+	}
+
+
+	/**
+	 * devuelve el atributo campos
+	 * @see PassInfoData
+	 */
+	@Override
+	public String[] getKeys() {
+		//TODO: modificar mas adelante para que aparezcan la cantidad de alumnos en 
+		//este grupo
+		return campos;
+	}
+	
+	
+	/**
+	 * devuelve los valores de los atributos de la clase
+	 * @see PassInfoData
+	 */
+	@Override
+	public String[] getValues() {
+		// TODO Auto-generated method stub
+		String[] toReturn = {nombreCurso, nombreGrupo};
+		return toReturn;
 	}
 
 

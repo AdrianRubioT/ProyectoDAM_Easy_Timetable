@@ -5,9 +5,9 @@ package modelo.objetos;
  *
  */
 public abstract class  Persona {
-	private String nombre;
-	private String apellido1;
-	private String apellido2;
+	protected String nombre;
+	protected String apellido1;
+	protected String apellido2;
 	
 	/**
 	 * @param nombre
