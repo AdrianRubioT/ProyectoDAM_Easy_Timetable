@@ -1,7 +1,6 @@
 package vista.elementos.ListaTargetas;
 
 import java.awt.Color;
-import java.awt.Component;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
@@ -20,9 +19,11 @@ import java.awt.event.MouseEvent;
  *
  */
 public class InfoPanel extends JPanel {
+	
 	/**
 	 * coleccion de JLabels generadas
 	 */
+	
 	private ArrayList<JLabel> claves;
 	/**
 	 * coleccion de los valores para las claves
