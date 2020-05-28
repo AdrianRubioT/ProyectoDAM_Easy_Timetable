@@ -1,13 +1,16 @@
 package modelo.objetos;
 
-import vista.elementos.ListaTargetas.PassInfoData;
-
 /**
  * define las caracteristicas de un alumno
  * @author
  *
  */
-public class Alumno extends Persona {
+public class Alumno{
+	
+	private String nombre;
+	private String apellido1;
+	private String apellido2;
+	
 	/**
 	 * Nombre del curso que realizan
 	 */
@@ -28,10 +31,13 @@ public class Alumno extends Persona {
 	 * @param nia
 	 */
 	public Alumno(String nombre, String apellido1, String apellido2, String curso, String nia) {
-		super(nombre, apellido1, apellido2);
+		this.nombre = nombre;
+		this.apellido1 = apellido1;
+		this.apellido2 = apellido2;
 		this.curso = curso;
 		this.nia = nia;
 	}
+	
 	
 	/**
 	 * @return the curso
@@ -78,7 +84,48 @@ public class Alumno extends Persona {
 //		return toReturn;
 //	}
 
-	
+	/**
+	 * @return the nombre
+	 */
+	public String getNombre() {
+		return nombre;
+	}
+
+	/**
+	 * @param nombre the nombre to set
+	 */
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	/**
+	 * @return the apellido1
+	 */
+	public String getApellido1() {
+		return apellido1;
+	}
+
+	/**
+	 * @param apellido1 the apellido1 to set
+	 */
+	public void setApellido1(String apellido1) {
+		this.apellido1 = apellido1;
+	}
+
+	/**
+	 * @return the apellido2
+	 */
+	public String getApellido2() {
+		return apellido2;
+	}
+
+	/**
+	 * @param apellido2 the apellido2 to set
+	 */
+	public void setApellido2(String apellido2) {
+		this.apellido2 = apellido2;
+	}
+
 
 }
 
