@@ -36,23 +36,22 @@ public class Asignatura implements PassInfoData{
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-
-	/**
-	 * @return the campos
-	 */
-	public String[] getCampos() {
-		return campos;
-	}
 	
 	
 	/**
-	 * 
+	 * devuelve el atributo campos
+	 * @see PassInfoData
 	 */
 	@Override
 	public String[] getKeys() {
 		return campos;
 	}
-
+	
+	
+	/**
+	 * devuelve los valores de los atributos de la clase
+	 * @see PassInfoData
+	 */
 	@Override
 	public String[] getValues() {
 		// TODO Auto-generated method stub
