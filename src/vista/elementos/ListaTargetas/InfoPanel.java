@@ -10,6 +10,9 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
 
+import vista.seleccion.Seleccion;
+import vista.seleccion.Seleccionable;
+
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -18,7 +21,7 @@ import java.awt.event.MouseEvent;
  * @author
  *
  */
-public class InfoPanel extends JPanel {
+public class InfoPanel extends JPanel implements Seleccionable {
 
 	private ArrayList<JLabel> labelKey = new ArrayList<JLabel>();
 	private ArrayList<JLabel> labelValue= new ArrayList<JLabel>();
@@ -31,6 +34,8 @@ public class InfoPanel extends JPanel {
 				public void mouseClicked(MouseEvent e) {
 					//obtener la instancia que proboca el evento
 					InfoPanel a = (InfoPanel) e.getSource();
+					notificarSeleccion(a);
+					
 					//... crear codigo
 				}
 			});
@@ -110,6 +115,15 @@ public class InfoPanel extends JPanel {
 				labelValue.get(i).setText(newValores[i]);
 			}
 			
+		}
+
+		/**
+		 * notifica a Seleccion que el objeto
+		 * ha sido seleccionado
+		 */
+		@Override
+		public void notificarSeleccion(Seleccionable seleccion) {
+			Seleccion.nuevoSeleccion(seleccion);
 		}
 	
 }
