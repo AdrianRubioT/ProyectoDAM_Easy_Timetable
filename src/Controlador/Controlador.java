@@ -12,7 +12,6 @@ import modelo.objetos.Habitacion;
 import vista.InterfazPrincipal;
 import vista.elementos.ListaTargetas.InfoPanel;
 import vista.interfaces.popup.InputPopup;
-import vista.seleccion.Seleccion;
 
 /**
  * 
@@ -49,6 +48,15 @@ public class Controlador {
 		listaHabitaciones.add(habitacion);
 		return habitacion;
 	}
+	
+	/**
+	 * elimina de la listaHabitacion y de la BD la instancia del parametro pasado
+	 * @param habtiacion instancia a eliminar
+	 */
+	private void eliminarHabitacion(Habitacion habtiacion) {
+		listaHabitaciones.remove(habtiacion);
+		//TODO: eliminar de la base de datos
+	}
 
 	/**
 	 * Crea objeto Asignatura y lo lista en colAsignatura
@@ -61,6 +69,16 @@ public class Controlador {
 		return asignatura;
 
 	}
+	
+	/**
+	 * elimina de la listaAsignatura y de la BD la instancia del parametro pasado
+	 * @param asignatura instancia a eliminar
+	 */
+	private void eliminarAsignatura(Asignatura asignatura) {
+		listaAsignatura.remove(asignatura);
+		//TODO: eliminar de la base de datos		
+	}
+
 
 	/**
 	 * Crea objeto docente y lo lista en colDocente
@@ -71,6 +89,15 @@ public class Controlador {
 		Docente asignatura = new Docente(datos[0], datos[1], datos[2], datos[3]);
 		listaDocente.add(asignatura);
 		return asignatura;
+	}
+	
+	/**
+	 * elimina de la listaDocentey de la BD la instancia del parametro pasado
+	 * @param docente instancia a eliminar
+	 */
+	private void eliminarDocente(Docente docente) {
+		listaDocente.remove(docente);
+		//TODO: eliminar de la BD
 	}
 
 	/**
@@ -84,7 +111,16 @@ public class Controlador {
 		return grupoAlumnos;
 	}
 
-
+	/**
+	 * elimina de la listaGrupoAlumnos y de la BD la instancia del parametro pasado
+	 * @param grupoAlumnos instancia a eliminar
+	 */
+	private void eliminarGrupoAlumnos(GrupoAlumnos grupoAlumnos) {
+		listaGruposAlumnos.remove(grupoAlumnos);
+		
+	}
+	
+	
 	/**
 	 * evento para indicar un nuevo archivo del horario
 	 */
@@ -154,6 +190,54 @@ public class Controlador {
 		return null;
 
 	}
+
+
+	/**
+	 * elimina el objeto seleccionado
+	 * @param infoPanel 
+	 */
+	public void eliminarSeleccionado(InfoPanel infoPanel) {
+
+		
+		switch ( infoPanel.getClass().getSimpleName() ) {
+		case "Asignatura":
+			eliminarAsignatura((Asignatura) infoPanel);
+//			System.out.println("tamanio lista: " + listaHabitaciones.size() );
+			break;
+
+		case "Habitacion":
+			eliminarHabitacion( (Habitacion) infoPanel);
+//			System.out.println("tamanio lista: " + listaHabitaciones.size() );
+			break;
+		
+		case "GrupoAlumnos":
+			eliminarGrupoAlumnos( (GrupoAlumnos) infoPanel);
+//			System.out.println("tamanio lista: " + listaHabitaciones.size() );
+			break;
+			
+		case "Docente":
+			eliminarDocente( (Docente) infoPanel);
+//			System.out.println("tamanio lista: " + listaHabitaciones.size() );
+			break;
+			
+			
+		default:
+			System.out.println("No encontrado:" +  infoPanel.getClass().getSimpleName() );
+			break;
+		}
+		
+		String clas = infoPanel.getClass().getSimpleName();
+			System.out.println(clas);
+		//listaAsignatura.remove( Seleccion.getUltimoSeleccionado() );
+		//System.out.println("tamanio lista: " + listaAsignatura.size() );
+
+		
+	}
+
+
+
+
+
 
 
 }
