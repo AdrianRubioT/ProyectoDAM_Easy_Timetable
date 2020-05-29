@@ -1,4 +1,4 @@
-package PorColocar;
+package vista.seleccion;
 /**
  * clase para controlar los objetos seleccionados
 Por el momento guarda el ultim
@@ -8,39 +8,30 @@ Por el momento guarda el ultim
  */
 public abstract class Seleccion {
 	/**
-	 * atributo para albergar el ultimo objeto seleccionado
-abstracto o unico en
-	 *  memoria
+	 * atributo para albergar el ultimo objeto seleccionado 
+	 * abstracto o unico en memoria
 	 */
-	private static Seleccionado ultimoSeleccionado;
+	private static Seleccionable ultimoSeleccionado;
 
-	public Seleccion() {
-		
-	}
-
-	/**
-	 * Instancia la clase
-	 * @return void
-	 */
-	public void Seleccion() {
-		// TODO Auto-generated method stub
-	}
 
 	/**
 	 * coloca el parametro seleccionado en el atributo ultimoSeleccionado
-	 * @param seleccion
-	 * @return Void
+	 * @param seleccion objeto que ha sido seleccionado
 	 */
-	private Void nuevoSeleccion(Seleccionado seleccion) {
-		// TODO Auto-generated method stub
+	public static void nuevoSeleccion(Seleccionable seleccion) {
+		ultimoSeleccionado = seleccion;
+		//System.out.println("seleccionado instancia de: " + seleccion.getClass() );
 	}
+	
 
 	/**
-	 * @return static Seleccionado
+	 * @return the ultimoSeleccionado
 	 */
-	public static Seleccionado getUltimoSeleccion() {
-		// TODO Auto-generated method stub
+	public static Seleccionable getUltimoSeleccionado() {
+		return ultimoSeleccionado;
 	}
+
+
 
 }
 
