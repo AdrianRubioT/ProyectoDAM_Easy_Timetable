@@ -96,4 +96,8 @@
 	 9:00 - 10:45 realizando pruebas para eliminar el objeto InfoPanel en la interfaz
 	11:30 - 13:00 implementar el eliminar una instancia de InfoPanel
 	13:00 - 13:30 realizando mi primera union de las ramas en eclipse
+	17:15 - 18:00 pensando como debe funcionar el area de trabajo
+	18:00 - 19:45 investigando y realizando pruebas en otro poryecto de JTable
+	19:45 - 20:30 esperimentando con Jtable y GridBagLayout
+	
 
