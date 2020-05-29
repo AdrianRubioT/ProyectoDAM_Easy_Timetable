@@ -1,24 +1,17 @@
-package PorColocar;
+package vista.seleccion;
 /**
  * Clase para indicar a la clase Seleccionados quien ha sido seleccionado
  * @author
  *
  */
-public class Seleccionable {
+public interface Seleccionable {
 
-	public Seleccionable() {
-		
-	}
+
 
 	/**
-	 * notifica que el objeto ha sido seleccionado
-Tiene que pasar una instancia
-	 *  de la clase
-	 * @return Void
+	 * notifica a Seleccion que el objeto ha sido seleccionado
 	 */
-	public Void notificarSeleccion() {
-		// TODO Auto-generated method stub
-	}
+	public void notificarSeleccion(Seleccionable seleccion);
 
 }
 
