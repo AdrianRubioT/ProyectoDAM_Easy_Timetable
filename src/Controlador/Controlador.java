@@ -138,9 +138,6 @@ public class Controlador {
 			//Obtenemos el fichero seleccionado 
 			File fichero = fileChooser.getSelectedFile();
 			controladorBD.conecta( fichero.getPath(), fichero.exists() );
-			//System.out.println(fichero.getPath() );
-
-			//System.out.println("El fichero existe: " +  fichero.exists() );
 
 		}
 
@@ -228,16 +225,9 @@ public class Controlador {
 		
 		String clas = infoPanel.getClass().getSimpleName();
 			System.out.println(clas);
-		//listaAsignatura.remove( Seleccion.getUltimoSeleccionado() );
-		//System.out.println("tamanio lista: " + listaAsignatura.size() );
 
 		
 	}
-
-
-
-
-
 
 
 }
