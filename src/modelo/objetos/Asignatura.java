@@ -1,14 +1,13 @@
 package modelo.objetos;
 
 import vista.elementos.ListaTargetas.InfoPanel;
-import vista.elementos.ListaTargetas.PassInfoData;
 
 /**
  * Clase con las propiedades de una asignatura
  * @author
  *
  */
-public class Asignatura extends InfoPanel implements PassInfoData{
+public class Asignatura extends InfoPanel{
 	
 	private String nombre;
 	
@@ -26,6 +25,9 @@ public class Asignatura extends InfoPanel implements PassInfoData{
 		actualizaSuper();
 	}
 
+	/**
+	 * recoge los valores de las variables de la clase para notificar a super
+	 */
 	private void actualizaSuper() {
 		String[] valores = {this.nombre};
 		actualizaValores(valores);
@@ -43,29 +45,10 @@ public class Asignatura extends InfoPanel implements PassInfoData{
 	 */
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
+		actualizaSuper();
 	}
 	
-	
-	/**
-	 * devuelve el atributo campos
-	 * @see PassInfoData
-	 */
-	@Override
-	public String[] getKeys() {
-		return campos;
-	}
-	
-	
-	/**
-	 * devuelve los valores de los atributos de la clase
-	 * @see PassInfoData
-	 */
-	@Override
-	public String[] getValues() {
-		// TODO Auto-generated method stub
-		String[] toReturn = {nombre};
-		return toReturn;
-	}
+
 
 	
 

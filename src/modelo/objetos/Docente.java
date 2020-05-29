@@ -1,13 +1,13 @@
 package modelo.objetos;
 
-import vista.elementos.ListaTargetas.PassInfoData;
+import vista.elementos.ListaTargetas.InfoPanel;
 
 /**
  * Clase con las propiedades y caracteristicas de un docente
  * @author
  *
  */
-public class Docente implements PassInfoData {
+public class Docente extends InfoPanel{
 	private String especialidad;
 	
 	private String nombre;
@@ -26,12 +26,23 @@ public class Docente implements PassInfoData {
 	 * @param apellido2
 	 */
 	public Docente(String especialidad, String nombre, String apellido1, String apellido2) {
+		super(campos);
 		this.especialidad = especialidad;
 		this.nombre = nombre;
 		this.apellido1 = apellido1;
 		this.apellido2 = apellido2;
+		actualizaSuper();
 	}
 
+
+	/**
+	 * recoge los valores de las variables de la clase para notificar a super
+	 */
+	private void actualizaSuper() {
+		String[] valores = {this.nombre, this.apellido1, this.apellido2, this.especialidad};
+		actualizaValores(valores);
+	}
+	
 	/**
 	 * @return the especialidad
 	 */
@@ -44,28 +55,8 @@ public class Docente implements PassInfoData {
 	 */
 	public void setEspecialidad(String especialidad) {
 		this.especialidad = especialidad;
+		actualizaSuper();
 	}
-
-	/**
-	 * devuelve el atributo campos
-	 * @see PassInfoData
-	 */
-	@Override
-	public String[] getKeys() {
-		return campos;
-	}
-	
-	
-	/**
-	 * devuelve los valores de los atributos de la clase
-	 * @see PassInfoData
-	 */
-	@Override
-	public String[] getValues() {
-		String[] toReturn = {nombre, apellido1, apellido2, especialidad}; 
-		return toReturn;
-	}
-
 
 
 	/**
@@ -80,6 +71,7 @@ public class Docente implements PassInfoData {
 	 */
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
+		actualizaSuper();
 	}
 
 	/**
@@ -94,6 +86,7 @@ public class Docente implements PassInfoData {
 	 */
 	public void setApellido1(String apellido1) {
 		this.apellido1 = apellido1;
+		actualizaSuper();
 	}
 
 	/**

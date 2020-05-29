@@ -1,13 +1,13 @@
 package modelo.objetos;
 
-import vista.elementos.ListaTargetas.PassInfoData;
+import vista.elementos.ListaTargetas.InfoPanel;
 
 /**
  * Clases con las propiedades de una sala 
  * @author
  *
  */
-public class Habitacion  implements PassInfoData{
+public class Habitacion  extends InfoPanel{
 	private String codigoHabitacion;
 
 	public static String[]campos = {"codigoHabitacion"}; 
@@ -17,8 +17,20 @@ public class Habitacion  implements PassInfoData{
 	 * @param codigoHabitacion
 	 */
 	public Habitacion(String codigoHabitacion) {
+		super(campos);
 		this.codigoHabitacion = codigoHabitacion;
+		actualizaSuper();
 	}
+	
+	
+	/**
+	 * recoge los valores de las variables de la clase para notificar a super
+	 */
+	private void actualizaSuper() {
+		String[] valores = {this.codigoHabitacion};
+		actualizaValores(valores);
+	}
+	
 
 	/**
 	 * @return the codigoHabitacion
@@ -32,26 +44,7 @@ public class Habitacion  implements PassInfoData{
 	 */
 	public void setCodigoHabitacion(String codigoHabitacion) {
 		this.codigoHabitacion = codigoHabitacion;
-	}
-
-	/**
-	 * devuelve el atributo campos
-	 * @see PassInfoData
-	 */
-	@Override
-	public String[] getKeys() {
-		return campos;
-	}
-	
-	
-	/**
-	 * devuelve los valores de los atributos de la clase
-	 * @see PassInfoData
-	 */
-	@Override
-	public String[] getValues() {
-		String[] toReturn = {codigoHabitacion}; 
-		return toReturn;
+		actualizaSuper();
 	}
 
 	

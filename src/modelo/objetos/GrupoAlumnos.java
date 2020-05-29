@@ -2,14 +2,14 @@ package modelo.objetos;
 
 import java.util.ArrayList;
 
-import vista.elementos.ListaTargetas.PassInfoData;
+import vista.elementos.ListaTargetas.InfoPanel;
 
 /**
  * Coleccion de alumnos que realizan un curso 
  * @author
  *
  */
-public class GrupoAlumnos implements PassInfoData{
+public class GrupoAlumnos extends InfoPanel{
 	private ArrayList<Alumno> alumnos;
 	private String nombreCurso;
 	private String nombreGrupo;
@@ -22,9 +22,20 @@ public class GrupoAlumnos implements PassInfoData{
 	 * @param nombreGrupo
 	 */
 	public GrupoAlumnos(String nombreCurso, String nombreGrupo) {
+		super(campos);
 		this.nombreCurso = nombreCurso;
 		this.nombreGrupo = nombreGrupo;
+		actualizaSuper();
 	}
+	
+	/**
+	 * recoge los valores de las variables de la clase para notificar a super
+	 */
+	private void actualizaSuper() {
+		String[] valores = {this.nombreCurso, this.nombreGrupo};
+		actualizaValores(valores);
+	}
+	
 
 
 	/**
@@ -40,6 +51,7 @@ public class GrupoAlumnos implements PassInfoData{
 	 */
 	public void setAlumnos(ArrayList<Alumno> alumnos) {
 		this.alumnos = alumnos;
+		actualizaSuper();
 	}
 
 
@@ -56,6 +68,7 @@ public class GrupoAlumnos implements PassInfoData{
 	 */
 	public void setNombreCurso(String nombreCurso) {
 		this.nombreCurso = nombreCurso;
+		actualizaSuper();
 	}
 
 
@@ -72,30 +85,6 @@ public class GrupoAlumnos implements PassInfoData{
 	 */
 	public void setNombreGrupo(String nombreGrupo) {
 		this.nombreGrupo = nombreGrupo;
-	}
-
-
-	/**
-	 * devuelve el atributo campos
-	 * @see PassInfoData
-	 */
-	@Override
-	public String[] getKeys() {
-		//TODO: modificar mas adelante para que aparezcan la cantidad de alumnos en 
-		//este grupo
-		return campos;
-	}
-	
-	
-	/**
-	 * devuelve los valores de los atributos de la clase
-	 * @see PassInfoData
-	 */
-	@Override
-	public String[] getValues() {
-		// TODO Auto-generated method stub
-		String[] toReturn = {nombreCurso, nombreGrupo};
-		return toReturn;
 	}
 
 
