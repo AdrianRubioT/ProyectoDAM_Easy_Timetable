@@ -1,7 +1,5 @@
 package Controlador;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.File;
 import java.util.ArrayList;
 
@@ -12,8 +10,9 @@ import modelo.objetos.Docente;
 import modelo.objetos.GrupoAlumnos;
 import modelo.objetos.Habitacion;
 import vista.InterfazPrincipal;
-import vista.elementos.ListaTargetas.PassInfoData;
+import vista.elementos.ListaTargetas.InfoPanel;
 import vista.interfaces.popup.InputPopup;
+import vista.seleccion.Seleccion;
 
 /**
  * 
@@ -32,6 +31,9 @@ public class Controlador {
 	private ControaldorBD controladorBD = new ControaldorBD();
 	private InterfazPrincipal interfazPrincipal = new InterfazPrincipal(this);
 
+	
+	
+	
 	public Controlador() {
 
 	}
@@ -114,7 +116,7 @@ public class Controlador {
 	 * lo añade a la lista correspondiente y lo devuelve
 	 * @param comando 
 	 */
-	public PassInfoData crearObjetoTargeta(String comando){
+	public InfoPanel crearObjetoTargeta(String comando){
 
 		
 		String[]datos;
