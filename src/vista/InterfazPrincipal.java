@@ -14,7 +14,6 @@ import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 
 import Controlador.Controlador;
-import PorColocar.AreaTrabajo;
 import vista.elementos.ListaTargetas.ListaTarjetas;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
@@ -39,7 +38,7 @@ public class InterfazPrincipal extends JFrame {
 	private ListaTarjetas listaAlumnos;
 	
 	//componentes de la interfaz
-	private AreaTrabajo areaTrabajo;
+	//private AreaTrabajo areaTrabajo;
 	private ListaTarjetas tabAsignatura;
 	private ListaTarjetas tabDocente;
 	private ListaTarjetas tabHabitaciones;
