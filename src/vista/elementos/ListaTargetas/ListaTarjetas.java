@@ -11,6 +11,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
 import Controlador.Controlador;
+import vista.seleccion.Seleccion;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -76,6 +77,14 @@ public class ListaTarjetas extends JPanel{
 		panel_1.add(botonAniadir);
 
 		botonEliminar = new JButton("Eliminar");
+		botonEliminar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				InfoPanel infoPanel = (InfoPanel) Seleccion.getUltimoSeleccionado();
+				controlador.eliminarSeleccionado(infoPanel);
+				eliminar(infoPanel);
+			}
+		});
 		panel_1.add(botonEliminar);
 
 		listado = new JScrollPane();
@@ -110,8 +119,11 @@ public class ListaTarjetas extends JPanel{
 	/**
 	 * evento para iniciar el evento de borrar un item de la lista
 	 */
-	public void eliminar() {
-		// TODO Auto-generated method stub
+	public void eliminar(InfoPanel objecto) {
+		lista.remove(objecto);
+		//actualizar la interfaz
+		revalidate();
+		repaint();
 	}
 
 	
