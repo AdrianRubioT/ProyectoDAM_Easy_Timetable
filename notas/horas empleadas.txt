@@ -95,5 +95,5 @@
 29/5/2020 
 	 9:00 - 10:45 realizando pruebas para eliminar el objeto InfoPanel en la interfaz
 	11:30 - 13:00 implementar el eliminar una instancia de InfoPanel
-	
+	13:00 - 13:30 realizando mi primera union de las ramas en eclipse
 
