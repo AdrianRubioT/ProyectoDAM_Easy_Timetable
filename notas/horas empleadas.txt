@@ -27,23 +27,69 @@
 22/4/2020 10:30 - 13:30 + 17:00 - 20:30 = 6H 	3hDesarrollo eleccion del proyecto y sucesion de versiones y 3H desarrollo del curriculum vitae
 23/4/2020 10:00 - 12:15 + 16:45 - 20:00 = 5.5H	2.25HComparando programas parecidos viendo susu caracteristicas, 3.25HCurriculum vitae 
 24/4/2020 11:00 - 13:45 + 17.30 - 20:00 = 5.25H	2.75H Repasando y apmpliando puntos desarrollados 2.5H descripcion de las Tecnologias empleadas
-27/4/2020 10:00 - 13:30 + 17:00	- 20:30 = 7H	0.5H Reunion clase, 3H tipos de cliente,	3.5H plataformas de trabajo
-28/4/2020  9:00 - 13:15 + 17:15 - 20:30 = 7.5H	5.5H repasando y ampliando Documentacion de riesgos laborales y clientes y servicios 2Hcarta presentacion
-29/4/2020  9:45 - 11:30 + 16:30 - 20:00 = 5.25	0.5H arreglando el indice 2.75H desarrollando comparacion de las distintas plataformas 2H planificar objetivos del proyecto
-30/4/2020  9:00 - 13:15 + 16:30	- 20:30 = 8H	9:00 organizacion de las tareas, investigacion y preguntas, reorganizacion de puntos de organizacion del trabajo, designacion de objetivos
+27/4/2020 10:00 - 13:30 + 17:00	- 20:30 = 7H	
+	0.5H Reunion clase, 
+	3H tipos de cliente,	
+	3.5H plataformas de trabajo
 
- 4/5/2020  9:15 - 13:15	+ 16:30 - 20:30 = 8H 	reunion clase, elaboracion de las 10 preguntas, requisitos minimos, preparacion de los programs en ubuntu
- 5/5/2020  9:30 - 11:30	+ 16:30 - 20:00 = 6H 	Reestructurando y organizando la documentacion, anaidida 1 pregunta y intentando ejecutar las fases del proyecto
- 6/5/2020 10:00 - 11:00 + 12:00 - 13:30 + 16:30	- 20:00 Repasar las fases del proyecto, Primer diagrama de objetos y analizando los elementos de la interfaz
- 7/5/2020 10:30 - 13:15	+ 16:30 - 20:00 = 6.25H	Repaso y ampliacion: aniadido nuevo riesgo laboral
- 8/5/2020  9:30 - 11:00 + 12:00 - 12:30 + 17:00	- 20:00 3Hrepasado para presentar documentacion, 2H programando
-11/5/2020 11:00 + 11:30 - 16:30 - 17:15 + 19:00 - 20:00 = 2.25H	0.5Reunion clase  1.75H plantilla para diagrama de grantt en excell , 	Dentista, compra, y medico... poco animo
-12/5/2020 10:00 - 11:45 + 16:30 - 20:30 = 5.75 	1.75H pensando como crear añadir los 4 objetos principales y listarlos 16:45 - 18:30 desarrollando la insercion de datos de un objeto 18:30 - 20:30 pensando como inicializar la clase habitacion 
+28/4/2020  9:00 - 13:15 + 17:15 - 20:30 = 7.5H	
+	5.5H repasando y ampliando Documentacion de riesgos laborales y clientes y servicios 		2Hcarta presentacion
 
-13/5/2020 10:00 - 13:00 + 16:30	- 20:00 = 6.5H	3H pensando como hacer llegar los datos de la listaTarjetas al controlador y ampliando el diagrama de objetos 3.5Hdesarrollando codigo
-14/5/2020 11:15 - 13:00 + 16:30 - 20:00 = 5.25H	1.75H desarrollando la parte de instanciar el objeto habitacion en el controlador y como mostrarlo
-15/5/2020  9:30 - 13:30 + 16:30 - 20:30 = 8H	8H desarrollando codigo para listar objetos en la interfaz
-18/5/2020 10:30 - 11:40 + 12:10 - 13:20 + 14:30 - 16:00	+ 18:00 - 20:00 = 6H 1H Pensando lo que he hecho mal en el desarrollo. 0.5HReunion clase 2.5Hbuscando y probando plugins para diseñar en UML, 2H desarrollando diagrama de objetos
+29/4/2020  9:45 - 11:30 + 16:30 - 20:00 = 5.25	
+	0.5H arreglando el indice 
+	2.75H desarrollando comparacion de las distintas plataformas 
+	2H planificar objetivos del proyecto
+
+30/4/2020  9:00 - 13:15 + 16:30	- 20:30 = 8H	
+	9:00 organizacion de las tareas, investigacion y preguntas, reorganizacion de puntos de organizacion del trabajo, designacion de objetivos
+
+ 4/5/2020  9:15 - 13:15	+ 16:30 - 20:30 = 8H 	
+	reunion clase, 
+	elaboracion de las 10 preguntas, 
+	requisitos minimos, 
+	preparacion de los programas en ubuntu
+
+ 5/5/2020  9:30 - 11:30	+ 16:30 - 20:00 = 6H 	
+	Reestructurando y organizando la documentacion, 
+	anaidida 1 pregunta y intentando ejecutar las fases del proyecto
+
+ 6/5/2020 10:00 - 11:00 + 12:00 - 13:30 + 16:30	- 20:00 
+	Repasar las fases del proyecto, 
+	Primer diagrama de objetos y analizando los elementos de la interfaz
+
+ 7/5/2020 10:30 - 13:15	+ 16:30 - 20:00 = 6.25H	
+	Repaso y ampliacion: aniadido nuevo riesgo laboral
+	
+ 8/5/2020  9:30 - 11:00 + 12:00 - 12:30 + 17:00	- 20:00 3H
+	repasado para presentar documentacion, 
+	2H programando
+
+11/5/2020 11:00 + 11:30 - 16:30 - 17:15 + 19:00 - 20:00 = 2.25H	
+	0.5Reunion clase  
+	1.75H plantilla para diagrama de grantt en excell , 	
+	Dentista, compra, y medico... poco animo
+
+12/5/2020 10:00 - 11:45 + 16:30 - 20:30 = 5.75 	
+	1.75H pensando como crear añadir los 4 objetos principales y listarlos 
+	16:45 - 18:30 desarrollando la insercion de datos de un objeto 
+	18:30 - 20:30 pensando como inicializar la clase habitacion 
+
+13/5/2020 10:00 - 13:00 + 16:30	- 20:00 = 6.5H	
+	3H pensando como hacer llegar los datos de la listaTarjetas al controlador y ampliando el diagrama de objetos 
+	3.5Hdesarrollando codigo
+
+14/5/2020 11:15 - 13:00 + 16:30 - 20:00 = 5.25H	
+	1.75H desarrollando la parte de instanciar el objeto habitacion en el controlador y como mostrarlo
+
+15/5/2020  9:30 - 13:30 + 16:30 - 20:30 = 8H	
+	8H desarrollando codigo para listar objetos en la interfaz
+
+18/5/2020 10:30 - 11:40 + 12:10 - 13:20 + 14:30 - 16:00	+ 18:00 - 20:00 = 6H 
+	1H Pensando lo que he hecho mal en el desarrollo. 
+	0.5HReunion clase 
+	2.5Hbuscando y probando plugins para diseñar en UML, 
+	2H desarrollando diagrama de objetos
+	
 19/5/2020 total: 7H
 	10:30 - 11:15 desarrollar diagrama clases 
 	11:15 - 14:00 devolver portatil a la empresa (Autobuses de 1 hora)
@@ -99,5 +145,13 @@
 	17:15 - 18:00 pensando como debe funcionar el area de trabajo
 	18:00 - 19:45 investigando y realizando pruebas en otro poryecto de JTable
 	19:45 - 20:30 esperimentando con Jtable y GridBagLayout
+
+1/6/2020 6.5 
+	 9:00 - 11:00 esperimentando con GridBagLayout
+	11:00 - 12:00 reunion clase
+	12:30 - 13:00 repasar y complear memoria proyecto
+	17:30 - 20:00 repasar y complear memoria proyecto
+	
+	
 	
 
