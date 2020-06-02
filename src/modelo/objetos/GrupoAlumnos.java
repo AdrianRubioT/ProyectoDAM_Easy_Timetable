@@ -10,11 +10,14 @@ import vista.elementos.ListaTargetas.InfoPanel;
  *
  */
 public class GrupoAlumnos extends InfoPanel{
+	private int id_BD;
+
+	
 	private ArrayList<Alumno> alumnos;
 	private String nombreCurso;
 	private String nombreGrupo;
 
-	public static String[]campos = {"nombreCurso", "nombreGrupo"}; 
+	final public static String[]CAMPOS = {"nombreCurso", "nombreGrupo"}; 
 
 
 	/**
@@ -22,7 +25,7 @@ public class GrupoAlumnos extends InfoPanel{
 	 * @param nombreGrupo
 	 */
 	public GrupoAlumnos(String nombreCurso, String nombreGrupo) {
-		super(campos);
+		super(CAMPOS);
 		this.nombreCurso = nombreCurso;
 		this.nombreGrupo = nombreGrupo;
 		actualizaSuper();
@@ -85,6 +88,20 @@ public class GrupoAlumnos extends InfoPanel{
 	 */
 	public void setNombreGrupo(String nombreGrupo) {
 		this.nombreGrupo = nombreGrupo;
+	}
+
+	/**
+	 * @return the id_BD
+	 */
+	public int getId_BD() {
+		return id_BD;
+	}
+
+	/**
+	 * @param id_BD the id_BD to set
+	 */
+	public void setId_BD(int id_BD) {
+		this.id_BD = id_BD;
 	}
 
 

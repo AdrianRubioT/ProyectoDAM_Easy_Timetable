@@ -8,6 +8,8 @@ import vista.elementos.ListaTargetas.InfoPanel;
  *
  */
 public class Docente extends InfoPanel{
+	private int id_BD;
+	
 	private String especialidad;
 	
 	private String nombre;
@@ -101,6 +103,22 @@ public class Docente extends InfoPanel{
 	 */
 	public void setApellido2(String apellido2) {
 		this.apellido2 = apellido2;
+	}
+
+
+	/**
+	 * @return the id_BD
+	 */
+	public int getId_BD() {
+		return id_BD;
+	}
+
+
+	/**
+	 * @param id_BD the id_BD to set
+	 */
+	public void setId_BD(int id_BD) {
+		this.id_BD = id_BD;
 	}
 
 	

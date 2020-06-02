@@ -9,18 +9,20 @@ import vista.elementos.ListaTargetas.InfoPanel;
  */
 public class Asignatura extends InfoPanel{
 	
+	private int id_BD;
+	
 	private String nombre;
 	
 	/**
 	 * Lista de la clave de los atributos que tiene la clase
 	 */
-	public static String[]campos = {"nombre"}; 
+	final public static String[]CAMPOS = {"nombre"}; 
 	
 	/**
 	 * @param nombre
 	 */
 	public Asignatura(String nombre) {
-		super(campos);
+		super(CAMPOS);
 		this.setNombre(nombre);
 		actualizaSuper();
 	}
@@ -46,6 +48,20 @@ public class Asignatura extends InfoPanel{
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 		actualizaSuper();
+	}
+
+	/**
+	 * @return the id_BD
+	 */
+	public int getId_BD() {
+		return id_BD;
+	}
+
+	/**
+	 * @param id_BD the id_BD to set
+	 */
+	public void setId_BD(int id_BD) {
+		this.id_BD = id_BD;
 	}
 	
 
