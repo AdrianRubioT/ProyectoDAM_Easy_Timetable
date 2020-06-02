@@ -293,7 +293,7 @@ public class ControaldorBD {
 		ArrayList<GrupoAlumnos> coleccion = new ArrayList<GrupoAlumnos>();
 		GrupoAlumnos habTemp;
 
-		String sql = "SELECT rowid, * FROM Docente";
+		String sql = "SELECT rowid, * FROM GrupoAlumnos";
 
 		try (
 				Statement stmt  = conexion.createStatement();
@@ -302,9 +302,9 @@ public class ControaldorBD {
 			// loop through the result set
 			while (rs.next()) {
 				habTemp = new GrupoAlumnos();
-
-				habTemp.setNombreCurso( rs.getString("nombreCurso") );
+				
 				habTemp.setNombreGrupo( rs.getString("nombreGrupo") );
+				habTemp.setNombreCurso( rs.getString("nombreCurso") );
 
 				//1 -> rowID from SQLite		no se porque no puedo acceder por el nombre
 				habTemp.setId_BD( rs.getInt(1) );
