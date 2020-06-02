@@ -1,6 +1,10 @@
 package modelo;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 
 import modelo.BD.conexiones.ConexionSQLite;
@@ -16,15 +20,16 @@ import modelo.objetos.Slot;
  *
  */
 //TODO: implementar metodos
+//TODO: reducir codigo duplicado de las sentencias
 public class ControaldorBD {
-	
+
 	/** conecxion con la BD Inicialmente para SQLite
 	 */
 	private Connection conexion;
 
-	
+
 	public ControaldorBD() {
-		
+
 	}
 
 	/**
@@ -37,19 +42,18 @@ public class ControaldorBD {
 		//establecer la nueva conecxion
 		this.conexion = ConexionSQLite.conexion(url);
 		System.out.println("Conectado");
-		
+
 		//crear la estructura de la BD
 		if (!existe) {
 			crearEstructuraBD();
 		}
 	}
-	
+
 	/**
 	 * intancia la clase
 	 * @param url
 	 */
 	public ControaldorBD(String url) {
-		// TODO Auto-generated method stub
 	}
 
 	/**
@@ -65,32 +69,108 @@ public class ControaldorBD {
 	 * @param habitacion
 	 * @return void
 	 */
-	public void addHabitacion(Habitacion habitacion) {
-		// TODO Auto-generated method stub
-	}
+	public int addHabitacion(Habitacion habitacion) {
+		String sql = "INSERT INTO Habitacion(codigoHabitacion) VALUES(?)";
+
+		try (
+				PreparedStatement pstmt = conexion.prepareStatement(sql)) {
+			pstmt.setString(1, habitacion.getCodigoHabitacion() );
+			pstmt.executeUpdate();
+
+			ResultSet resultado = pstmt.getGeneratedKeys();
+			if (resultado.next()) {
+				return resultado.getInt(1);
+			}
+
+
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+		//return para que indica fallo
+		//TODO: cambiar por una excepcion o algo mejor
+		return -1;	}
 
 	/**
+	 * agrega parametro asignatura a la BD
 	 * @param asignatura
-	 * @return void
 	 */
-	public void addAsignatura(Asignatura asignatura) {
-		// TODO Auto-generated method stub
+	public int addAsignatura(Asignatura asignatura) {
+		String sql = "INSERT INTO Asignatura(nombre) VALUES(?)";
+
+		try (
+				PreparedStatement pstmt = conexion.prepareStatement(sql)) {
+			pstmt.setString(1, asignatura.getNombre() );
+			pstmt.executeUpdate();
+
+			ResultSet resultado = pstmt.getGeneratedKeys();
+			if (resultado.next()) {
+				return resultado.getInt(1);
+			}
+
+
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+		//return para que indica fallo
+		//TODO: cambiar por una excepcion o algo mejor
+		return -1;
 	}
 
 	/**
+	 * aniade el objeto docente a la BD y retorna el id generado
 	 * @param docente
-	 * @return void
+	 * @return 
 	 */
-	public void addDocente(Docente docente) {
-		// TODO Auto-generated method stub
+	public int addDocente(Docente docente) {
+		String sql = "INSERT INTO Docente(nombre, apellido1, apellido2, especialidad) VALUES(?,?,?,?)";
+
+		try (
+				PreparedStatement pstmt = conexion.prepareStatement(sql)) {
+			pstmt.setString(1, docente.getNombre() );
+			pstmt.setString(2, docente.getApellido1() );
+			pstmt.setString(3, docente.getApellido2() );
+			pstmt.setString(4, docente.getEspecialidad() );
+
+			pstmt.executeUpdate();
+
+			ResultSet resultado = pstmt.getGeneratedKeys();
+			if (resultado.next()) {
+				return resultado.getInt(1);
+			}
+
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+		//return para que indica fallo
+		//TODO: cambiar por una excepcion o algo mejor
+		return -1;
 	}
 
 	/**
 	 * @param grupoAlumnos
 	 * @return void
 	 */
-	public void addGrupoAlumno(GrupoAlumnos grupoAlumnos) {
-		// TODO Auto-generated method stub
+	public int addGrupoAlumno(GrupoAlumnos grupoAlumnos) {
+		String sql = "INSERT INTO GrupoALumno(nombreGrupo, nombreCurso) VALUES(?,?)";
+
+		try (
+				PreparedStatement pstmt = conexion.prepareStatement(sql)) {
+			pstmt.setString(1, grupoAlumnos.getNombreCurso() );
+			pstmt.setString(2, grupoAlumnos.getNombreGrupo() );
+
+			pstmt.executeUpdate();
+
+			ResultSet resultado = pstmt.getGeneratedKeys();
+			if (resultado.next()) {
+				return resultado.getInt(1);
+			}
+
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+		//return para que indica fallo
+		//TODO: cambiar por una excepcion o algo mejor
+		return -1;
 	}
 
 	/**
@@ -105,8 +185,35 @@ public class ControaldorBD {
 	 * @return ArrayList<Habitaciones>
 	 */
 	public ArrayList<Habitacion> obtenerListaHabitaciones() {
-		return null;
-		// TODO Auto-generated method stub
+
+		ArrayList<Habitacion> coleccion = new ArrayList<Habitacion>();
+		Habitacion habTemp;
+		
+		String sql = "SELECT rowid, * FROM Habitacion";
+
+		try (
+				Statement stmt  = conexion.createStatement();
+				ResultSet rs    = stmt.executeQuery(sql)){
+
+			// loop through the result set
+			while (rs.next()) {
+				habTemp = new Habitacion();
+
+				habTemp.setCodigoHabitacion( rs.getString("codigoHabitacion") );
+				
+				//1 -> rowID from SQLite		no se porque no puedo acceder por el nombre
+				habTemp.setId_BD( rs.getInt(1) );
+				
+				coleccion.add(habTemp );
+
+			}
+			
+			
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+		
+		return coleccion;
 	}
 
 	/**
@@ -219,26 +326,69 @@ Return: array list co
 	 * @param habitacion
 	 */
 	public void eliminarHabitacion(Habitacion habitacion) {
-		// TODO Auto-generated method stub
+		String sql = "DELETE FROM Habitacion WHERE rowID = ?";
+
+		try (
+				PreparedStatement pstmt = conexion.prepareStatement(sql)) {
+			pstmt.setInt( 1, habitacion.getId_BD() );
+
+			pstmt.executeUpdate();
+
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
 	}
 
 	/**
 	 * @param asignatura
 	 */
 	public void eliminaAsignatura(Asignatura asignatura) {
-		// TODO Auto-generated method stub
+
+		String sql = "DELETE FROM Asignatura WHERE rowID = ?";
+
+		try (
+				PreparedStatement pstmt = conexion.prepareStatement(sql)) {
+			pstmt.setInt( 1, asignatura.getId_BD() );
+
+			pstmt.executeUpdate();
+
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+
 	}
 
 	/**
+	 * elimina docente de la BD
 	 * @param docente
 	 */
 	public void eliminarDocente(Docente docente) {
-		// TODO Auto-generated method stub
+		String sql = "DELETE FROM Docente WHERE rowID = ?";
+
+		try (
+				PreparedStatement pstmt = conexion.prepareStatement(sql)) {
+			pstmt.setInt( 1, docente.getId_BD() );
+
+			pstmt.executeUpdate();
+
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
 	}
 
 
-	public void eliminarGrupoAlumnos() {
-		// TODO Auto-generated method stub
+	public void eliminarGrupoAlumnos(GrupoAlumnos grupoAlumnos) {
+		String sql = "DELETE FROM GrupoAlumnos WHERE rowID = ?";
+
+		try (
+				PreparedStatement pstmt = conexion.prepareStatement(sql)) {
+			pstmt.setInt( 1, grupoAlumnos.getId_BD() );
+
+			pstmt.executeUpdate();
+
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
 	}
 
 	/**
@@ -247,6 +397,8 @@ Return: array list co
 	public void eliminarSlot() {
 		// TODO Auto-generated method stub
 	}
+
+
 
 }
 
