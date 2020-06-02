@@ -45,6 +45,10 @@ public class Controlador {
 	 */
 	private Habitacion crearHabitacion(String[] datos) {
 		Habitacion habitacion = new Habitacion(datos[0]);
+		
+		int id = controladorBD.addHabitacion(habitacion);
+		habitacion.setId_BD(id);
+		
 		listaHabitaciones.add(habitacion);
 		return habitacion;
 	}
@@ -53,19 +57,25 @@ public class Controlador {
 	 * elimina de la listaHabitacion y de la BD la instancia del parametro pasado
 	 * @param habtiacion instancia a eliminar
 	 */
-	private void eliminarHabitacion(Habitacion habtiacion) {
-		listaHabitaciones.remove(habtiacion);
-		//TODO: eliminar de la base de datos
+	private void eliminarHabitacion(Habitacion habitiacion) {
+		listaHabitaciones.remove(habitiacion);
+		controladorBD.eliminarHabitacion(habitiacion);
 	}
 
 	/**
-	 * Crea objeto Asignatura y lo lista en colAsignatura
+	 * Crea objeto Asignatura, lo lista en colAsignatura y a la BD
 	 * @param datos datos que contendra la asignatura
 	 * @return objeto asignatura con los datos
 	 */
 	private Asignatura crearAsignatura(String[] datos) {
+		
 		Asignatura asignatura = new Asignatura(datos[0]);
+		
+		int id = controladorBD.addAsignatura(asignatura);
+		asignatura.setId_BD(id);
+		
 		listaAsignatura.add(asignatura);
+		
 		return asignatura;
 
 	}
@@ -76,8 +86,8 @@ public class Controlador {
 	 */
 	private void eliminarAsignatura(Asignatura asignatura) {
 		listaAsignatura.remove(asignatura);
-		//TODO: eliminar de la base de datos		
-	}
+		controladorBD.eliminaAsignatura(asignatura);
+		}
 
 
 	/**
@@ -86,9 +96,11 @@ public class Controlador {
 	 * @return 
 	 */
 	private Docente crearDocente(String[] datos) {
-		Docente asignatura = new Docente(datos[0], datos[1], datos[2], datos[3]);
-		listaDocente.add(asignatura);
-		return asignatura;
+		Docente docente = new Docente(datos[0], datos[1], datos[2], datos[3]);
+		int id = controladorBD.addDocente(docente);
+		docente.setId_BD(id);
+		listaDocente.add(docente);
+		return docente;
 	}
 	
 	/**
@@ -97,7 +109,7 @@ public class Controlador {
 	 */
 	private void eliminarDocente(Docente docente) {
 		listaDocente.remove(docente);
-		//TODO: eliminar de la BD
+		controladorBD.eliminarDocente(docente);
 	}
 
 	/**
@@ -107,6 +119,10 @@ public class Controlador {
 	 */
 	private GrupoAlumnos crearGrupoAlumno(String[] datos) {
 		GrupoAlumnos grupoAlumnos = new GrupoAlumnos(datos[0], datos[1]);
+		
+		int id = controladorBD.addGrupoAlumno(grupoAlumnos);
+		grupoAlumnos.setId_BD(id);
+		
 		listaGruposAlumnos.add(grupoAlumnos);
 		return grupoAlumnos;
 	}
@@ -117,7 +133,7 @@ public class Controlador {
 	 */
 	private void eliminarGrupoAlumnos(GrupoAlumnos grupoAlumnos) {
 		listaGruposAlumnos.remove(grupoAlumnos);
-		
+		controladorBD.eliminarGrupoAlumnos(grupoAlumnos);
 	}
 	
 	
@@ -157,7 +173,7 @@ public class Controlador {
 		switch (comando) {
 		case "aniadirAsignaturas":
 
-			datos = new InputPopup(interfazPrincipal, true, Asignatura.campos).getData();
+			datos = new InputPopup(interfazPrincipal, true, Asignatura.CAMPOS).getData();
 			Asignatura asignatura = crearAsignatura(datos);
 			return asignatura;
 
@@ -169,13 +185,13 @@ public class Controlador {
 
 		case "aniadirGrupoAlumnos":
 
-			datos = new InputPopup(interfazPrincipal, true, GrupoAlumnos.campos).getData();
+			datos = new InputPopup(interfazPrincipal, true, GrupoAlumnos.CAMPOS).getData();
 			GrupoAlumnos grupoALumnos = crearGrupoAlumno(datos);
 			return grupoALumnos;
 
 		case "aniadirHabitaciones":
 
-			datos = new InputPopup(interfazPrincipal, true, Habitacion.campos).getData();
+			datos = new InputPopup(interfazPrincipal, true, Habitacion.CAMPOS).getData();
 			Habitacion habitacion = crearHabitacion(datos);
 			return habitacion;
 
@@ -226,6 +242,28 @@ public class Controlador {
 		String clas = infoPanel.getClass().getSimpleName();
 			System.out.println(clas);
 
+		
+	}
+
+	
+	/**
+	 * recoje los listados de los objetos a listar y los añade a 
+	 * las listas de la interfaz
+	 */
+	public void eventoCargar() {
+
+		listaHabitaciones = controladorBD.obtenerListaHabitaciones();
+		interfazPrincipal.setListaHabitacion(listaHabitaciones);
+		
+		
+		listaAsignatura = controladorBD.obtenerListaAsignaturas();
+		interfazPrincipal.setListaAsignatura(listaAsignatura);
+		
+		listaDocente = controladorBD.obtenerListaDocentes();
+		interfazPrincipal.setListaDocente(listaDocente);
+		
+		listaGruposAlumnos = controladorBD.obtenerListaGrupoAlumnos();
+		interfazPrincipal.setListaGrupoAlumnos(listaGruposAlumnos);
 		
 	}
 
