@@ -152,6 +152,12 @@
 	12:30 - 13:00 repasar y complear memoria proyecto
 	17:30 - 20:00 repasar y complear memoria proyecto
 	
-	
+2/6/2020 8H
+	 8:45 -  9:00 revisando la primera guia
+	 9:10 - 10:30 Create and remove --desarrollando CRUD de los objetos creados
+	10:30 - 13:00 cargar desde la base de datos e intentar mostrar los valores mostrados
+	16:45 - 18:00 intentar mostrar los valores mostrados (problema resuelto)
+	18:00 - 19:00 repetir los pasos para los otros objetos
+	19:00 - 20:30 iniciando proceso de crear un evento en el horario, solucionado fallo en copyPaste
 	
 
