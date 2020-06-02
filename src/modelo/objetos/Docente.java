@@ -127,7 +127,10 @@ public class Docente extends InfoPanel{
 	}
 
 	
-	
+
+	public String toString() {
+		return this.nombre;
+	}
 
 
 }

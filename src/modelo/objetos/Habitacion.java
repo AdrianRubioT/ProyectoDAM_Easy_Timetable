@@ -72,6 +72,9 @@ public class Habitacion  extends InfoPanel{
 	}
 
 	
+	public String toString() {
+		return this.codigoHabitacion;
+	}
 
 }
 
