@@ -151,7 +151,7 @@ public class ControaldorBD {
 	 * @return void
 	 */
 	public int addGrupoAlumno(GrupoAlumnos grupoAlumnos) {
-		String sql = "INSERT INTO GrupoALumno(nombreGrupo, nombreCurso) VALUES(?,?)";
+		String sql = "INSERT INTO GrupoALumnos(nombreGrupo, nombreCurso) VALUES(?,?)";
 
 		try (
 				PreparedStatement pstmt = conexion.prepareStatement(sql)) {
@@ -188,7 +188,7 @@ public class ControaldorBD {
 
 		ArrayList<Habitacion> coleccion = new ArrayList<Habitacion>();
 		Habitacion habTemp;
-		
+
 		String sql = "SELECT rowid, * FROM Habitacion";
 
 		try (
@@ -200,19 +200,19 @@ public class ControaldorBD {
 				habTemp = new Habitacion();
 
 				habTemp.setCodigoHabitacion( rs.getString("codigoHabitacion") );
-				
+
 				//1 -> rowID from SQLite		no se porque no puedo acceder por el nombre
 				habTemp.setId_BD( rs.getInt(1) );
-				
+
 				coleccion.add(habTemp );
 
 			}
-			
-			
+
+
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 		}
-		
+
 		return coleccion;
 	}
 
@@ -220,24 +220,104 @@ public class ControaldorBD {
 	 * @return ArrayList<Asignatura>
 	 */
 	public ArrayList<Asignatura> obtenerListaAsignaturas() {
-		return null;
-		// TODO Auto-generated method stub
+		ArrayList<Asignatura> coleccion = new ArrayList<Asignatura>();
+		Asignatura habTemp;
+
+		String sql = "SELECT rowid, * FROM Asignatura";
+
+		try (
+				Statement stmt  = conexion.createStatement();
+				ResultSet rs    = stmt.executeQuery(sql)){
+
+			// loop through the result set
+			while (rs.next()) {
+				habTemp = new Asignatura();
+
+				habTemp.setNombre( rs.getString("nombre") );
+
+				//1 -> rowID from SQLite		no se porque no puedo acceder por el nombre
+				habTemp.setId_BD( rs.getInt(1) );
+
+				coleccion.add(habTemp );
+
+			}
+
+
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+
+		return coleccion;
 	}
 
 	/**
 	 * @return ArrayList<Docentes>
 	 */
 	public ArrayList<Docente> obtenerListaDocentes() {
-		return null;
-		// TODO Auto-generated method stub
+		ArrayList<Docente> coleccion = new ArrayList<Docente>();
+		Docente habTemp;
+
+		String sql = "SELECT rowid, * FROM Docente";
+
+		try (
+				Statement stmt  = conexion.createStatement();
+				ResultSet rs    = stmt.executeQuery(sql)){
+
+			// loop through the result set
+			while (rs.next()) {
+				habTemp = new Docente();
+
+				habTemp.setNombre( rs.getString("nombre") );
+				habTemp.setApellido1( rs.getString("apellido1") );
+				habTemp.setApellido1( rs.getString("apellido2") );
+				habTemp.setApellido1( rs.getString("especialidad") );
+
+				//1 -> rowID from SQLite		no se porque no puedo acceder por el nombre
+				habTemp.setId_BD( rs.getInt(1) );
+
+				coleccion.add(habTemp );
+			}
+
+
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+
+		return coleccion;
 	}
 
 	/**
 	 * @return ArrayList<GrupoAlumnos>
 	 */
 	public ArrayList<GrupoAlumnos> obtenerListaGrupoAlumnos() {
-		return null;
-		// TODO Auto-generated method stub
+		ArrayList<GrupoAlumnos> coleccion = new ArrayList<GrupoAlumnos>();
+		GrupoAlumnos habTemp;
+
+		String sql = "SELECT rowid, * FROM Docente";
+
+		try (
+				Statement stmt  = conexion.createStatement();
+				ResultSet rs    = stmt.executeQuery(sql)){
+
+			// loop through the result set
+			while (rs.next()) {
+				habTemp = new GrupoAlumnos();
+
+				habTemp.setNombreCurso( rs.getString("nombreCurso") );
+				habTemp.setNombreGrupo( rs.getString("nombreGrupo") );
+
+				//1 -> rowID from SQLite		no se porque no puedo acceder por el nombre
+				habTemp.setId_BD( rs.getInt(1) );
+
+				coleccion.add(habTemp );
+			}
+
+
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+
+		return coleccion;
 	}
 
 	/**
