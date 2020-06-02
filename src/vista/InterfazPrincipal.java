@@ -14,10 +14,16 @@ import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 
 import Controlador.Controlador;
+import modelo.objetos.Asignatura;
+import modelo.objetos.Docente;
+import modelo.objetos.GrupoAlumnos;
+import modelo.objetos.Habitacion;
+import vista.elementos.ListaTargetas.InfoPanel;
 import vista.elementos.ListaTargetas.ListaTarjetas;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 
 /**
@@ -75,6 +81,16 @@ public class InterfazPrincipal extends JFrame {
 			}
 		});
 		mnArchivo.add(mntmNuevo);
+		JMenuItem mntmCargar = new JMenuItem("Abrir");
+		mntmCargar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				controlador.eventoCargar();
+				
+			}
+		});
+		mnArchivo.add(mntmCargar);
+		
+		
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[]{0, 100, 0};
 		gridBagLayout.rowHeights = new int[]{0, 0};
@@ -149,7 +165,50 @@ public class InterfazPrincipal extends JFrame {
 		setVisible(true);
 	}
 
+	/**
+	 * Settea la nueva lista en tabAsignatura
+	 * @param listaAsignaturas
+	 */
+	public void setListaAsignatura(ArrayList<Asignatura>listaAsignaturas) {
+		tabAsignatura.eliminarTodo();
+		for (Asignatura asignatura : listaAsignaturas) {
+			tabAsignatura.aniadir(asignatura);
+		}
+	}
 	
+	/**
+	 * Setea la nueva lista en tabDocente
+	 * @param listaDocente
+	 */
+	public void setListaDocente(ArrayList<Docente>listaDocente) {
+		tabDocente.eliminarTodo();
+		for (Docente docente : listaDocente) {
+			tabDocente.aniadir(docente);
+		}
+	}
+	
+	
+	/**
+	 * Setea la nueva lista en tabAsignatura
+	 * @param listaAsignaturas
+	 */
+	public void setListaGrupoAlumnos(ArrayList<GrupoAlumnos>listaGrupoAlumnos) {
+		tabGrupoAlumnos.eliminarTodo();
+		for (GrupoAlumnos grupoAlumnos: listaGrupoAlumnos) {
+			tabGrupoAlumnos.aniadir(grupoAlumnos);
+		}
+	}
+	
+	/**
+	 * Setea la nueva lista en tabAsignatura
+	 * @param listaAsignaturas
+	 */
+	public void setListaHabitacion(ArrayList<Habitacion>listaHabitacion ) {
+		tabHabitaciones.eliminarTodo();
+		for (Habitacion habitacion: listaHabitacion) {
+			tabHabitaciones.aniadir(habitacion);
+		}
+	}
 	
 	
 }
