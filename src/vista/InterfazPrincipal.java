@@ -18,7 +18,6 @@ import modelo.objetos.Asignatura;
 import modelo.objetos.Docente;
 import modelo.objetos.GrupoAlumnos;
 import modelo.objetos.Habitacion;
-import vista.elementos.ListaTargetas.InfoPanel;
 import vista.elementos.ListaTargetas.ListaTarjetas;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
@@ -120,11 +119,8 @@ public class InterfazPrincipal extends JFrame {
 		gbc_panel.gridy = 0;
 		panHorario.add(panel, gbc_panel);
 
-		JLabel lblHorario = new JLabel("Horario:");
+		JLabel lblHorario = new JLabel("Momento:");
 		panel.add(lblHorario);
-
-		JComboBox comboBox = new JComboBox();
-		panel.add(comboBox);
 
 		JButton btnAadir = new JButton("A\u00F1adir");
 		panel.add(btnAadir);
