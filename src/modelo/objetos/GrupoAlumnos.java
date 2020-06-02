@@ -31,6 +31,10 @@ public class GrupoAlumnos extends InfoPanel{
 		actualizaSuper();
 	}
 	
+	public GrupoAlumnos() {
+		super(CAMPOS);
+	}
+
 	/**
 	 * recoge los valores de las variables de la clase para notificar a super
 	 */

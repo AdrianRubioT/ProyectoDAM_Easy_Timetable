@@ -37,6 +37,11 @@ public class Docente extends InfoPanel{
 	}
 
 
+	public Docente() {
+		super(campos);
+	}
+
+
 	/**
 	 * recoge los valores de las variables de la clase para notificar a super
 	 */

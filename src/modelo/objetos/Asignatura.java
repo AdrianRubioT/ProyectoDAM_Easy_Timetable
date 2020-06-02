@@ -27,6 +27,10 @@ public class Asignatura extends InfoPanel{
 		actualizaSuper();
 	}
 
+	public Asignatura() {
+		super(CAMPOS);
+	}
+
 	/**
 	 * recoge los valores de las variables de la clase para notificar a super
 	 */
