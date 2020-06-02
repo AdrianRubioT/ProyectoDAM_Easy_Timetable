@@ -11,6 +11,7 @@ import modelo.objetos.GrupoAlumnos;
 import modelo.objetos.Habitacion;
 import vista.InterfazPrincipal;
 import vista.elementos.ListaTargetas.InfoPanel;
+import vista.interfaces.crearMomentos.crearMomento;
 import vista.interfaces.popup.InputPopup;
 
 /**
@@ -264,6 +265,13 @@ public class Controlador {
 		
 		listaGruposAlumnos = controladorBD.obtenerListaGrupoAlumnos();
 		interfazPrincipal.setListaGrupoAlumnos(listaGruposAlumnos);
+		
+	}
+
+
+	public void aniadirEvento() {
+
+		new crearMomento(interfazPrincipal, true, listaAsignatura, listaDocente, listaGruposAlumnos, listaHabitaciones);
 		
 	}
 

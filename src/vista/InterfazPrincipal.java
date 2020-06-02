@@ -123,6 +123,11 @@ public class InterfazPrincipal extends JFrame {
 		panel.add(lblHorario);
 
 		JButton btnAadir = new JButton("A\u00F1adir");
+		btnAadir.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				controlador.aniadirEvento();
+			}
+		});
 		panel.add(btnAadir);
 
 		JButton btnEliminar = new JButton("Eliminar");
