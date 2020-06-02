@@ -5,12 +5,21 @@ import java.awt.FlowLayout;
 
 import javax.swing.JButton;
 import javax.swing.JDialog;
+import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import modelo.objetos.Asignatura;
+import modelo.objetos.Docente;
+import modelo.objetos.GrupoAlumnos;
+import modelo.objetos.Habitacion;
+
 import java.awt.GridBagLayout;
 import javax.swing.JLabel;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
+import java.util.ArrayList;
+
 import javax.swing.JSpinner;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.JComboBox;
@@ -18,32 +27,34 @@ import javax.swing.JComboBox;
 public class crearMomento extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
-	private JComboBox cbHabitacion;
-	private JComboBox cbAsignatura;
-	private JComboBox cbDocente;
-	private JComboBox cbGrupoAlum;
+	private JComboBox<Habitacion> cbHabitacion;
+	private JComboBox<Asignatura> cbAsignatura;
+	private JComboBox<Docente> cbDocente;
+	private JComboBox<GrupoAlumnos> cbGrupoAlum;
 	private JSpinner spinHoraIni;
 	private JSpinner spinMinIni;
 	private JSpinner spinHoraFin;
 	private JSpinner spinMinFin;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		try {
-			crearMomento dialog = new crearMomento();
-			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-			dialog.setVisible(true);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
+
 
 	/**
 	 * Create the dialog.
+	 * @param listaAsignatura 
+	 * @param listaHabitaciones 
+	 * @param listaGruposAlumnos 
+	 * @param listaDocente 
 	 */
-	public crearMomento() {
+	public crearMomento(
+			JFrame padre, boolean modal, 
+			ArrayList<Asignatura> listaAsignatura, 
+			ArrayList<Docente> listaDocente, 
+			ArrayList<GrupoAlumnos> listaGruposAlumnos, 
+			ArrayList<Habitacion> listaHabitaciones
+			) {
+		
+		super(padre, modal);
+		
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -122,7 +133,12 @@ public class crearMomento extends JDialog {
 			contentPanel.add(lblGrupoAlumno, gbc_lblGrupoAlumno);
 		}
 		{
-			cbGrupoAlum = new JComboBox();
+			cbGrupoAlum = new JComboBox<GrupoAlumnos>();
+			
+			for(GrupoAlumnos grupoAlumno : listaGruposAlumnos) {
+				cbGrupoAlum.addItem(grupoAlumno);
+			}
+			
 			GridBagConstraints gbc_cbGrupoAlum = new GridBagConstraints();
 			gbc_cbGrupoAlum.insets = new Insets(0, 0, 5, 5);
 			gbc_cbGrupoAlum.fill = GridBagConstraints.HORIZONTAL;
@@ -141,7 +157,12 @@ public class crearMomento extends JDialog {
 			contentPanel.add(lblDocente, gbc_lblDocente);
 		}
 		{
-			cbDocente = new JComboBox();
+			cbDocente = new JComboBox<Docente>();
+			
+			for(Docente docente : listaDocente) {
+			    cbDocente.addItem(docente);
+			}
+			
 			GridBagConstraints gbc_cbDocente = new GridBagConstraints();
 			gbc_cbDocente.insets = new Insets(0, 0, 5, 5);
 			gbc_cbDocente.fill = GridBagConstraints.HORIZONTAL;
@@ -151,6 +172,7 @@ public class crearMomento extends JDialog {
 		}
 		{
 			JLabel lblAsignatura = new JLabel("Asignatura");
+			
 			GridBagConstraints gbc_lblAsignatura = new GridBagConstraints();
 			gbc_lblAsignatura.anchor = GridBagConstraints.WEST;
 			gbc_lblAsignatura.insets = new Insets(0, 0, 5, 5);
@@ -160,7 +182,11 @@ public class crearMomento extends JDialog {
 			contentPanel.add(lblAsignatura, gbc_lblAsignatura);
 		}
 		{
-			cbAsignatura = new JComboBox();
+			cbAsignatura = new JComboBox<Asignatura>();
+			for(Asignatura asignatura : listaAsignatura) {
+			    cbAsignatura.addItem(asignatura);
+			}
+			
 			GridBagConstraints gbc_cbAsignatura = new GridBagConstraints();
 			gbc_cbAsignatura.insets = new Insets(0, 0, 5, 5);
 			gbc_cbAsignatura.fill = GridBagConstraints.HORIZONTAL;
@@ -178,7 +204,11 @@ public class crearMomento extends JDialog {
 			contentPanel.add(lblHabitacion, gbc_lblHabitacion);
 		}
 		{
-			cbHabitacion = new JComboBox();
+			cbHabitacion = new JComboBox<Habitacion>();
+			for(Habitacion habitacion : listaHabitaciones) {
+				cbHabitacion.addItem(habitacion);
+			}
+			
 			GridBagConstraints gbc_cbHabitacion = new GridBagConstraints();
 			gbc_cbHabitacion.insets = new Insets(0, 0, 0, 5);
 			gbc_cbHabitacion.fill = GridBagConstraints.HORIZONTAL;
@@ -202,6 +232,9 @@ public class crearMomento extends JDialog {
 				buttonPane.add(cancelButton);
 			}
 		}
+		
+		setVisible(true);
+		
 	}
 
 }
