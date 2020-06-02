@@ -14,6 +14,7 @@ import Controlador.Controlador;
 import vista.seleccion.Seleccion;
 
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 
 /**
@@ -125,7 +126,15 @@ public class ListaTarjetas extends JPanel{
 		revalidate();
 		repaint();
 	}
-
+	
+	/**
+	 * elimina todos los elementos en lista
+	 */
+	public void eliminarTodo() {
+		for (int i = 0; i < lista.getComponentCount(); i++) {
+			lista.remove(0);
+		}
+	}
 	
 	/**
 	 * @return the titulo
