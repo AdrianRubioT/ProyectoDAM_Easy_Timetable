@@ -98,10 +98,12 @@ public class ConexionSQLite {
 				"	ID_Asignatura  integer,\n" + 
 				"	ID_Docente integer,\n" + 
 				"	ID_GrupoAlumnos integer,\n" + 
+				"	ID_IntervaloTiempo interger,\n" + 
 				"	FOREIGN KEY(ID_Habitacion) REFERENCES Habitacion(ID_Habitacion)ON 			DELETE CASCADE,\n" + 
 				"	FOREIGN KEY(ID_Asignatura) REFERENCES Asignatura(ID_Asignatura)ON 			DELETE CASCADE,\n" + 
 				"	FOREIGN KEY(ID_Docente) REFERENCES Docente(ID_Docente)ON DELETE 		CASCADE,\n" + 
-				"	FOREIGN KEY(ID_GrupoAlumnos) REFERENCES 							GrupoAlumnos(ID_GrupoAlumnos)ON DELETE CASCADE\n" + 
+				"	FOREIGN KEY(ID_GrupoAlumnos) REFERENCES 							GrupoAlumnos(ID_GrupoAlumnos)ON DELETE CASCADE\n," +
+				"	FOREIGN KEY(ID_IntervaloTiempo) REFERENCES 							IntervaloTiempo(ID_IntervaloTiempo)ON DELETE CASCADE\n" +
 				"	);";
 
 		//Triggers
