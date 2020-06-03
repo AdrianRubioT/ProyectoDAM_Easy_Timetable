@@ -13,7 +13,9 @@ public class IntervaloTiempo  {
 	private int minutoInicio;
 	private int horaFin;
 	private int minutoFin;
-
+	private int dia;
+	
+	
 	public IntervaloTiempo () {
 
 	}
@@ -24,12 +26,14 @@ public class IntervaloTiempo  {
 	 * Margen:
 	 *     Horas: 0 - 24
 	 *     Minutos: 0 - 60
+	 * @param dia dia de la semana 0-Lunes 6-Domingo
 	 * @param horaInit
 	 * @param minutoInit
 	 * @param horaFin
 	 * @param minutoFin
 	 */
-	public IntervaloTiempo(int horaIncio, int minutoInicio, int horaFin, int minutoFin) {
+	public IntervaloTiempo(int dia, int horaIncio, int minutoInicio, int horaFin, int minutoFin) {
+		this.dia = dia;
 		this.horaIncio = horaIncio;
 		this.minutoInicio = minutoInicio;
 		this.horaFin = horaFin;
@@ -45,6 +49,76 @@ public class IntervaloTiempo  {
 	public boolean comprobarSolapamiento(IntervaloTiempo otroMargen) {
 		//TODO: por hacer
 		return false;
+	}
+
+	/**
+	 * @return the horaIncio
+	 */
+	public int getHoraIncio() {
+		return horaIncio;
+	}
+
+	/**
+	 * @param horaIncio the horaIncio to set
+	 */
+	public void setHoraIncio(int horaIncio) {
+		this.horaIncio = horaIncio;
+	}
+
+	/**
+	 * @return the minutoInicio
+	 */
+	public int getMinutoInicio() {
+		return minutoInicio;
+	}
+
+	/**
+	 * @param minutoInicio the minutoInicio to set
+	 */
+	public void setMinutoInicio(int minutoInicio) {
+		this.minutoInicio = minutoInicio;
+	}
+
+	/**
+	 * @return the horaFin
+	 */
+	public int getHoraFin() {
+		return horaFin;
+	}
+
+	/**
+	 * @param horaFin the horaFin to set
+	 */
+	public void setHoraFin(int horaFin) {
+		this.horaFin = horaFin;
+	}
+
+	/**
+	 * @return the minutoFin
+	 */
+	public int getMinutoFin() {
+		return minutoFin;
+	}
+
+	/**
+	 * @param minutoFin the minutoFin to set
+	 */
+	public void setMinutoFin(int minutoFin) {
+		this.minutoFin = minutoFin;
+	}
+
+	/**
+	 * @return the dia
+	 */
+	public int getDia() {
+		return dia;
+	}
+
+	/**
+	 * @param dia the dia to set
+	 */
+	public void setDia(int dia) {
+		this.dia = dia;
 	}
 
 
