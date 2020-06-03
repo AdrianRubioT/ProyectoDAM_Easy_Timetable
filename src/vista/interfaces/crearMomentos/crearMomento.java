@@ -35,6 +35,7 @@ public class crearMomento extends JDialog {
 	private JSpinner spinMinIni;
 	private JSpinner spinHoraFin;
 	private JSpinner spinMinFin;
+	private JComboBox cbDiaSem;
 
 
 
@@ -61,9 +62,9 @@ public class crearMomento extends JDialog {
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
 		GridBagLayout gbl_contentPanel = new GridBagLayout();
 		gbl_contentPanel.columnWidths = new int[]{119, 0, 0, 0};
-		gbl_contentPanel.rowHeights = new int[]{24, 37, 27, 28, 24, 0, 0};
-		gbl_contentPanel.columnWeights = new double[]{0.0, 1.0, 0.0, Double.MIN_VALUE};
-		gbl_contentPanel.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
+		gbl_contentPanel.rowHeights = new int[]{24, 37, 28, 27, 28, 24, 0, 0};
+		gbl_contentPanel.columnWeights = new double[]{1.0, 1.0, 0.0, Double.MIN_VALUE};
+		gbl_contentPanel.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 		contentPanel.setLayout(gbl_contentPanel);
 		{
 			JLabel lblHoraInico = new JLabel("Hora Inico");
@@ -123,13 +124,31 @@ public class crearMomento extends JDialog {
 			}
 		}
 		{
+			JLabel lblDiaSemana = new JLabel("Dia semana");
+			GridBagConstraints gbc_lblDiaSemana = new GridBagConstraints();
+			gbc_lblDiaSemana.anchor = GridBagConstraints.WEST;
+			gbc_lblDiaSemana.insets = new Insets(0, 0, 5, 5);
+			gbc_lblDiaSemana.gridx = 0;
+			gbc_lblDiaSemana.gridy = 2;
+			contentPanel.add(lblDiaSemana, gbc_lblDiaSemana);
+		}
+		{
+			cbDiaSem = new JComboBox();
+			GridBagConstraints gbc_cbDiaSem = new GridBagConstraints();
+			gbc_cbDiaSem.insets = new Insets(0, 0, 5, 5);
+			gbc_cbDiaSem.fill = GridBagConstraints.HORIZONTAL;
+			gbc_cbDiaSem.gridx = 1;
+			gbc_cbDiaSem.gridy = 2;
+			contentPanel.add(cbDiaSem, gbc_cbDiaSem);
+		}
+		{
 			JLabel lblGrupoAlumno = new JLabel("Grupo Alumno");
 			GridBagConstraints gbc_lblGrupoAlumno = new GridBagConstraints();
 			gbc_lblGrupoAlumno.anchor = GridBagConstraints.WEST;
 			gbc_lblGrupoAlumno.fill = GridBagConstraints.VERTICAL;
 			gbc_lblGrupoAlumno.insets = new Insets(0, 0, 5, 5);
 			gbc_lblGrupoAlumno.gridx = 0;
-			gbc_lblGrupoAlumno.gridy = 2;
+			gbc_lblGrupoAlumno.gridy = 3;
 			contentPanel.add(lblGrupoAlumno, gbc_lblGrupoAlumno);
 		}
 		{
@@ -143,7 +162,7 @@ public class crearMomento extends JDialog {
 			gbc_cbGrupoAlum.insets = new Insets(0, 0, 5, 5);
 			gbc_cbGrupoAlum.fill = GridBagConstraints.HORIZONTAL;
 			gbc_cbGrupoAlum.gridx = 1;
-			gbc_cbGrupoAlum.gridy = 2;
+			gbc_cbGrupoAlum.gridy = 3;
 			contentPanel.add(cbGrupoAlum, gbc_cbGrupoAlum);
 		}
 		{
@@ -153,7 +172,7 @@ public class crearMomento extends JDialog {
 			gbc_lblDocente.fill = GridBagConstraints.VERTICAL;
 			gbc_lblDocente.insets = new Insets(0, 0, 5, 5);
 			gbc_lblDocente.gridx = 0;
-			gbc_lblDocente.gridy = 3;
+			gbc_lblDocente.gridy = 4;
 			contentPanel.add(lblDocente, gbc_lblDocente);
 		}
 		{
@@ -167,7 +186,7 @@ public class crearMomento extends JDialog {
 			gbc_cbDocente.insets = new Insets(0, 0, 5, 5);
 			gbc_cbDocente.fill = GridBagConstraints.HORIZONTAL;
 			gbc_cbDocente.gridx = 1;
-			gbc_cbDocente.gridy = 3;
+			gbc_cbDocente.gridy = 4;
 			contentPanel.add(cbDocente, gbc_cbDocente);
 		}
 		{
@@ -178,7 +197,7 @@ public class crearMomento extends JDialog {
 			gbc_lblAsignatura.insets = new Insets(0, 0, 5, 5);
 			gbc_lblAsignatura.fill = GridBagConstraints.VERTICAL;
 			gbc_lblAsignatura.gridx = 0;
-			gbc_lblAsignatura.gridy = 4;
+			gbc_lblAsignatura.gridy = 5;
 			contentPanel.add(lblAsignatura, gbc_lblAsignatura);
 		}
 		{
@@ -191,7 +210,7 @@ public class crearMomento extends JDialog {
 			gbc_cbAsignatura.insets = new Insets(0, 0, 5, 5);
 			gbc_cbAsignatura.fill = GridBagConstraints.HORIZONTAL;
 			gbc_cbAsignatura.gridx = 1;
-			gbc_cbAsignatura.gridy = 4;
+			gbc_cbAsignatura.gridy = 5;
 			contentPanel.add(cbAsignatura, gbc_cbAsignatura);
 		}
 		{
@@ -200,7 +219,7 @@ public class crearMomento extends JDialog {
 			gbc_lblHabitacion.anchor = GridBagConstraints.WEST;
 			gbc_lblHabitacion.insets = new Insets(0, 0, 0, 5);
 			gbc_lblHabitacion.gridx = 0;
-			gbc_lblHabitacion.gridy = 5;
+			gbc_lblHabitacion.gridy = 6;
 			contentPanel.add(lblHabitacion, gbc_lblHabitacion);
 		}
 		{
@@ -213,7 +232,7 @@ public class crearMomento extends JDialog {
 			gbc_cbHabitacion.insets = new Insets(0, 0, 0, 5);
 			gbc_cbHabitacion.fill = GridBagConstraints.HORIZONTAL;
 			gbc_cbHabitacion.gridx = 1;
-			gbc_cbHabitacion.gridy = 5;
+			gbc_cbHabitacion.gridy = 6;
 			contentPanel.add(cbHabitacion, gbc_cbHabitacion);
 		}
 		{
