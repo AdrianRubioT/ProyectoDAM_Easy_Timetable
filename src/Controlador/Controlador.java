@@ -47,7 +47,7 @@ public class Controlador {
 	 * @param datos
 	 * @return
 	 */
-	private Slot crarMomento(IntervaloTiempo intervalo, Habitacion habitacion, 
+	private Slot crearMomento(IntervaloTiempo intervalo, Habitacion habitacion, 
 			Asignatura asignatura, Docente docentes,GrupoAlumnos grupoAlumnos) {
 
 		Slot momento= new Slot(intervalo, habitacion, asignatura, docentes, grupoAlumnos);
@@ -321,11 +321,13 @@ public class Controlador {
 		crearMomento evento = 
 				new crearMomento(interfazPrincipal, true, listaAsignatura, listaDocente, listaGruposAlumnos, listaHabitaciones);
 
-		crearIntervaloTiempo(evento.getSelDiaSem(),
+		IntervaloTiempo intervalo = crearIntervaloTiempo(evento.getSelDiaSem(),
 				evento.getSelHoraIni(), evento.getSelMinIni(), 
 				evento.getSelHoraFin(), evento.getSelMinFin() );
 
-		Slot momento = new Slot();
+		Slot momento = crearMomento(intervalo, evento.getSelHabitacion(), 
+				evento.getSelAsignatura(), evento.getSelDocente(), evento.getSelGrupoAlum() );
+
 
 
 	}
