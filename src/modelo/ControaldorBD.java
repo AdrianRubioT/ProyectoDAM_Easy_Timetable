@@ -225,14 +225,15 @@ public class ControaldorBD {
 
 		try (
 				PreparedStatement pstmt = conexion.prepareStatement(sql)) {
+
 			pstmt.setInt(1, momento.getHabitacion().getId_BD() );
 			pstmt.setInt(2, momento.getAsignatura().getId_BD() );
 			pstmt.setInt(3, momento.getDocentes().getId_BD() );
 			pstmt.setInt(4, momento.getGrupoAlumnos().getId_BD() );
 			pstmt.setInt(5, momento.getIntervalo().getId_BD() );
 
-			pstmt.executeUpdate();
 
+			pstmt.executeUpdate();
 			ResultSet resultado = pstmt.getGeneratedKeys();
 			if (resultado.next()) {
 				return resultado.getInt(1);
