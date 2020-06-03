@@ -46,6 +46,7 @@ public class ConexionSQLite {
 
 	/**
 	 * Genera la estructura de la base de datos
+	 * TODO: La ejecucion de triggers no esta bien, buscar una solucin mediante codigo
 	 * @param conSQLite BD donde crear la estructura
 	 */
 	public static void crearEstructura(Connection connSQLite) {
@@ -226,14 +227,15 @@ public class ConexionSQLite {
 			stmt.execute(tablaIntervaloTiempo);
 			stmt.execute(tablaOcurren);
 			
-			stmt.execute(triggerInSolaHab);
-			stmt.execute(triggerUpSolaHab);
-			stmt.execute(triggerInSolaAsig);
-			stmt.execute(triggerUpSolaAsig);
-			stmt.execute(triggerInSolaDoc);
-			stmt.execute(triggerUpSolaDoc);
-			stmt.execute(triggerInSolaGrupoAlum);
-			stmt.execute(triggerUpSolaGrupoAlum);
+			
+//			stmt.execute(triggerInSolaHab);
+//			stmt.execute(triggerUpSolaHab);
+//			stmt.execute(triggerInSolaAsig);
+//			stmt.execute(triggerUpSolaAsig);
+//			stmt.execute(triggerInSolaDoc);
+//			stmt.execute(triggerUpSolaDoc);
+//			stmt.execute(triggerInSolaGrupoAlum);
+//			stmt.execute(triggerUpSolaGrupoAlum);
 			
 			
 			connSQLite.commit();
