@@ -9,6 +9,9 @@ Las horas i minutos se indican como un
  *
  */
 public class IntervaloTiempo  {
+	
+	private int id_BD;
+	
 	private int horaIncio;
 	private int minutoInicio;
 	private int horaFin;
@@ -49,6 +52,22 @@ public class IntervaloTiempo  {
 	public boolean comprobarSolapamiento(IntervaloTiempo otroMargen) {
 		//TODO: por hacer
 		return false;
+	}
+	
+	
+
+	/**
+	 * @return the id_BD
+	 */
+	public int getId_BD() {
+		return id_BD;
+	}
+
+	/**
+	 * @param id_BD the id_BD to set
+	 */
+	public void setId_BD(int id_BD) {
+		this.id_BD = id_BD;
 	}
 
 	/**
