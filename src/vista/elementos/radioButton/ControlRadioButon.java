@@ -45,7 +45,7 @@ public class ControlRadioButon {
 		
 		radio.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				
+				controlador.actualizarAreaTrabajo();
 			}
 		});
 		

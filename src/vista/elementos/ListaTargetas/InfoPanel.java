@@ -144,6 +144,15 @@ public class InfoPanel extends JPanel implements Seleccionable {
 			add(radio, gbc_lblLinea_3);
 			
 		}
+
+		/**
+		 * @return the tipo
+		 */
+		public String getTipo() {
+			return tipo;
+		}
 	
+		
+		
 }
 

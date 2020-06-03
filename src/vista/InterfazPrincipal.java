@@ -215,5 +215,9 @@ public class InterfazPrincipal extends JFrame {
 	}
 	
 	
+	public ControlRadioButon getControlRadioButon() {
+		return controlRadio;
+	}
+	
 }
 

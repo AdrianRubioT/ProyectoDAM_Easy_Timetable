@@ -113,7 +113,7 @@ public class ListaTarjetas extends JPanel{
 	 */
 	public void aniadir(InfoPanel object) {
 		
-		String text = object.toString();
+		String text = object.getTipo() +" : "+ object.toString();
 		object.addRadioButon(controlRadio.crearRadioButton("vista", text) );
 		lista.add(object);
 		

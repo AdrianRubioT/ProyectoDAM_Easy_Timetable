@@ -333,5 +333,15 @@ public class Controlador {
 	}
 
 
+	/**
+	 * 
+	 */
+	public void actualizarAreaTrabajo() {
+		System.out.println(
+				interfazPrincipal.getControlRadioButon().getSelected().getActionCommand()
+				);
+	}
+
+
 }
 
