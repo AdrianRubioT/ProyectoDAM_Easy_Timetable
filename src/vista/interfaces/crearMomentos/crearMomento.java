@@ -137,18 +137,13 @@ public class crearMomento extends JDialog {
 		}
 		{
 			cbDiaSem = new JComboBox<String>();
-			cbDiaSem.addItem("Enero");
-			cbDiaSem.addItem("Febrero");
-			cbDiaSem.addItem("Marzo");
-			cbDiaSem.addItem("Abril");
-			cbDiaSem.addItem("Mayo");
-			cbDiaSem.addItem("Junio");
-			cbDiaSem.addItem("Julio");
-			cbDiaSem.addItem("Agosto");
-			cbDiaSem.addItem("Septiembre");
-			cbDiaSem.addItem("Octubre");
-			cbDiaSem.addItem("Noviembre");
-			cbDiaSem.addItem("Diciembre");
+			cbDiaSem.addItem("Lunes");
+			cbDiaSem.addItem("Martes");
+			cbDiaSem.addItem("Miercoles");
+			cbDiaSem.addItem("Jueves");
+			cbDiaSem.addItem("Viernes");
+			cbDiaSem.addItem("Sabado");
+			cbDiaSem.addItem("Domingo");
 			
 			
 			GridBagConstraints gbc_cbDiaSem = new GridBagConstraints();
