@@ -7,6 +7,8 @@ package modelo.objetos;
  */
 public class Slot {
 	
+	private int id_BD;
+	
 	private IntervaloTiempo intervalo;
 	private Habitacion habitacion;
 	private Asignatura asignatura;
@@ -128,9 +130,22 @@ public class Slot {
 		this.grupoAlumnos = grupoAlumnos;
 	}
 
-	
-	
-	
+
+	/**
+	 * @return the id_BD
+	 */
+	public int getId_BD() {
+		return id_BD;
+	}
+
+
+	/**
+	 * @param id_BD the id_BD to set
+	 */
+	public void setId_BD(int id_BD) {
+		this.id_BD = id_BD;
+	}
+
 	
 
 }
