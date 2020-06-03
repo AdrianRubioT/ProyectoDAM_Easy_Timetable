@@ -212,10 +212,36 @@ public class ControaldorBD {
 	
 	/**
 	 * inserta una instancia de habitacion en la BD
-	 * @return void
+	 * @param momento 
 	 */
-	public void addSlot() {
-		// TODO Auto-generated method stub
+	public int addSlot(Slot momento) {
+		String sql = "INSERT INTO Ocurre("
+				+ "ID_Habitacion,"
+				+ "ID_Asignatura, "
+				+ "ID_Docente,"
+				+ "ID_GrupoAlumnos) "
+				+ "VALUES(?,?,?,?,?)";
+
+		try (
+				PreparedStatement pstmt = conexion.prepareStatement(sql)) {
+			pstmt.setInt(1, momento.getHabitacion().getId_BD() );
+			pstmt.setInt(2, momento.getAsignatura().getId_BD() );
+			pstmt.setInt(3, momento.getDocentes().getId_BD() );
+			pstmt.setInt(4, momento.getGrupoAlumnos().getId_BD() );
+
+			pstmt.executeUpdate();
+
+			ResultSet resultado = pstmt.getGeneratedKeys();
+			if (resultado.next()) {
+				return resultado.getInt(1);
+			}
+
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+		//return para que indica fallo
+		//TODO: cambiar por una excepcion o algo mejor
+		return -1;
 	}
 
 	/**
