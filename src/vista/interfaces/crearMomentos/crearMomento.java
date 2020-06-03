@@ -23,6 +23,8 @@ import java.util.ArrayList;
 import javax.swing.JSpinner;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.JComboBox;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class crearMomento extends JDialog {
 
@@ -37,6 +39,7 @@ public class crearMomento extends JDialog {
 	private JSpinner spinMinFin;
 	private JComboBox <String> cbDiaSem;
 
+	private boolean isAcepted = false;
 
 
 	/**
@@ -133,19 +136,19 @@ public class crearMomento extends JDialog {
 			contentPanel.add(lblDiaSemana, gbc_lblDiaSemana);
 		}
 		{
-//			cbDiaSem = new JComboBox();
-//			cbDiaSem.add("Enero");
-//			cbDiaSem.add("Febrero");
-//			cbDiaSem.add("Marzo");
-//			cbDiaSem.add("Abril");
-//			cbDiaSem.add("Mayo");
-//			cbDiaSem.add("Junio");
-//			cbDiaSem.add("Julio");
-//			cbDiaSem.add("Agosto");
-//			cbDiaSem.add("Septiembre");
-//			cbDiaSem.add("Octubre");
-//			cbDiaSem.add("Noviembre");
-//			cbDiaSem.add("Diciembre");
+			cbDiaSem = new JComboBox<String>();
+			cbDiaSem.addItem("Enero");
+			cbDiaSem.addItem("Febrero");
+			cbDiaSem.addItem("Marzo");
+			cbDiaSem.addItem("Abril");
+			cbDiaSem.addItem("Mayo");
+			cbDiaSem.addItem("Junio");
+			cbDiaSem.addItem("Julio");
+			cbDiaSem.addItem("Agosto");
+			cbDiaSem.addItem("Septiembre");
+			cbDiaSem.addItem("Octubre");
+			cbDiaSem.addItem("Noviembre");
+			cbDiaSem.addItem("Diciembre");
 			
 			
 			GridBagConstraints gbc_cbDiaSem = new GridBagConstraints();
@@ -255,14 +258,27 @@ public class crearMomento extends JDialog {
 			getContentPane().add(buttonPane, BorderLayout.SOUTH);
 			{
 				JButton okButton = new JButton("OK");
+				okButton.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						isAcepted = true;
+						dispose();
+					}
+				});
 				okButton.setActionCommand("OK");
 				buttonPane.add(okButton);
 				getRootPane().setDefaultButton(okButton);
 			}
 			{
 				JButton cancelButton = new JButton("Cancel");
+				cancelButton.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						isAcepted = false;
+						dispose();
+					}
+				});
 				cancelButton.setActionCommand("Cancel");
 				buttonPane.add(cancelButton);
+				
 			}
 		}
 		
@@ -270,4 +286,88 @@ public class crearMomento extends JDialog {
 		
 	}
 
+
+
+	/**
+	 * @return the cbHabitacion
+	 */
+	public Habitacion getCbHabitacion() {
+		return (Habitacion) cbHabitacion.getSelectedItem();
+	}
+
+
+	/**
+	 * @return the cbAsignatura
+	 */
+	public Asignatura getCbAsignatura() {
+		return (Asignatura) cbAsignatura.getSelectedItem();
+	}
+
+
+	/**
+	 * @return the cbDocente
+	 */
+	public Docente getCbDocente() {
+		return (Docente) cbDocente.getSelectedItem();
+	}
+
+
+	/**
+	 * @return the cbGrupoAlum
+	 */
+	public GrupoAlumnos getCbGrupoAlum() {
+		return (GrupoAlumnos) cbGrupoAlum.getSelectedItem();
+	}
+
+
+	/**
+	 * @return the spinHoraIni
+	 */
+	public int getSpinHoraIni() {
+		return (int )spinHoraIni.getValue();
+	}
+
+
+	/**
+	 * @return the spinMinIni
+	 */
+	public int getSpinMinIni() {
+		return (int) spinMinIni.getValue();
+	}
+
+
+	/**
+	 * @return the spinHoraFin
+	 */
+	public int getSpinHoraFin() {
+		return (int) spinHoraFin.getValue();
+	}
+
+
+	/**
+	 * @return the spinMinFin
+	 */
+	public int getSpinMinFin() {
+		return (int) spinMinFin.getValue();
+	}
+
+
+	/**
+	 * @return the cbDiaSem
+	 */
+	public int getCbDiaSem() {
+		return cbDiaSem.getSelectedIndex();
+	}
+
+
+	/**
+	 * @return the isAcepted
+	 */
+	public boolean isAcepted() {
+		return isAcepted;
+	}
+
+	
+	
+	
 }
