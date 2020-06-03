@@ -9,6 +9,7 @@ import modelo.objetos.Asignatura;
 import modelo.objetos.Docente;
 import modelo.objetos.GrupoAlumnos;
 import modelo.objetos.Habitacion;
+import modelo.objetos.IntervaloTiempo;
 import vista.InterfazPrincipal;
 import vista.elementos.ListaTargetas.InfoPanel;
 import vista.interfaces.crearMomentos.crearMomento;
@@ -27,16 +28,37 @@ public class Controlador {
 	private ArrayList<Asignatura> listaAsignatura = new ArrayList<Asignatura>();
 	private ArrayList<Docente> listaDocente = new ArrayList<Docente>();
 	private ArrayList<GrupoAlumnos> listaGruposAlumnos = new ArrayList<GrupoAlumnos>();
+	private ArrayList<IntervaloTiempo> listaIntervaloTiempo= new ArrayList<IntervaloTiempo>();
 
 	private ControaldorBD controladorBD = new ControaldorBD();
 	private InterfazPrincipal interfazPrincipal = new InterfazPrincipal(this);
 
-	
-	
-	
+
+
+
 	public Controlador() {
 
 	}
+
+
+	/**
+	 * Inicialia objeto IntervaloTiempo y lo  aniade a la coleccion de IntervaloTiempo
+	 * @param datos
+	 * @return
+	 */
+	private IntervaloTiempo crearIntervaloTiempo(
+			int dia, 
+			int horaIncio,int minutoInicio, 
+			int horaFin, int minutoFin) {
+
+		IntervaloTiempo intervalo = new IntervaloTiempo(dia, horaIncio, minutoInicio, horaFin, minutoFin);
+		int id = controladorBD.addIntervaloTiempo(intervalo);
+		intervalo.setId_BD(id);
+
+
+		return intervalo;	
+	}
+
 
 
 	/**
@@ -46,14 +68,14 @@ public class Controlador {
 	 */
 	private Habitacion crearHabitacion(String[] datos) {
 		Habitacion habitacion = new Habitacion(datos[0]);
-		
+
 		int id = controladorBD.addHabitacion(habitacion);
 		habitacion.setId_BD(id);
-		
+
 		listaHabitaciones.add(habitacion);
 		return habitacion;
 	}
-	
+
 	/**
 	 * elimina de la listaHabitacion y de la BD la instancia del parametro pasado
 	 * @param habtiacion instancia a eliminar
@@ -69,18 +91,18 @@ public class Controlador {
 	 * @return objeto asignatura con los datos
 	 */
 	private Asignatura crearAsignatura(String[] datos) {
-		
+
 		Asignatura asignatura = new Asignatura(datos[0]);
-		
+
 		int id = controladorBD.addAsignatura(asignatura);
 		asignatura.setId_BD(id);
-		
+
 		listaAsignatura.add(asignatura);
-		
+
 		return asignatura;
 
 	}
-	
+
 	/**
 	 * elimina de la listaAsignatura y de la BD la instancia del parametro pasado
 	 * @param asignatura instancia a eliminar
@@ -88,7 +110,7 @@ public class Controlador {
 	private void eliminarAsignatura(Asignatura asignatura) {
 		listaAsignatura.remove(asignatura);
 		controladorBD.eliminaAsignatura(asignatura);
-		}
+	}
 
 
 	/**
@@ -103,7 +125,7 @@ public class Controlador {
 		listaDocente.add(docente);
 		return docente;
 	}
-	
+
 	/**
 	 * elimina de la listaDocentey de la BD la instancia del parametro pasado
 	 * @param docente instancia a eliminar
@@ -120,10 +142,10 @@ public class Controlador {
 	 */
 	private GrupoAlumnos crearGrupoAlumno(String[] datos) {
 		GrupoAlumnos grupoAlumnos = new GrupoAlumnos(datos[0], datos[1]);
-		
+
 		int id = controladorBD.addGrupoAlumno(grupoAlumnos);
 		grupoAlumnos.setId_BD(id);
-		
+
 		listaGruposAlumnos.add(grupoAlumnos);
 		return grupoAlumnos;
 	}
@@ -136,8 +158,8 @@ public class Controlador {
 		listaGruposAlumnos.remove(grupoAlumnos);
 		controladorBD.eliminarGrupoAlumnos(grupoAlumnos);
 	}
-	
-	
+
+
 	/**
 	 * evento para indicar un nuevo archivo del horario
 	 */
@@ -168,7 +190,7 @@ public class Controlador {
 	 */
 	public InfoPanel crearObjetoTargeta(String comando){
 
-		
+
 		String[]datos;
 
 		switch (comando) {
@@ -212,41 +234,41 @@ public class Controlador {
 	 */
 	public void eliminarSeleccionado(InfoPanel infoPanel) {
 
-		
+
 		switch ( infoPanel.getClass().getSimpleName() ) {
 		case "Asignatura":
 			eliminarAsignatura((Asignatura) infoPanel);
-//			System.out.println("tamanio lista: " + listaHabitaciones.size() );
+			//			System.out.println("tamanio lista: " + listaHabitaciones.size() );
 			break;
 
 		case "Habitacion":
 			eliminarHabitacion( (Habitacion) infoPanel);
-//			System.out.println("tamanio lista: " + listaHabitaciones.size() );
+			//			System.out.println("tamanio lista: " + listaHabitaciones.size() );
 			break;
-		
+
 		case "GrupoAlumnos":
 			eliminarGrupoAlumnos( (GrupoAlumnos) infoPanel);
-//			System.out.println("tamanio lista: " + listaHabitaciones.size() );
+			//			System.out.println("tamanio lista: " + listaHabitaciones.size() );
 			break;
-			
+
 		case "Docente":
 			eliminarDocente( (Docente) infoPanel);
-//			System.out.println("tamanio lista: " + listaHabitaciones.size() );
+			//			System.out.println("tamanio lista: " + listaHabitaciones.size() );
 			break;
-			
-			
+
+
 		default:
 			System.out.println("No encontrado:" +  infoPanel.getClass().getSimpleName() );
 			break;
 		}
-		
-		String clas = infoPanel.getClass().getSimpleName();
-			System.out.println(clas);
 
-		
+		String clas = infoPanel.getClass().getSimpleName();
+		System.out.println(clas);
+
+
 	}
 
-	
+
 	/**
 	 * recoje los listados de los objetos a listar y los añade a 
 	 * las listas de la interfaz
@@ -255,23 +277,35 @@ public class Controlador {
 
 		listaHabitaciones = controladorBD.obtenerListaHabitaciones();
 		interfazPrincipal.setListaHabitacion(listaHabitaciones);
-		
-		
+
+
 		listaAsignatura = controladorBD.obtenerListaAsignaturas();
 		interfazPrincipal.setListaAsignatura(listaAsignatura);
-		
+
 		listaDocente = controladorBD.obtenerListaDocentes();
 		interfazPrincipal.setListaDocente(listaDocente);
-		
+
 		listaGruposAlumnos = controladorBD.obtenerListaGrupoAlumnos();
 		interfazPrincipal.setListaGrupoAlumnos(listaGruposAlumnos);
-		
+
 	}
 
 
+	/**
+	 * evento para aniadir un evento en un tiempo determinado
+	 * donde pueden actuar un Docente, GrupoAlumnos, Habitacion y Asignatura
+	 */
 	public void aniadirEvento() {
 
-		new crearMomento(interfazPrincipal, true, listaAsignatura, listaDocente, listaGruposAlumnos, listaHabitaciones);
+		crearMomento evento = 
+				new crearMomento(interfazPrincipal, true, listaAsignatura, listaDocente, listaGruposAlumnos, listaHabitaciones);
+
+		crearIntervaloTiempo(evento.getSelDiaSem(),
+				evento.getSelHoraIni(), evento.getSelMinIni(), 
+				evento.getSelHoraFin(), evento.getSelMinFin() );
+
+
+		
 		
 	}
 
