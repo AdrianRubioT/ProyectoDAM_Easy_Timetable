@@ -10,6 +10,7 @@ import modelo.objetos.Docente;
 import modelo.objetos.GrupoAlumnos;
 import modelo.objetos.Habitacion;
 import modelo.objetos.IntervaloTiempo;
+import modelo.objetos.Slot;
 import vista.InterfazPrincipal;
 import vista.elementos.ListaTargetas.InfoPanel;
 import vista.interfaces.crearMomentos.crearMomento;
@@ -40,6 +41,22 @@ public class Controlador {
 
 	}
 
+
+	/**
+	 * Inicialia objeto IntervaloTiempo y lo  aniade a la coleccion de IntervaloTiempo
+	 * @param datos
+	 * @return
+	 */
+	private Slot crarMomento(IntervaloTiempo intervalo, Habitacion habitacion, 
+			Asignatura asignatura, Docente docentes,GrupoAlumnos grupoAlumnos) {
+
+		Slot momento= new Slot(intervalo, habitacion, asignatura, docentes, grupoAlumnos);
+		int id = controladorBD.addSlot(momento);
+		momento.setId_BD(id);
+
+
+		return momento;	
+	}
 
 	/**
 	 * Inicialia objeto IntervaloTiempo y lo  aniade a la coleccion de IntervaloTiempo
@@ -289,16 +306,17 @@ public class Controlador {
 		interfazPrincipal.setListaGrupoAlumnos(listaGruposAlumnos);
 
 		listaIntervaloTiempo = controladorBD.obtenerListaIntervaloTiempo();
-		
-		
+
+
 	}
 
 
 	/**
-	 * evento para aniadir un evento en un tiempo determinado
-	 * donde pueden actuar un Docente, GrupoAlumnos, Habitacion y Asignatura
+	 * evento para aniadir un momento en un tiempo determinado
+	 * donde interactuan un Docente, GrupoAlumnos, Habitacion y Asignatura
+	 * en un margen de tiempo determinado real
 	 */
-	public void aniadirEvento() {
+	public void aniadirMomento() {
 
 		crearMomento evento = 
 				new crearMomento(interfazPrincipal, true, listaAsignatura, listaDocente, listaGruposAlumnos, listaHabitaciones);
@@ -307,9 +325,9 @@ public class Controlador {
 				evento.getSelHoraIni(), evento.getSelMinIni(), 
 				evento.getSelHoraFin(), evento.getSelMinFin() );
 
-		
-		
-		
+		Slot momento = new Slot();
+
+
 	}
 
 
