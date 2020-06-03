@@ -13,17 +13,34 @@ public class Slot {
 	private Docente docentes;
 	private GrupoAlumnos grupoAlumnos;
 
+
+	/**
+	 * Intancia la clase
+	 */
 	public Slot() {
 		
 	}
 
+		
 	/**
-	 * Intancia la clase
-	 * @return void
+	 * @param intervalo
+	 * @param habitacion
+	 * @param asignatura
+	 * @param docentes
+	 * @param grupoAlumnos
 	 */
-	public void Slot() {
-		// TODO Auto-generated method stub
+	public Slot(IntervaloTiempo intervalo, Habitacion habitacion, Asignatura asignatura, Docente docentes,
+			GrupoAlumnos grupoAlumnos) {
+		super();
+		this.intervalo = intervalo;
+		this.habitacion = habitacion;
+		this.asignatura = asignatura;
+		this.docentes = docentes;
+		this.grupoAlumnos = grupoAlumnos;
 	}
+
+
+
 
 	/**
 	 * metodo para determinar el orden de los intervalos de los slots.
