@@ -211,7 +211,7 @@ public class ControaldorBD {
 	
 	
 	/**
-	 * inserta una instancia de habitacion en la BD
+	 * inserta una instancia de slot en la BD
 	 * @param momento 
 	 */
 	public int addSlot(Slot momento) {
@@ -219,7 +219,8 @@ public class ControaldorBD {
 				+ "ID_Habitacion,"
 				+ "ID_Asignatura, "
 				+ "ID_Docente,"
-				+ "ID_GrupoAlumnos) "
+				+ "ID_GrupoAlumnos,"
+				+ "ID_IntervaloTiempo) "
 				+ "VALUES(?,?,?,?,?)";
 
 		try (
@@ -228,6 +229,7 @@ public class ControaldorBD {
 			pstmt.setInt(2, momento.getAsignatura().getId_BD() );
 			pstmt.setInt(3, momento.getDocentes().getId_BD() );
 			pstmt.setInt(4, momento.getGrupoAlumnos().getId_BD() );
+			pstmt.setInt(5, momento.getIntervalo().getId_BD() );
 
 			pstmt.executeUpdate();
 
