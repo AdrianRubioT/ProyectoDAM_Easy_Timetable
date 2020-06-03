@@ -288,6 +288,9 @@ public class Controlador {
 		listaGruposAlumnos = controladorBD.obtenerListaGrupoAlumnos();
 		interfazPrincipal.setListaGrupoAlumnos(listaGruposAlumnos);
 
+		listaIntervaloTiempo = controladorBD.obtenerListaIntervaloTiempo();
+		
+		
 	}
 
 
@@ -304,7 +307,7 @@ public class Controlador {
 				evento.getSelHoraIni(), evento.getSelMinIni(), 
 				evento.getSelHoraFin(), evento.getSelMinFin() );
 
-
+		
 		
 		
 	}
