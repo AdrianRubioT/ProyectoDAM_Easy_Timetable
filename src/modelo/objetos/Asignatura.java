@@ -22,13 +22,13 @@ public class Asignatura extends InfoPanel{
 	 * @param nombre
 	 */
 	public Asignatura(String nombre) {
-		super(CAMPOS);
+		super(CAMPOS, "Asignatura");
 		this.setNombre(nombre);
 		actualizaSuper();
 	}
 
 	public Asignatura() {
-		super(CAMPOS);
+		super(CAMPOS, "Asignatura");
 	}
 
 	/**

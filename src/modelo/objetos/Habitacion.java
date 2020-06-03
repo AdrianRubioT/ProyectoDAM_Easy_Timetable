@@ -20,14 +20,14 @@ public class Habitacion  extends InfoPanel{
 	 * @param codigoHabitacion
 	 */
 	public Habitacion(String codigoHabitacion) {
-		super(CAMPOS);
+		super(CAMPOS, "Habitacion");
 		this.codigoHabitacion = codigoHabitacion;
 		actualizaSuper();
 	}
 	
 	
 	public Habitacion() {
-		super(CAMPOS);
+		super(CAMPOS, "Habitacion");
 	}
 
 

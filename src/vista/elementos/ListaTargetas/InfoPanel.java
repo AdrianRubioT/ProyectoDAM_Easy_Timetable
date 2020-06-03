@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JRadioButton;
 import javax.swing.border.LineBorder;
 
 import vista.seleccion.Seleccion;
@@ -25,9 +26,13 @@ public class InfoPanel extends JPanel implements Seleccionable {
 
 	private ArrayList<JLabel> labelKey = new ArrayList<JLabel>();
 	private ArrayList<JLabel> labelValue= new ArrayList<JLabel>();
+	private String tipo;
 	
 	
-		public InfoPanel(String[] campos) {
+		public InfoPanel(String[] campos, String tipo) {
+			
+			this.tipo = tipo;
+			
 			
 			addMouseListener(new MouseAdapter() {
 				@Override
@@ -61,8 +66,8 @@ public class InfoPanel extends JPanel implements Seleccionable {
 
 
 			creteJLabels(campos);
-
-
+			
+			
 		}
 
 		/**
@@ -80,7 +85,7 @@ public class InfoPanel extends JPanel implements Seleccionable {
 				labelKey.add(jlKey);
 				GridBagConstraints gbc_lblLinea_3 = new GridBagConstraints();
 				gbc_lblLinea_3.insets = new Insets(0, 0, 0, 5);
-				gbc_lblLinea_3.gridx = 0;
+				gbc_lblLinea_3.gridx = 1;
 				gbc_lblLinea_3.gridy = i;
 				add(jlKey, gbc_lblLinea_3);
 			}
@@ -91,7 +96,7 @@ public class InfoPanel extends JPanel implements Seleccionable {
 				labelValue.add(jlValue);
 				GridBagConstraints gbc_lin4 = new GridBagConstraints();
 				gbc_lin4.fill = GridBagConstraints.HORIZONTAL;
-				gbc_lin4.gridx = 1;
+				gbc_lin4.gridx = 2;
 				gbc_lin4.gridy = i;
 				add( jlValue, gbc_lin4);
 
@@ -124,6 +129,20 @@ public class InfoPanel extends JPanel implements Seleccionable {
 		@Override
 		public void notificarSeleccion(Seleccionable seleccion) {
 			Seleccion.nuevoSeleccion(seleccion);
+		}
+		
+		/**
+		 * agrega el radiobuton a la parte visible
+		 * @param radio
+		 */
+		public void addRadioButon(JRadioButton radio) {
+			
+			GridBagConstraints gbc_lblLinea_3 = new GridBagConstraints();
+			gbc_lblLinea_3.insets = new Insets(0, 0, 0, 5);
+			gbc_lblLinea_3.gridx = 0;
+			gbc_lblLinea_3.gridy = 0;
+			add(radio, gbc_lblLinea_3);
+			
 		}
 	
 }

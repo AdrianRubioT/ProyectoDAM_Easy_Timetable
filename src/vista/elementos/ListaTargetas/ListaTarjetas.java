@@ -11,6 +11,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
 import Controlador.Controlador;
+import vista.elementos.radioButton.ControlRadioButon;
 import vista.seleccion.Seleccion;
 
 import java.awt.event.ActionListener;
@@ -34,16 +35,17 @@ public class ListaTarjetas extends JPanel{
 	private JPanel lista;
 
 	private Controlador controlador;
-
+	private ControlRadioButon controlRadio;
 	/**
 	 * @param titulo
 	 */
-	public ListaTarjetas(String titulo, Controlador controlador) {
+	public ListaTarjetas(String titulo, Controlador controlador, ControlRadioButon conRadioButon) {
 		super();
 		
 		this.titulo = titulo;
 		this.controlador =  controlador;
-
+		this.controlRadio = conRadioButon;
+		
 		GridBagLayout gbl_panModulos = new GridBagLayout();
 		gbl_panModulos.columnWidths = new int[]{91, 0};
 		gbl_panModulos.rowHeights = new int[]{14, 27, 0, 0};
@@ -110,7 +112,9 @@ public class ListaTarjetas extends JPanel{
 	 * @param object objeto a aniadir
 	 */
 	public void aniadir(InfoPanel object) {
-		//InfoPanel infoPanel = new InfoPanel(object);
+		
+		String text = object.toString();
+		object.addRadioButon(controlRadio.crearRadioButton("vista", text) );
 		lista.add(object);
 		
 		//scrollLista.revalidate();

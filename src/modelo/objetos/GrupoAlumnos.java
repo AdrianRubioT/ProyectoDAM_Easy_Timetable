@@ -25,14 +25,14 @@ public class GrupoAlumnos extends InfoPanel{
 	 * @param nombreGrupo
 	 */
 	public GrupoAlumnos(String nombreCurso, String nombreGrupo) {
-		super(CAMPOS);
+		super(CAMPOS, "GrupoAlumnos");
 		this.nombreCurso = nombreCurso;
 		this.nombreGrupo = nombreGrupo;
 		actualizaSuper();
 	}
 
 	public GrupoAlumnos() {
-		super(CAMPOS);
+		super(CAMPOS, "GrupoAlumnos");
 	}
 
 	/**

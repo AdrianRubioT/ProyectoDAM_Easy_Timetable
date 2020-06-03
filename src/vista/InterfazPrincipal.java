@@ -18,6 +18,8 @@ import modelo.objetos.Docente;
 import modelo.objetos.GrupoAlumnos;
 import modelo.objetos.Habitacion;
 import vista.elementos.ListaTargetas.ListaTarjetas;
+import vista.elementos.radioButton.ControlRadioButon;
+
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import java.awt.event.ActionListener;
@@ -48,12 +50,14 @@ public class InterfazPrincipal extends JFrame {
 	private ListaTarjetas tabHabitaciones;
 	private ListaTarjetas tabGrupoAlumnos;
 
+	private ControlRadioButon controlRadio;
 	
 	/**
 	 * @wbp.parser.entryPoint
 	 */
 	public InterfazPrincipal(Controlador controlador) {
 		this.controlador = controlador;
+		this.controlRadio = new ControlRadioButon(controlador);
 		initialize();
 		//setVisible(true);
 	}
@@ -148,16 +152,16 @@ public class InterfazPrincipal extends JFrame {
 		getContentPane().add(tabbedPane, gbc_tabbedPane);
 
 
-		tabAsignatura = new ListaTarjetas("Asignaturas", controlador);
+		tabAsignatura = new ListaTarjetas("Asignaturas", controlador, controlRadio);
 		tabbedPane.addTab("Asignaturas", tabAsignatura);
 
-		tabDocente = new ListaTarjetas("Docente", controlador);
+		tabDocente = new ListaTarjetas("Docente", controlador, controlRadio);
 		tabbedPane.addTab("Docente", tabDocente);
 
-		tabHabitaciones = new ListaTarjetas("Habitaciones", controlador);
+		tabHabitaciones = new ListaTarjetas("Habitaciones", controlador, controlRadio);
 		tabbedPane.addTab("Habitaciones", tabHabitaciones);
 
-		tabGrupoAlumnos = new ListaTarjetas("GrupoAlumnos", controlador);
+		tabGrupoAlumnos = new ListaTarjetas("GrupoAlumnos", controlador, controlRadio);
 		tabbedPane.addTab("GrupoAlumnos", tabGrupoAlumnos);
 
 

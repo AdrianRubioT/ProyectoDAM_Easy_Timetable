@@ -28,7 +28,7 @@ public class Docente extends InfoPanel{
 	 * @param apellido2
 	 */
 	public Docente(String especialidad, String nombre, String apellido1, String apellido2) {
-		super(campos);
+		super(campos, "Docente");
 		this.especialidad = especialidad;
 		this.nombre = nombre;
 		this.apellido1 = apellido1;
@@ -38,7 +38,7 @@ public class Docente extends InfoPanel{
 
 
 	public Docente() {
-		super(campos);
+		super(campos, "Docente");
 	}
 
 
