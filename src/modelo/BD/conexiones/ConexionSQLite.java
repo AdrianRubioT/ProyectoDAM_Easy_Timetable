@@ -113,7 +113,7 @@ public class ConexionSQLite {
 				"		SELECT RAISE(ABORT, 'Ya existe esta habitacion en este intervalo')\n" + 
 				"		WHERE\n" + 
 				"			EXISTS(\n" + 
-				"				SELECT IntervaloTiempo\n" + 
+				"				SELECT ID_IntervaloTiempo\n" + 
 				"				FROM \n" + 
 				"					Ocurre \n" + 
 				"				WHERE\n" + 
@@ -126,7 +126,7 @@ public class ConexionSQLite {
 				"		SELECT RAISE(ABORT, 'Ya existe esta habitacion en este intervalo')\n" + 
 				"		WHERE\n" + 
 				"			EXISTS(\n" + 
-				"				SELECT IntervaloTiempo\n" + 
+				"				SELECT ID_IntervaloTiempo\n" + 
 				"				FROM \n" + 
 				"					Ocurre \n" + 
 				"				WHERE\n" + 
@@ -139,7 +139,7 @@ public class ConexionSQLite {
 				"		SELECT RAISE(ABORT, 'Ya existe esta Asignatura en este intervalo')\n" + 
 				"		WHERE\n" + 
 				"			EXISTS(\n" + 
-				"				SELECT IntervaloTiempo\n" + 
+				"				SELECT ID_IntervaloTiempo\n" + 
 				"				FROM \n" + 
 				"					Ocurre \n" + 
 				"				WHERE\n" + 
@@ -152,7 +152,7 @@ public class ConexionSQLite {
 				"		SELECT RAISE(ABORT, 'Ya existe esta asignatura en este intervalo')\n" + 
 				"		WHERE\n" + 
 				"			EXISTS(\n" + 
-				"				SELECT IntervaloTiempo\n" + 
+				"				SELECT ID_IntervaloTiempo\n" + 
 				"				FROM \n" + 
 				"					Ocurre \n" + 
 				"				WHERE\n" + 
@@ -165,7 +165,7 @@ public class ConexionSQLite {
 				"		SELECT RAISE(ABORT, 'Ya existe esta Asignatura en este intervalo')\n" + 
 				"		WHERE\n" + 
 				"			EXISTS(\n" + 
-				"				SELECT IntervaloTiempo\n" + 
+				"				SELECT ID_IntervaloTiempo\n" + 
 				"				FROM \n" + 
 				"					Ocurre \n" + 
 				"				WHERE\n" + 
@@ -178,7 +178,7 @@ public class ConexionSQLite {
 				"		SELECT RAISE(ABORT, 'Ya existe esta asignatura en este intervalo')\n" + 
 				"		WHERE\n" + 
 				"			EXISTS(\n" + 
-				"				SELECT IntervaloTiempo\n" + 
+				"				SELECT ID_IntervaloTiempo\n" + 
 				"				FROM \n" + 
 				"					Ocurre \n" + 
 				"				WHERE\n" + 
@@ -192,7 +192,7 @@ public class ConexionSQLite {
 				"		SELECT RAISE(ABORT, 'Ya existe esta Asignatura en este intervalo')\n" + 
 				"		WHERE\n" + 
 				"			EXISTS(\n" + 
-				"				SELECT IntervaloTiempo\n" + 
+				"				SELECT ID_IntervaloTiempo\n" + 
 				"				FROM \n" + 
 				"					Ocurre \n" + 
 				"				WHERE\n" + 
@@ -205,7 +205,7 @@ public class ConexionSQLite {
 				"		SELECT RAISE(ABORT, 'Ya existe esta asignatura en este intervalo')\n" + 
 				"		WHERE\n" + 
 				"			EXISTS(\n" + 
-				"				SELECT IntervaloTiempo\n" + 
+				"				SELECT ID_IntervaloTiempo\n" + 
 				"				FROM \n" + 
 				"					Ocurre \n" + 
 				"				WHERE\n" + 
