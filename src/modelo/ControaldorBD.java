@@ -12,6 +12,7 @@ import modelo.objetos.Asignatura;
 import modelo.objetos.Docente;
 import modelo.objetos.GrupoAlumnos;
 import modelo.objetos.Habitacion;
+import modelo.objetos.IntervaloTiempo;
 import modelo.objetos.Slot;
 
 /**
@@ -173,6 +174,42 @@ public class ControaldorBD {
 		return -1;
 	}
 
+	
+
+	public int addIntervaloTiempo(IntervaloTiempo intervalo) {
+		String sql = "INSERT INTO IntervaloTiempo("
+				+ "diaSemana, "
+				+ "horaInicio, minutoInicio, "
+				+ "horaFin, minutoFin) "
+				+ "VALUES(?,?,?,?,?)";
+
+		try (
+				PreparedStatement pstmt = conexion.prepareStatement(sql)) {
+			pstmt.setInt(1, intervalo.getDia() );
+			pstmt.setInt(2, intervalo.getHoraIncio() );
+			pstmt.setInt(3, intervalo.getMinutoInicio() );
+			pstmt.setInt(4, intervalo.getHoraFin() );
+			pstmt.setInt(5, intervalo.getMinutoFin() );
+			
+
+			pstmt.executeUpdate();
+
+			ResultSet resultado = pstmt.getGeneratedKeys();
+			if (resultado.next()) {
+				return resultado.getInt(1);
+			}
+
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+		//return para que indica fallo
+		//TODO: cambiar por una excepcion o algo mejor
+		return -1;
+		
+	}
+
+	
+	
 	/**
 	 * inserta una instancia de habitacion en la BD
 	 * @return void
