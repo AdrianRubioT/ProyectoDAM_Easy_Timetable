@@ -35,7 +35,7 @@ public class crearMomento extends JDialog {
 	private JSpinner spinMinIni;
 	private JSpinner spinHoraFin;
 	private JSpinner spinMinFin;
-	private JComboBox cbDiaSem;
+	private JComboBox <String> cbDiaSem;
 
 
 
@@ -133,7 +133,21 @@ public class crearMomento extends JDialog {
 			contentPanel.add(lblDiaSemana, gbc_lblDiaSemana);
 		}
 		{
-			cbDiaSem = new JComboBox();
+//			cbDiaSem = new JComboBox();
+//			cbDiaSem.add("Enero");
+//			cbDiaSem.add("Febrero");
+//			cbDiaSem.add("Marzo");
+//			cbDiaSem.add("Abril");
+//			cbDiaSem.add("Mayo");
+//			cbDiaSem.add("Junio");
+//			cbDiaSem.add("Julio");
+//			cbDiaSem.add("Agosto");
+//			cbDiaSem.add("Septiembre");
+//			cbDiaSem.add("Octubre");
+//			cbDiaSem.add("Noviembre");
+//			cbDiaSem.add("Diciembre");
+			
+			
 			GridBagConstraints gbc_cbDiaSem = new GridBagConstraints();
 			gbc_cbDiaSem.insets = new Insets(0, 0, 5, 5);
 			gbc_cbDiaSem.fill = GridBagConstraints.HORIZONTAL;
