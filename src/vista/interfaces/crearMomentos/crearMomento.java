@@ -289,73 +289,75 @@ public class crearMomento extends JDialog {
 
 
 	/**
-	 * @return the cbHabitacion
+	 * @return Habitacion Seleccionada en el ComboBox
 	 */
-	public Habitacion getCbHabitacion() {
+	public Habitacion getSelHabitacion() {
 		return (Habitacion) cbHabitacion.getSelectedItem();
 	}
 
 
 	/**
-	 * @return the cbAsignatura
+	 * @return Asignatura seleccionado en el ComboBox
 	 */
-	public Asignatura getCbAsignatura() {
+	public Asignatura getSelAsignatura() {
 		return (Asignatura) cbAsignatura.getSelectedItem();
 	}
 
 
 	/**
-	 * @return the cbDocente
+	 * @return Docente seleccionado en el ComboBox
 	 */
-	public Docente getCbDocente() {
+	public Docente getSelDocente() {
 		return (Docente) cbDocente.getSelectedItem();
 	}
 
 
 	/**
-	 * @return the cbGrupoAlum
+	 * @return GrupoAlumnos seleccionado en el ComboBox
 	 */
-	public GrupoAlumnos getCbGrupoAlum() {
+	public GrupoAlumnos getSelGrupoAlum() {
 		return (GrupoAlumnos) cbGrupoAlum.getSelectedItem();
 	}
 
 
 	/**
-	 * @return the spinHoraIni
+	 * @return HoraIni indicado en spinHoraIni
 	 */
-	public int getSpinHoraIni() {
+	public int getSelHoraIni() {
 		return (int )spinHoraIni.getValue();
 	}
 
 
 	/**
-	 * @return the spinMinIni
+	 * @return MinIni indicado en spinMinIni
 	 */
-	public int getSpinMinIni() {
+	public int getSelMinIni() {
 		return (int) spinMinIni.getValue();
 	}
 
 
 	/**
-	 * @return the spinHoraFin
+	 * @return HoraFin indicado en spinHoraFin
 	 */
-	public int getSpinHoraFin() {
+	public int getSelHoraFin() {
 		return (int) spinHoraFin.getValue();
 	}
 
 
 	/**
-	 * @return the spinMinFin
+	 * @return MinFin indicado en spinMinFin
 	 */
-	public int getSpinMinFin() {
+	public int getSelMinFin() {
 		return (int) spinMinFin.getValue();
 	}
 
 
 	/**
-	 * @return the cbDiaSem
+	 * @return Indice del dia de la semana
+	 * 0-Lunes
+	 * 6-Domingo
 	 */
-	public int getCbDiaSem() {
+	public int getSelDiaSem() {
 		return cbDiaSem.getSelectedIndex();
 	}
 
