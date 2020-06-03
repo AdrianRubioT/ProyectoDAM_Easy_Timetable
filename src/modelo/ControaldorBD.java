@@ -356,6 +356,44 @@ public class ControaldorBD {
 
 		return coleccion;
 	}
+	
+	
+	public ArrayList<IntervaloTiempo> obtenerListaIntervaloTiempo() {
+		ArrayList<IntervaloTiempo> coleccion = new ArrayList<IntervaloTiempo>();
+		IntervaloTiempo habTemp;
+
+		String sql = "SELECT rowid, * FROM IntervaloTiempo";
+
+		try (
+				Statement stmt  = conexion.createStatement();
+				ResultSet rs    = stmt.executeQuery(sql)){
+
+			// loop through the result set
+			while (rs.next()) {
+				habTemp = new IntervaloTiempo();
+				
+				habTemp.setDia( rs.getInt( "diaSemana" ) );
+				habTemp.setHoraIncio( rs.getInt ( "horaInicio" ) );
+				habTemp.setMinutoInicio( rs.getInt ( "horaInicio" ) );
+				habTemp.setHoraFin( rs.getInt( "horaFin") );
+				habTemp.setMinutoFin( rs.getInt( "minutoFin" ) );
+				
+
+				//1 -> rowID from SQLite		no se porque no puedo acceder por el nombre
+				habTemp.setId_BD( rs.getInt(1) );
+
+				coleccion.add(habTemp );
+			}
+
+
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+
+		return coleccion;
+	}
+
+	
 
 	/**
 	 * busca en la base de datos todas las tuplas de la tabla GrupoAlumnos e ins
@@ -514,6 +552,7 @@ Return: array list co
 	public void eliminarSlot() {
 		// TODO Auto-generated method stub
 	}
+
 
 
 
