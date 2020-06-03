@@ -160,4 +160,19 @@
 	18:00 - 19:00 repetir los pasos para los otros objetos
 	19:00 - 20:30 iniciando proceso de crear un evento en el horario, solucionado fallo en copyPaste
 	
+3/6/2020 7.5
+	 9:00 -  9:30 planificando como y donde indicar el dia del momento
+	 9:30 - 10:40 desarrollando la planificacion
+	10:40 - 10:55 cargar los intervalos desde la BD
+	
+	12:20 - 13:30 Crear objeto slot y buscando un problema en la BD
+	
+	16:30 - 17:00 solucionando problema y continuando 
+	17:00 - 17:30 buscando idea de como incorporar un Jpanel en un Jtable
+	17:30 - 17-45 detectado problema en la BD y apaño chapuza
+	17:45 - 18:10 pensando como realizar el area de trabajo
+	18:10 - 18:45 desarrollando la idea del area de trabajo necesito radiobuttons
+	18:45 - 20:00 implementando los radiobuttons
+
+
 
