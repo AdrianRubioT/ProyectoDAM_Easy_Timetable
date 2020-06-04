@@ -9,16 +9,16 @@ Las horas i minutos se indican como un
  *
  */
 public class IntervaloTiempo  {
-	
+
 	private int id_BD;
-	
+
 	private int horaIncio;
 	private int minutoInicio;
 	private int horaFin;
 	private int minutoFin;
 	private int dia;
-	
-	
+
+
 	public IntervaloTiempo () {
 
 	}
@@ -53,8 +53,21 @@ public class IntervaloTiempo  {
 		//TODO: por hacer
 		return false;
 	}
-	
-	
+
+
+	/**
+	 * metodo para devolver la hora y minuto inicio
+	 */
+	public String horaMinInicio() {
+		return horaIncio + ":" + minutoInicio;
+	}
+
+	/**
+	 * metodo para devolver la hora y minuto fin
+	 */
+	public String horaMinFin() {
+		return horaFin + ":" + minutoFin;
+	}
 
 	/**
 	 * @return the id_BD
@@ -139,6 +152,7 @@ public class IntervaloTiempo  {
 	public void setDia(int dia) {
 		this.dia = dia;
 	}
+
 
 
 
