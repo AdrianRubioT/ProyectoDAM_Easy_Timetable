@@ -17,6 +17,7 @@ import modelo.objetos.Asignatura;
 import modelo.objetos.Docente;
 import modelo.objetos.GrupoAlumnos;
 import modelo.objetos.Habitacion;
+import vista.elementos.AreaTrabajo.AreaTrabajo;
 import vista.elementos.ListaTargetas.ListaTarjetas;
 import vista.elementos.radioButton.ControlRadioButon;
 
@@ -51,6 +52,7 @@ public class InterfazPrincipal extends JFrame {
 	private ListaTarjetas tabGrupoAlumnos;
 
 	private ControlRadioButon controlRadio;
+	private JPanel areaTrabajo_1;
 	
 	/**
 	 * @wbp.parser.entryPoint
@@ -136,13 +138,13 @@ public class InterfazPrincipal extends JFrame {
 		JButton btnEliminar = new JButton("Eliminar");
 		panel.add(btnEliminar);
 
-		JPanel areaTrabajo = new JPanel();
-		areaTrabajo.setBackground(Color.WHITE);
-		GridBagConstraints gbc_areaTrabajo = new GridBagConstraints();
-		gbc_areaTrabajo.fill = GridBagConstraints.BOTH;
-		gbc_areaTrabajo.gridx = 0;
-		gbc_areaTrabajo.gridy = 1;
-		panHorario.add(areaTrabajo, gbc_areaTrabajo);
+		areaTrabajo_1 = new JPanel();
+		areaTrabajo_1.setBackground(Color.WHITE);
+		GridBagConstraints gbc_areaTrabajo_1 = new GridBagConstraints();
+		gbc_areaTrabajo_1.fill = GridBagConstraints.BOTH;
+		gbc_areaTrabajo_1.gridx = 0;
+		gbc_areaTrabajo_1.gridy = 1;
+		panHorario.add(areaTrabajo_1, gbc_areaTrabajo_1);
 
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		GridBagConstraints gbc_tabbedPane = new GridBagConstraints();
@@ -167,6 +169,16 @@ public class InterfazPrincipal extends JFrame {
 
 
 		setVisible(true);
+	}
+	
+	/**
+	 * elimina el contenido del JPanel areatrabajo para
+	 * imponer el de la instancia areatrabajo
+	 * @param
+	 */
+	public void setAreaTrabajo(AreaTrabajo areaTrabajo) {
+		this.areaTrabajo_1.removeAll();
+		this.areaTrabajo_1.add(areaTrabajo);
 	}
 
 	/**
@@ -215,6 +227,11 @@ public class InterfazPrincipal extends JFrame {
 	}
 	
 	
+	
+	/**
+	 * retorna la instancia controlRadioButton
+	 * @return
+	 */
 	public ControlRadioButon getControlRadioButon() {
 		return controlRadio;
 	}
