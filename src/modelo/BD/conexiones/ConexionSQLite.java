@@ -77,7 +77,7 @@ public class ConexionSQLite {
 				"	);";
 		
 		String tablaDocente = "CREATE TABLE Docente(\n" + 
-				"	ID_ Docente integer PRIMARY KEY,\n" + 
+				"	ID_Docente integer PRIMARY KEY,\n" + 
 				"	nombre TEXT,\n" + 
 				"	apellido1 TEXT,\n" + 
 				"	apellido2 TEXT,\n" + 
