@@ -29,6 +29,11 @@ public class InfoPanel extends JPanel implements Seleccionable {
 	private String tipo;
 	
 	
+	//TODO: quitar este atributo
+	private int id_BD;
+
+	
+
 		public InfoPanel(String[] campos, String tipo) {
 			
 			this.tipo = tipo;
@@ -152,7 +157,20 @@ public class InfoPanel extends JPanel implements Seleccionable {
 			return tipo;
 		}
 	
-		
+
+	/**
+	 * @return the id_BD
+	 */
+	public int getId_BD() {
+		return id_BD;
+	}
+
+	/**
+	 * @param id_BD the id_BD to set
+	 */
+	public void setId_BD(int id_BD) {
+		this.id_BD = id_BD;
+	}
 		
 }
 
