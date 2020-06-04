@@ -172,7 +172,14 @@
 	17:30 - 17-45 detectado problema en la BD y apaño chapuza
 	17:45 - 18:10 pensando como realizar el area de trabajo
 	18:10 - 18:45 desarrollando la idea del area de trabajo necesito radiobuttons
-	18:45 - 20:00 implementando los radiobuttons
+	18:45 - 20:00 implementando los radiobuttons y el string para filtrar
 
-
+2/6/2020 6.25
+	 9:45 - 10:55 modificar los objetos para obtener en el filtro el id
+	12:00 - 13:00 implementando metodo ActualizaAreaTrabajo.
+	16:30 - 18:20 implementando metodo obtenerListaMomentosAsignatura
+	18:20 - 19:30 pensando como implementar clase AreaTrabajo y primer intento
+	19:30 - 20:30 afinando los metodos y corrigiendo pequeños fallos
+	
+	
 
