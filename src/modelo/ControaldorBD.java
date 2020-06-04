@@ -174,7 +174,7 @@ public class ControaldorBD {
 		return -1;
 	}
 
-	
+
 
 	public int addIntervaloTiempo(IntervaloTiempo intervalo) {
 		String sql = "INSERT INTO IntervaloTiempo("
@@ -190,7 +190,7 @@ public class ControaldorBD {
 			pstmt.setInt(3, intervalo.getMinutoInicio() );
 			pstmt.setInt(4, intervalo.getHoraFin() );
 			pstmt.setInt(5, intervalo.getMinutoFin() );
-			
+
 
 			pstmt.executeUpdate();
 
@@ -205,11 +205,11 @@ public class ControaldorBD {
 		//return para que indica fallo
 		//TODO: cambiar por una excepcion o algo mejor
 		return -1;
-		
+
 	}
 
-	
-	
+
+
 	/**
 	 * inserta una instancia de slot en la BD
 	 * @param momento 
@@ -368,7 +368,7 @@ public class ControaldorBD {
 			// loop through the result set
 			while (rs.next()) {
 				habTemp = new GrupoAlumnos();
-				
+
 				habTemp.setNombreGrupo( rs.getString("nombreGrupo") );
 				habTemp.setNombreCurso( rs.getString("nombreCurso") );
 
@@ -385,8 +385,8 @@ public class ControaldorBD {
 
 		return coleccion;
 	}
-	
-	
+
+
 	public ArrayList<IntervaloTiempo> obtenerListaIntervaloTiempo() {
 		ArrayList<IntervaloTiempo> coleccion = new ArrayList<IntervaloTiempo>();
 		IntervaloTiempo habTemp;
@@ -400,13 +400,13 @@ public class ControaldorBD {
 			// loop through the result set
 			while (rs.next()) {
 				habTemp = new IntervaloTiempo();
-				
+
 				habTemp.setDia( rs.getInt( "diaSemana" ) );
 				habTemp.setHoraIncio( rs.getInt ( "horaInicio" ) );
 				habTemp.setMinutoInicio( rs.getInt ( "horaInicio" ) );
 				habTemp.setHoraFin( rs.getInt( "horaFin") );
 				habTemp.setMinutoFin( rs.getInt( "minutoFin" ) );
-				
+
 
 				//1 -> rowID from SQLite		no se porque no puedo acceder por el nombre
 				habTemp.setId_BD( rs.getInt(1) );
@@ -422,18 +422,244 @@ public class ControaldorBD {
 		return coleccion;
 	}
 
+	/**
+	 * metodo para obtener una instancia de asignatura con los 
+	 * datos de la BD
+	 * @param id
+	 * @return 
+	 */
+	private Asignatura obtenerAsignatura (int id) {
+		Asignatura temp = new Asignatura();
+
+
+		String sql = "SELECT rowid, * FROM Asignatura "
+				+ "WHERE id_Asignatura = ?";
+
+		try {
+			PreparedStatement stmt  = conexion.prepareStatement(sql);
+			stmt.setInt(1, id);
+			ResultSet rs    = stmt.executeQuery();
+
+			// loop through the result set
+			while (rs.next()) {
+				temp.setNombre( rs.getString("nombre"));
+				//1 -> rowID from SQLite		no se porque no puedo acceder por el nombre
+				temp.setId_BD( rs.getInt(1) );
+			}
+
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+
+		return temp;
+	}
+
+	/**
+	 * metodo para obtener una instancia de GrupoAlumno con los 
+	 * datos de la BD
+	 * @param id
+	 * @return 
+	 */
+	private GrupoAlumnos obtenerGrupoAlumno(int id) {
+		GrupoAlumnos temp = new GrupoAlumnos();
+
+
+		String sql = "SELECT rowid, * FROM GrupoAlumnos "
+				+ "WHERE id_GrupoAlumnos = ?";
+
+		try {
+			PreparedStatement stmt  = conexion.prepareStatement(sql);
+			stmt.setInt(1, id);
+			ResultSet rs    = stmt.executeQuery();
+
+			// loop through the result set
+			while (rs.next()) {
+				temp.setNombreCurso( rs.getString("nombreCurso") );
+				temp.setNombreGrupo( rs.getString("nombreGrupo") );
+				//1 -> rowID from SQLite		no se porque no puedo acceder por el nombre
+				temp.setId_BD( rs.getInt(1) );
+			}
+
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+
+		return temp;
+	}
+
+
+	/**
+	 * metodo para obtener una instancia de GrupoAlumno con los 
+	 * datos de la BD
+	 * @param id
+	 * @return 
+	 */
+	private Docente obtenerDocente(int id) {
+		Docente temp = new Docente();
+
+
+		String sql = "SELECT rowid, * FROM Docente "
+				+ "WHERE id_ = ?";
+
+		try {
+			PreparedStatement stmt  = conexion.prepareStatement(sql);
+			stmt.setInt(1, id);
+			ResultSet rs    = stmt.executeQuery();
+
+			// loop through the result set
+			while (rs.next()) {
+				temp.setNombre( rs.getString("nombre") );
+				temp.setApellido1( rs.getString("apellido1") );
+				temp.setApellido2( rs.getString("apellido2") );
+				temp.setEspecialidad( rs.getString("especalidad") );
+				//1 -> rowID from SQLite		no se porque no puedo acceder por el nombre
+				temp.setId_BD( rs.getInt(1) );
+			}
+
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+
+		return temp;
+	}
 	
+	/**
+	 * metodo para obtener una instancia de GrupoAlumno con los 
+	 * datos de la BD
+	 * @param id
+	 * @return 
+	 */
+	private Habitacion obtenerHabitacion(int id) {
+		Habitacion temp = new Habitacion();
+
+
+		String sql = "SELECT rowid, * FROM Habitacion "
+				+ "WHERE id_Habitacion = ?";
+
+		try {
+			PreparedStatement stmt  = conexion.prepareStatement(sql);
+			stmt.setInt(1, id);
+			ResultSet rs    = stmt.executeQuery();
+
+			// loop through the result set
+			while (rs.next()) {
+				temp.setCodigoHabitacion( rs.getString("codigoHabitacion") );
+				//1 -> rowID from SQLite		no se porque no puedo acceder por el nombre
+				temp.setId_BD( rs.getInt(1) );
+			}
+
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+
+		return temp;
+	}
+	
+	/**
+	 * metodo para obtener una instancia de GrupoAlumno con los 
+	 * datos de la BD
+	 * @param id
+	 * @return 
+	 */
+	private IntervaloTiempo obtenerIntervaloTiempo(int id) {
+		IntervaloTiempo temp = new IntervaloTiempo();
+
+
+		String sql = "SELECT rowid, * FROM IntervaloTiempo "
+				+ "WHERE id_IntervaloTiempo = ?";
+
+		try {
+			PreparedStatement stmt  = conexion.prepareStatement(sql);
+			stmt.setInt(1, id);
+			ResultSet rs    = stmt.executeQuery();
+
+			// loop through the result set
+			while (rs.next()) {
+				temp.setDia( rs.getInt("diaSemana") );
+				temp.setHoraIncio( rs.getInt( "horaInicio" ) );
+				temp.setMinutoInicio( rs.getInt( "minutoInicio" ) );
+				temp.setHoraFin( rs.getInt( "horaFin" ) );
+				temp.setMinutoFin( rs.getInt( "minutoFin" ) );
+				//1 -> rowID from SQLite		no se porque no puedo acceder por el nombre
+				temp.setId_BD( rs.getInt(1) );
+			}
+
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+
+		return temp;
+	}
+	
+	
+	/**
+	 * Busca en la BD las tuplas relacionadas con 
+	 * @param id
+	 * @return listado con los momentos ordenados por dia y hora
+	 */
+	public ArrayList<Slot> obtenerListaMomentosAsignatura(int id) {
+		ArrayList<Slot> coleccion = new ArrayList<Slot>();
+		Slot slotTemp;
+
+		String sql = "SELECT "
+				+	"Ocurre.rowid, "
+				+ 	"Ocurre.id_IntervaloTiempo,"
+				//+ 	"id_Asignatura, "
+				+ 	"Ocurre.id_Docente,"
+				+ 	"Ocurre.id_GrupoAlumnos,"
+				+ 	"Ocurre.id_Habitacion "
+				+ "FROM Ocurre, IntervaloTiempo "
+				+ "WHERE ("
+				+ 	"id_Asignatura = ? AND "
+				+ 	"Ocurre.id_IntervaloTiempo = IntervaloTiempo.id_IntervaloTiempo "
+				+ 	")"
+				+ "ORDER BY "
+				+ 	"IntervaloTiempo.horaInicio ASC;";
+
+		try {
+			PreparedStatement pstmt = conexion.prepareStatement(sql);
+			pstmt.setInt(1, id);
+
+
+			ResultSet rs = pstmt.executeQuery();
+
+
+			// loop through the result set
+			while (rs.next()) {
+				rs.getInt("id_Docente");
+				slotTemp = new Slot();
+				slotTemp.setIntervalo(obtenerIntervaloTiempo(rs.getInt("id_IntervaloTiempo")));
+				//slotTemp.setAsignatura(obtenerAsignatura( rs.getInt("id_Asignatura") ));
+				System.out.println("antes");
+				slotTemp.setDocentes(obtenerDocente( rs.getInt("id_Docente") ));
+				System.out.println("despues");
+				slotTemp.setGrupoAlumnos(obtenerGrupoAlumno( rs.getInt("id_GrupoAlumnos") ));
+				slotTemp.setHabitacion(obtenerHabitacion( rs.getInt("id_Habitacion") ));
+				//1 -> rowID from SQLite		no se porque no puedo acceder por el nombre
+				slotTemp.setId_BD( rs.getInt(1) );
+
+				coleccion.add(slotTemp );
+
+			}	
+		}
+		catch (SQLException e) {
+			System.out.println("error");
+			System.out.println(e.getMessage());
+		}
+
+		return coleccion;
+	}
+
 
 	/**
 	 * busca en la base de datos todas las tuplas de la tabla GrupoAlumnos e ins
 	 * tancia los objetos GrupoAlumnos con todos los datos
-Return: array list co
-	 * n lo encontrado
-	 * @return ArrayList<Slot>
+	 * 
+	 * @Return: array list con lo encontrado
 	 */
-	public ArrayList<Slot> obtenerListaSlot() {
-		return null;
+	public ArrayList<Slot> obtenerListaMomentos() {
 		// TODO Auto-generated method stub
+		return null;
 	}
 
 	/**
@@ -581,6 +807,8 @@ Return: array list co
 	public void eliminarSlot() {
 		// TODO Auto-generated method stub
 	}
+
+
 
 
 
