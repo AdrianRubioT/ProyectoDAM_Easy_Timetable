@@ -12,6 +12,8 @@ import modelo.objetos.Habitacion;
 import modelo.objetos.IntervaloTiempo;
 import modelo.objetos.Slot;
 import vista.InterfazPrincipal;
+import vista.elementos.AreaTrabajo.AreaTrabajo;
+import vista.elementos.AreaTrabajo.MomentoInfo;
 import vista.elementos.ListaTargetas.InfoPanel;
 import vista.interfaces.crearMomentos.crearMomento;
 import vista.interfaces.popup.InputPopup;
@@ -30,6 +32,8 @@ public class Controlador {
 	private ArrayList<Docente> listaDocente = new ArrayList<Docente>();
 	private ArrayList<GrupoAlumnos> listaGruposAlumnos = new ArrayList<GrupoAlumnos>();
 	private ArrayList<IntervaloTiempo> listaIntervaloTiempo= new ArrayList<IntervaloTiempo>();
+	//private ArrayList<Slot> listaSlots= new ArrayList<Slot>();
+
 
 	private ControaldorBD controladorBD = new ControaldorBD();
 	private InterfazPrincipal interfazPrincipal = new InterfazPrincipal(this);
@@ -334,12 +338,35 @@ public class Controlador {
 
 
 	/**
-	 * 
+	 * recoge la informacion
 	 */
 	public void actualizarAreaTrabajo() {
 		System.out.println(
 				interfazPrincipal.getControlRadioButon().getSelected().getActionCommand()
 				);
+
+		ArrayList<Slot> listaMomentos = new ArrayList<Slot>();
+		
+		String tipoObjeto = interfazPrincipal.getControlRadioButon().getSelected().getActionCommand().split(" : " )[0];
+		String id= interfazPrincipal.getControlRadioButon().getSelected().getActionCommand().split(" : ")[1];
+		
+//		System.out.println("tipo objeto " + tipoObjeto);
+//		System.out.println("id: " + id);
+
+		switch (tipoObjeto) {
+		case "Asignatura":
+			listaMomentos = controladorBD.obtenerListaMomentosAsignatura( Integer.valueOf(id) );
+			
+			break;
+
+		default:
+			System.out.println("var: tipoObjeto --- no encontrada");
+			break;
+		}
+
+		interfazPrincipal.setAreaTrabajo(new AreaTrabajo(listaMomentos, tipoObjeto) );
+		
+
 	}
 
 
