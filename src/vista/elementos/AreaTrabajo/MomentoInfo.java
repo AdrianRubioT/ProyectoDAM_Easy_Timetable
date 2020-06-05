@@ -21,8 +21,7 @@ public class MomentoInfo extends JPanel {
 	 * Create the panel.
 	 */
 	public MomentoInfo(String puntoVista, Slot momento) {
-		//TODO quitar chivato
-		System.out.println(puntoVista);
+
 		
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[]{0, 0, 0};
@@ -91,7 +90,7 @@ public class MomentoInfo extends JPanel {
 		}
 
 
-		if (!puntoVista.contentEquals("Grupo")) {
+		if (!puntoVista.contentEquals("GrupoAlumnos")) {
 			JLabel lblGrupo = new JLabel("Grupo");
 			GridBagConstraints gbc_lblGrupo = new GridBagConstraints();
 			gbc_lblGrupo.anchor = GridBagConstraints.WEST;
@@ -126,7 +125,7 @@ public class MomentoInfo extends JPanel {
 		}
 
 
-		if (!puntoVista.contentEquals("Docente")) {
+		if (!puntoVista.contentEquals("Asignatura")) {
 			JLabel lblAsignatura = new JLabel("Asignatura");
 			GridBagConstraints gbc_lblAsignatura = new GridBagConstraints();
 			gbc_lblAsignatura.insets = new Insets(0, 0, 0, 5);
@@ -135,7 +134,7 @@ public class MomentoInfo extends JPanel {
 			gbc_lblAsignatura.gridy = 3;
 			panel_1.add(lblAsignatura, gbc_lblAsignatura);
 
-			JLabel valorAsignatura = new JLabel( momento.getDocentes().getNombre() );
+			JLabel valorAsignatura = new JLabel( momento.getAsignatura().getNombre() );
 			GridBagConstraints gbc_valorAsignatura = new GridBagConstraints();
 			gbc_valorAsignatura.gridx = 1;
 			gbc_valorAsignatura.gridy = 3;
