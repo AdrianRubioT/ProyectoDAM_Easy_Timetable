@@ -977,8 +977,12 @@ public class ControaldorBD {
 		// TODO Auto-generated method stub
 	}
 
-
-
+	/**
+	 * @return the conexion
+	 */
+	public Boolean isConected() {
+		return conexion != null;
+	}
 
 
 
