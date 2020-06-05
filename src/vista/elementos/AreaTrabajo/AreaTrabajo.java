@@ -134,27 +134,27 @@ public class AreaTrabajo extends JPanel {
 
 			switch (slot.getIntervalo().getDia()) {
 			//Lunes
-			case 1:
+			case 0:
 				coleccionLunes.add(slot);
 				break;
 
-			case 2:
+			case 1:
 				coleccionMartes.add(slot);
 				break;
-			case 3:
+			case 2:
 				coleccionMiercoles.add(slot);
 				break;
-			case 4:
+			case 3:
 				coleccionJueves.add(slot);
 				break;
-			case 5:
+			case 4:
 				coleccionViernes.add(slot);
 				break;
-			case 6:
+			case 5:
 				coleccionSabado.add(slot);
 				break;
 				//dominto
-			case 7:
+			case 6:
 				coleccionDomingo.add(slot);
 				break;
 
