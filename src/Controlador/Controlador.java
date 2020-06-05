@@ -332,7 +332,10 @@ public class Controlador {
 		Slot momento = crearMomento(intervalo, evento.getSelHabitacion(), 
 				evento.getSelAsignatura(), evento.getSelDocente(), evento.getSelGrupoAlum() );
 
-
+		
+		//si el usuario esta añadiendo un elemento al area de trbajo 
+		//con la vista activada notara el cambio
+		actualizarAreaTrabajo();
 
 	}
 
@@ -341,9 +344,9 @@ public class Controlador {
 	 * recoge la informacion
 	 */
 	public void actualizarAreaTrabajo() {
-		System.out.println(
-				interfazPrincipal.getControlRadioButon().getSelected().getActionCommand()
-				);
+//		System.out.println(
+//				interfazPrincipal.getControlRadioButon().getSelected().getActionCommand()
+//				);
 
 		ArrayList<Slot> listaMomentos = new ArrayList<Slot>();
 		
