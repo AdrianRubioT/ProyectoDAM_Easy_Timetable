@@ -13,8 +13,8 @@ import modelo.objetos.IntervaloTiempo;
 import modelo.objetos.Slot;
 import vista.InterfazPrincipal;
 import vista.elementos.AreaTrabajo.AreaTrabajo;
-import vista.elementos.AreaTrabajo.MomentoInfo;
 import vista.elementos.ListaTargetas.InfoPanel;
+import vista.elementos.ListaTargetas.ListaTarjetas;
 import vista.interfaces.crearMomentos.crearMomento;
 import vista.interfaces.popup.InputPopup;
 
@@ -204,50 +204,67 @@ public class Controlador {
 
 	}
 
+
 	/**
 	 * metodo para el evento de crear un objeto InfoPanel, con sus valores,
 	 * lo añade a la lista correspondiente y lo devuelve
 	 * @param comando 
 	 */
-	public InfoPanel crearObjetoTargeta(String comando){
+	public InfoPanel crearObjetoTargeta(ListaTarjetas listaTargeta, String comando){
 
+		InputPopup entradaDatos;
 
 		String[]datos;
 
 		switch (comando) {
-		case "aniadirAsignaturas":
 
-			datos = new InputPopup(interfazPrincipal, true, Asignatura.CAMPOS).getData();
-			Asignatura asignatura = crearAsignatura(datos);
-			return asignatura;
+		case "aniadirAsignaturas":
+			entradaDatos = new InputPopup(interfazPrincipal, true, Asignatura.CAMPOS);
+			if (entradaDatos.isAcepted) {
+				datos = entradaDatos.getData();
+				Asignatura asignatura = crearAsignatura( datos );
+				listaTargeta.aniadir( asignatura );
+			}
+			break;
 
 		case "aniadirDocente":
+			entradaDatos = new InputPopup(interfazPrincipal, true, Docente.CAMPOS);
+			if (entradaDatos.isAcepted) {
+				datos = entradaDatos.getData();
+				Docente docente = crearDocente(datos);
+				listaTargeta.aniadir( docente );
+			}
+			break;
 
-			datos = new InputPopup(interfazPrincipal, true, Docente.campos).getData();
-			Docente docente = crearDocente(datos);
-			return docente;
 
 		case "aniadirGrupoAlumnos":
+			entradaDatos =  new InputPopup(interfazPrincipal, true, GrupoAlumnos.CAMPOS); 
+			if (entradaDatos.isAcepted) {
+				datos = entradaDatos.getData();
+				GrupoAlumnos grupoALumnos = crearGrupoAlumno(datos);
+				listaTargeta.aniadir( grupoALumnos );
+			}
+			break;
 
-			datos = new InputPopup(interfazPrincipal, true, GrupoAlumnos.CAMPOS).getData();
-			GrupoAlumnos grupoALumnos = crearGrupoAlumno(datos);
-			return grupoALumnos;
 
 		case "aniadirHabitaciones":
-
-			datos = new InputPopup(interfazPrincipal, true, Habitacion.CAMPOS).getData();
-			Habitacion habitacion = crearHabitacion(datos);
-			return habitacion;
+			entradaDatos = new InputPopup(interfazPrincipal, true, Habitacion.CAMPOS);
+			if (entradaDatos.isAcepted) {
+				datos = entradaDatos.getData();
+				Habitacion habitacion = crearHabitacion(datos);
+				listaTargeta.aniadir( habitacion );
+			}
+			break;
+			
 
 		default:
-			System.out.println("Comando no encontrado: " + comando);
+			System.out.println("-----crearObjetoTargetatest: Comando no encontrado: " + comando);
 			break;
 		}
 
 		return null;
 
 	}
-
 
 	/**
 	 * elimina el objeto seleccionado
@@ -332,7 +349,7 @@ public class Controlador {
 		Slot momento = crearMomento(intervalo, evento.getSelHabitacion(), 
 				evento.getSelAsignatura(), evento.getSelDocente(), evento.getSelGrupoAlum() );
 
-		
+
 		//si el usuario esta añadiendo un elemento al area de trbajo 
 		//con la vista activada notara el cambio
 		actualizarAreaTrabajo();
@@ -344,18 +361,18 @@ public class Controlador {
 	 * recoge la informacion
 	 */
 	public void actualizarAreaTrabajo() {
-//		System.out.println(
-//				interfazPrincipal.getControlRadioButon().getSelected().getActionCommand()
-//				);
+		//		System.out.println(
+		//				interfazPrincipal.getControlRadioButon().getSelected().getActionCommand()
+		//				);
 
 		ArrayList<Slot> listaMomentos = new ArrayList<Slot>();
-		
+
 		String tipoObjeto = interfazPrincipal.getControlRadioButon().getSelected().getActionCommand().split(" : " )[0];
 		String id= interfazPrincipal.getControlRadioButon().getSelected().getActionCommand().split(" : ")[1];
-		
-		System.out.println("tipo objeto " + tipoObjeto);
-//		System.out.println("id: " + id);
-		
+
+		//		System.out.println("tipo objeto " + tipoObjeto);
+		//		System.out.println("id: " + id);
+
 		switch (tipoObjeto) {
 		case "Asignatura":
 			listaMomentos = controladorBD.obtenerListaMomentosAsignatura( Integer.valueOf(id) );
@@ -369,15 +386,15 @@ public class Controlador {
 		case "Habitacion":
 			listaMomentos = controladorBD.obtenerListaMomentosHabitaciones( Integer.valueOf(id) );
 			break;
-			
-			
+
+
 		default:
 			System.out.println("var: tipoObjeto --- no encontrada");
 			break;
 		}
 
 		interfazPrincipal.setAreaTrabajo(new AreaTrabajo(listaMomentos, tipoObjeto) );
-		
+
 
 	}
 
