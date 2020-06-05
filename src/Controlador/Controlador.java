@@ -353,15 +353,24 @@ public class Controlador {
 		String tipoObjeto = interfazPrincipal.getControlRadioButon().getSelected().getActionCommand().split(" : " )[0];
 		String id= interfazPrincipal.getControlRadioButon().getSelected().getActionCommand().split(" : ")[1];
 		
-//		System.out.println("tipo objeto " + tipoObjeto);
+		System.out.println("tipo objeto " + tipoObjeto);
 //		System.out.println("id: " + id);
-
+		
 		switch (tipoObjeto) {
 		case "Asignatura":
 			listaMomentos = controladorBD.obtenerListaMomentosAsignatura( Integer.valueOf(id) );
-			
 			break;
-
+		case "Docente":
+			listaMomentos = controladorBD.obtenerListaMomentosDocente( Integer.valueOf(id) );
+			break;
+		case "GrupoAlumnos":
+			listaMomentos = controladorBD.obtenerListaMomentosGrupoAlumnos( Integer.valueOf(id) );
+			break;
+		case "Habitacion":
+			listaMomentos = controladorBD.obtenerListaMomentosHabitaciones( Integer.valueOf(id) );
+			break;
+			
+			
 		default:
 			System.out.println("var: tipoObjeto --- no encontrada");
 			break;
