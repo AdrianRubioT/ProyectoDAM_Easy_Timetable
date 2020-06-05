@@ -499,7 +499,7 @@ public class ControaldorBD {
 
 
 		String sql = "SELECT rowid, * FROM Docente "
-				+ "WHERE id_ = ?";
+				+ "WHERE id_Docente = ?";
 
 		try {
 			PreparedStatement stmt  = conexion.prepareStatement(sql);
@@ -511,7 +511,7 @@ public class ControaldorBD {
 				temp.setNombre( rs.getString("nombre") );
 				temp.setApellido1( rs.getString("apellido1") );
 				temp.setApellido2( rs.getString("apellido2") );
-				temp.setEspecialidad( rs.getString("especalidad") );
+				temp.setEspecialidad( rs.getString("especialidad") );
 				//1 -> rowID from SQLite		no se porque no puedo acceder por el nombre
 				temp.setId_BD( rs.getInt(1) );
 			}
@@ -630,9 +630,7 @@ public class ControaldorBD {
 				slotTemp = new Slot();
 				slotTemp.setIntervalo(obtenerIntervaloTiempo(rs.getInt("id_IntervaloTiempo")));
 				//slotTemp.setAsignatura(obtenerAsignatura( rs.getInt("id_Asignatura") ));
-				System.out.println("antes");
 				slotTemp.setDocentes(obtenerDocente( rs.getInt("id_Docente") ));
-				System.out.println("despues");
 				slotTemp.setGrupoAlumnos(obtenerGrupoAlumno( rs.getInt("id_GrupoAlumnos") ));
 				slotTemp.setHabitacion(obtenerHabitacion( rs.getInt("id_Habitacion") ));
 				//1 -> rowID from SQLite		no se porque no puedo acceder por el nombre
