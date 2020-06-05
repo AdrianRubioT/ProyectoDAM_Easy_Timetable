@@ -204,7 +204,50 @@ public class Controlador {
 
 	}
 
+	/**
+	 * recoje los listados de los objetos a listar y los añade a 
+	 * las listas de la interfaz
+	 */
+	public void eventoCargar() {
 
+		if ( controladorBD.isConected() ) {
+			
+			JFileChooser fileChooser = new JFileChooser("./prueba");
+
+			//mostrar el dialogo para seleccionar la carpeta
+			int seleccion = fileChooser.showSaveDialog( interfazPrincipal );
+
+			//comprovacion que el usuario ha pulsado el boton guardar
+			if (seleccion == JFileChooser.APPROVE_OPTION)
+			{
+
+				//Obtenemos el fichero seleccionado 
+				File fichero = fileChooser.getSelectedFile();
+				controladorBD.conecta( fichero.getPath(), fichero.exists() );
+				
+				//cargar listados
+				listaHabitaciones = controladorBD.obtenerListaHabitaciones();
+				interfazPrincipal.setListaHabitacion(listaHabitaciones);
+
+
+				listaAsignatura = controladorBD.obtenerListaAsignaturas();
+				interfazPrincipal.setListaAsignatura(listaAsignatura);
+
+				listaDocente = controladorBD.obtenerListaDocentes();
+				interfazPrincipal.setListaDocente(listaDocente);
+
+				listaGruposAlumnos = controladorBD.obtenerListaGrupoAlumnos();
+				interfazPrincipal.setListaGrupoAlumnos(listaGruposAlumnos);
+
+				listaIntervaloTiempo = controladorBD.obtenerListaIntervaloTiempo();
+			}
+		}
+		
+
+
+	}
+	
+	
 	/**
 	 * metodo para el evento de crear un objeto InfoPanel, con sus valores,
 	 * lo añade a la lista correspondiente y lo devuelve
@@ -311,29 +354,7 @@ public class Controlador {
 	}
 
 
-	/**
-	 * recoje los listados de los objetos a listar y los añade a 
-	 * las listas de la interfaz
-	 */
-	public void eventoCargar() {
-
-		listaHabitaciones = controladorBD.obtenerListaHabitaciones();
-		interfazPrincipal.setListaHabitacion(listaHabitaciones);
-
-
-		listaAsignatura = controladorBD.obtenerListaAsignaturas();
-		interfazPrincipal.setListaAsignatura(listaAsignatura);
-
-		listaDocente = controladorBD.obtenerListaDocentes();
-		interfazPrincipal.setListaDocente(listaDocente);
-
-		listaGruposAlumnos = controladorBD.obtenerListaGrupoAlumnos();
-		interfazPrincipal.setListaGrupoAlumnos(listaGruposAlumnos);
-
-		listaIntervaloTiempo = controladorBD.obtenerListaIntervaloTiempo();
-
-
-	}
+	
 
 
 	/**
