@@ -38,12 +38,6 @@ public class InterfazPrincipal extends JFrame {
 	
 	private Controlador controlador;
 	
-	//listados para mostrar en la interfaz
-	private ListaTarjetas listaHabitaciones;
-	private ListaTarjetas listaAsiganturas;
-	private ListaTarjetas listaDocentes;
-	private ListaTarjetas listaAlumnos;
-	
 	//componentes de la interfaz
 	//private AreaTrabajo areaTrabajo;
 	private ListaTarjetas tabAsignatura;
@@ -179,6 +173,8 @@ public class InterfazPrincipal extends JFrame {
 	public void setAreaTrabajo(AreaTrabajo areaTrabajo) {
 		this.areaTrabajo_1.removeAll();
 		this.areaTrabajo_1.add(areaTrabajo);
+		revalidate();
+		repaint();
 	}
 
 	/**
