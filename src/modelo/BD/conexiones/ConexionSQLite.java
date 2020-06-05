@@ -72,7 +72,7 @@ public class ConexionSQLite {
 				"	);";
 		
 		String tablaAsignatura = "CREATE TABLE Asignatura(\n" + 
-				"	ID_ Asignatura  integer PRIMARY KEY,\n" + 
+				"	ID_Asignatura  integer PRIMARY KEY,\n" + 
 				"	nombre TEXT\n" + 
 				"	);";
 		
