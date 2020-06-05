@@ -26,7 +26,7 @@ import java.awt.event.ActionEvent;
 public class ListaTarjetas extends JPanel{
 	
 	private String titulo;
-	
+
 	
 	private JButton botonAniadir;
 	private JButton botonEliminar;
@@ -72,8 +72,9 @@ public class ListaTarjetas extends JPanel{
 		botonAniadir = new JButton("A\u00F1adir");
 		botonAniadir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				InfoPanel Object = (InfoPanel)controlador.crearObjetoTargeta( arg0.getActionCommand() );
-				aniadir(Object);
+
+				eventoAniadir( arg0.getActionCommand() );
+
 			}
 		});
 		botonAniadir.setActionCommand("aniadir" + titulo);
@@ -105,6 +106,15 @@ public class ListaTarjetas extends JPanel{
 
 		listado.setViewportView(lista);
 
+	}
+	
+	/**
+	 * metodo del evento del boton aniadir
+	 * llama a  controlador.crearObjetoTargeta 
+	 * @param actionCommand
+	 */
+	private void eventoAniadir(String actionCommand) {
+		controlador.crearObjetoTargeta(this,  actionCommand );
 	}
 
 	/**
