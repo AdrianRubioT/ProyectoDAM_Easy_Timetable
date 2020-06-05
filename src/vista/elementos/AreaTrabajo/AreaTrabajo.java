@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import javax.swing.JPanel;
 import modelo.objetos.Slot;
 import java.awt.GridBagLayout;
-import javax.swing.JLabel;
 import java.awt.GridBagConstraints;
 
 
