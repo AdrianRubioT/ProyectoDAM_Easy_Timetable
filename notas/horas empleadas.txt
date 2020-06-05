@@ -180,6 +180,11 @@
 	16:30 - 18:20 implementando metodo obtenerListaMomentosAsignatura
 	18:20 - 19:30 pensando como implementar clase AreaTrabajo y primer intento
 	19:30 - 20:30 afinando los metodos y corrigiendo pequeños fallos
-	
-	
+
+
+3/6/2020 3.75 + 
+	 9:00 -  9:30 invesitgando porque no aparece el area de trabajo (ya funciona)
+	 9:30 - 10:40 terminando metodo Controlador.actualizarAreaTrabajo() de las partes faltantes y pequeñas correcciones
+	10:40 - 12:45 mejorando pequeños aspectos del programa
+	16:30 - 20:55 revisando documentacion FCT segun correo y ampliando
 
