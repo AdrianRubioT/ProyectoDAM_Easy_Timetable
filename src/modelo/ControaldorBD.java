@@ -703,6 +703,120 @@ public class ControaldorBD {
 
 		return coleccion;
 	}
+
+	/**obtenerListaMomentosDocente
+	 * Busca en la BD las tuplas relacionadas con 
+	 * @param id
+	 * @return listado con los momentos ordenados por dia y hora
+	 */
+	public ArrayList<Slot> obtenerListaMomentosGrupoAlumnos(int id) {
+		ArrayList<Slot> coleccion = new ArrayList<Slot>();
+		Slot slotTemp;
+
+		String sql = "SELECT "
+				+	"Ocurre.rowid, "
+				+ 	"Ocurre.ID_IntervaloTiempo, "
+				+ 	"Ocurre.ID_Asignatura, "
+				+ 	"Ocurre.id_Docente, "
+				//+ 	"Ocurre.ID_GrupoAlumnos, "
+				+ 	"Ocurre.ID_Habitacion "
+				+ "FROM Ocurre, IntervaloTiempo "
+				+ "WHERE ("
+				+ 	"Ocurre.ID_GrupoAlumnos = ? AND "
+				+ 	"Ocurre.ID_IntervaloTiempo = IntervaloTiempo.id_IntervaloTiempo "
+				+ 	")"
+				+ "ORDER BY "
+				+ 	"IntervaloTiempo.horaInicio ASC;";
+
+		try {
+			PreparedStatement pstmt = conexion.prepareStatement(sql);
+			pstmt.setInt(1, id);
+
+			ResultSet rs = pstmt.executeQuery();
+
+
+			// loop through the result set
+			while (rs.next()) {
+
+				slotTemp = new Slot();
+				
+				slotTemp.setIntervalo(obtenerIntervaloTiempo(rs.getInt("id_IntervaloTiempo")));
+				slotTemp.setAsignatura(obtenerAsignatura( rs.getInt("id_Asignatura") ));
+				slotTemp.setDocentes(obtenerDocente( rs.getInt("id_Docente") ));
+				//slotTemp.setGrupoAlumnos(obtenerGrupoAlumno( rs.getInt("id_GrupoAlumnos") ));
+				slotTemp.setHabitacion(obtenerHabitacion( rs.getInt("id_Habitacion") ));
+				
+				//1 -> rowID from SQLite		no se porque no puedo acceder por el nombre
+				slotTemp.setId_BD( rs.getInt(1) );
+
+				coleccion.add(slotTemp );
+
+			}	
+		}
+		catch (SQLException e) {
+			System.out.println("error");
+			System.out.println(e.getMessage());
+		}
+
+		return coleccion;
+	}
+	
+	/**obtenerListaMomentosDocente
+	 * Busca en la BD las tuplas relacionadas con 
+	 * @param id
+	 * @return listado con los momentos ordenados por dia y hora
+	 */
+	public ArrayList<Slot> obtenerListaMomentosHabitaciones(int id) {
+		ArrayList<Slot> coleccion = new ArrayList<Slot>();
+		Slot slotTemp;
+
+		String sql = "SELECT "
+				+	"Ocurre.rowid, "
+				+ 	"Ocurre.ID_IntervaloTiempo, "
+				+ 	"Ocurre.ID_Asignatura, "
+				+ 	"Ocurre.id_Docente, "
+				+ 	"Ocurre.ID_GrupoAlumnos "
+				//+ 	"Ocurre.ID_Habitacion "
+				+ "FROM Ocurre, IntervaloTiempo "
+				+ "WHERE ("
+				+ 	"Ocurre.ID_Habitacion = ? AND "
+				+ 	"Ocurre.ID_IntervaloTiempo = IntervaloTiempo.id_IntervaloTiempo "
+				+ 	")"
+				+ "ORDER BY "
+				+ 	"IntervaloTiempo.horaInicio ASC;";
+
+		try {
+			PreparedStatement pstmt = conexion.prepareStatement(sql);
+			pstmt.setInt(1, id);
+
+			ResultSet rs = pstmt.executeQuery();
+
+
+			// loop through the result set
+			while (rs.next()) {
+
+				slotTemp = new Slot();
+				
+				slotTemp.setIntervalo(obtenerIntervaloTiempo(rs.getInt("id_IntervaloTiempo")));
+				slotTemp.setAsignatura(obtenerAsignatura( rs.getInt("id_Asignatura") ));
+				slotTemp.setDocentes(obtenerDocente( rs.getInt("id_Docente") ));
+				slotTemp.setGrupoAlumnos(obtenerGrupoAlumno( rs.getInt("id_GrupoAlumnos") ));
+				//slotTemp.setHabitacion(obtenerHabitacion( rs.getInt("id_Habitacion") ));
+				
+				//1 -> rowID from SQLite		no se porque no puedo acceder por el nombre
+				slotTemp.setId_BD( rs.getInt(1) );
+
+				coleccion.add(slotTemp );
+
+			}	
+		}
+		catch (SQLException e) {
+			System.out.println("error");
+			System.out.println(e.getMessage());
+		}
+
+		return coleccion;
+	}
 	
 	
 
