@@ -255,7 +255,7 @@ public class Controlador {
 				listaTargeta.aniadir( habitacion );
 			}
 			break;
-			
+
 
 		default:
 			System.out.println("-----crearObjetoTargetatest: Comando no encontrado: " + comando);
@@ -272,37 +272,41 @@ public class Controlador {
 	 */
 	public void eliminarSeleccionado(InfoPanel infoPanel) {
 
-
-		switch ( infoPanel.getClass().getSimpleName() ) {
-		case "Asignatura":
-			eliminarAsignatura((Asignatura) infoPanel);
-			//			System.out.println("tamanio lista: " + listaHabitaciones.size() );
-			break;
-
-		case "Habitacion":
-			eliminarHabitacion( (Habitacion) infoPanel);
-			//			System.out.println("tamanio lista: " + listaHabitaciones.size() );
-			break;
-
-		case "GrupoAlumnos":
-			eliminarGrupoAlumnos( (GrupoAlumnos) infoPanel);
-			//			System.out.println("tamanio lista: " + listaHabitaciones.size() );
-			break;
-
-		case "Docente":
-			eliminarDocente( (Docente) infoPanel);
-			//			System.out.println("tamanio lista: " + listaHabitaciones.size() );
-			break;
+		try {
 
 
-		default:
-			System.out.println("No encontrado:" +  infoPanel.getClass().getSimpleName() );
-			break;
+			switch ( infoPanel.getClass().getSimpleName() ) {
+			case "Asignatura":
+				eliminarAsignatura((Asignatura) infoPanel);
+				//			System.out.println("tamanio lista: " + listaHabitaciones.size() );
+				break;
+
+			case "Habitacion":
+				eliminarHabitacion( (Habitacion) infoPanel);
+				//			System.out.println("tamanio lista: " + listaHabitaciones.size() );
+				break;
+
+			case "GrupoAlumnos":
+				eliminarGrupoAlumnos( (GrupoAlumnos) infoPanel);
+				//			System.out.println("tamanio lista: " + listaHabitaciones.size() );
+				break;
+
+			case "Docente":
+				eliminarDocente( (Docente) infoPanel);
+				//			System.out.println("tamanio lista: " + listaHabitaciones.size() );
+				break;
+
+
+			default:
+				System.out.println("No encontrado:" +  infoPanel.getClass().getSimpleName() );
+				break;
+			}
+
+//			String clas = infoPanel.getClass().getSimpleName();
+//			System.out.println(clas);
+		} catch (NullPointerException e) {
+			System.out.println("No hay nada seleccionado");
 		}
-
-		String clas = infoPanel.getClass().getSimpleName();
-		System.out.println(clas);
-
 
 	}
 
