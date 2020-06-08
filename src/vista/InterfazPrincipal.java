@@ -47,6 +47,8 @@ public class InterfazPrincipal extends JFrame {
 
 	private ControlRadioButon controlRadio;
 	private JPanel areaTrabajo_1;
+	private JButton btnAadir;
+	private JButton btnEliminar;
 	
 	/**
 	 * @wbp.parser.entryPoint
@@ -121,18 +123,30 @@ public class InterfazPrincipal extends JFrame {
 		JLabel lblHorario = new JLabel("Momento:");
 		panel.add(lblHorario);
 
-		JButton btnAadir = new JButton("A\u00F1adir");
+		btnAadir = new JButton("A\u00F1adir");
+		btnAadir.setEnabled(false);
 		btnAadir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				controlador.aniadirMomento();
+				
+				try {
+					controlador.aniadirMomento();
+				} catch (Exception e) {
+				}
+				
 			}
 		});
 		panel.add(btnAadir);
 
-		JButton btnEliminar = new JButton("Eliminar");
+		btnEliminar = new JButton("Eliminar");
+		btnEliminar.setEnabled(false);
 		btnEliminar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				controlador.eliminarMomento();
+				
+				try {
+					controlador.eliminarMomento();
+				} catch (Exception e) {
+				}
+				
 			}
 		});
 		panel.add(btnEliminar);
@@ -235,6 +249,22 @@ public class InterfazPrincipal extends JFrame {
 	 */
 	public ControlRadioButon getControlRadioButon() {
 		return controlRadio;
+	}
+	
+	/**
+	 * Habilita o desabilita los botones de la interfaz
+	 * @param enabled 
+	 */
+	public void habilitarBotones(boolean enabled) {
+		tabAsignatura.setEnabled(enabled);
+		tabDocente.SetEnableButtons(enabled);
+		tabGrupoAlumnos.SetEnableButtons(enabled);
+		tabHabitaciones.SetEnableButtons(enabled);
+		
+		btnAadir.setEnabled(enabled);
+		btnEliminar.setEnabled(enabled);
+		
+		
 	}
 	
 }

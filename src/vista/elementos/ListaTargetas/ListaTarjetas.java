@@ -70,6 +70,7 @@ public class ListaTarjetas extends JPanel{
 		panel_1.setLayout(new GridLayout(0, 2, 0, 0));
 
 		botonAniadir = new JButton("A\u00F1adir");
+		botonAniadir.setEnabled(false);
 		botonAniadir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 
@@ -81,12 +82,18 @@ public class ListaTarjetas extends JPanel{
 		panel_1.add(botonAniadir);
 
 		botonEliminar = new JButton("Eliminar");
+		botonEliminar.setEnabled(false);
 		botonEliminar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
-				InfoPanel infoPanel = (InfoPanel) Seleccion.getUltimoSeleccionado();
-				controlador.eliminarSeleccionado(infoPanel);
-				eliminar(infoPanel);
+				try {
+					InfoPanel infoPanel = (InfoPanel) Seleccion.getUltimoSeleccionado();
+					controlador.eliminarSeleccionado(infoPanel);
+					eliminar(infoPanel);
+				} catch (Exception e) {
+				}
+				
+				
 			}
 		});
 		panel_1.add(botonEliminar);
@@ -151,6 +158,18 @@ public class ListaTarjetas extends JPanel{
 	}
 	
 	/**
+	 * habilita o desabilita los botones segun el parametro
+	 * @param set 
+	 */
+	public void SetEnableButtons(boolean enable) {
+		botonAniadir.setEnabled(enable);
+		botonEliminar.setEnabled(enable);
+	}
+	
+	
+	
+	
+	/**
 	 * @return the titulo
 	 */
 	public String getTitulo() {
@@ -163,7 +182,7 @@ public class ListaTarjetas extends JPanel{
 	public void setTitulo(String titulo) {
 		this.titulo = titulo;
 	}
-
+	
 	
 	
 }
