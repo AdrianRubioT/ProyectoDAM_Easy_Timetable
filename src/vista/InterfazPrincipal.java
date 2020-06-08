@@ -130,6 +130,11 @@ public class InterfazPrincipal extends JFrame {
 		panel.add(btnAadir);
 
 		JButton btnEliminar = new JButton("Eliminar");
+		btnEliminar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				controlador.eliminarMomento();
+			}
+		});
 		panel.add(btnEliminar);
 
 		areaTrabajo_1 = new JPanel();
