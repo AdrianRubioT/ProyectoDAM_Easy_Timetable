@@ -14,6 +14,7 @@ import modelo.objetos.GrupoAlumnos;
 import modelo.objetos.Habitacion;
 import modelo.objetos.IntervaloTiempo;
 import modelo.objetos.Slot;
+import vista.elementos.ListaTargetas.InfoPanel;
 
 /**
  * Clase que se encarga de la permanencia de los datos en la base de datos SQLite
@@ -971,10 +972,21 @@ public class ControaldorBD {
 	}
 
 	/**
-	 * elimina el GrupoAlumnos de la BD
+	 * elimina momento de la BD
+	 * @param id clave primaria del row a eliminar
 	 */
-	public void eliminarSlot() {
-		// TODO Auto-generated method stub
+	public void eliminarSlot(int id) {
+		String sql = "DELETE FROM Ocurre WHERE rowID = ?";
+
+		try (
+				PreparedStatement pstmt = conexion.prepareStatement(sql)) {
+			pstmt.setInt( 1, id );
+
+			pstmt.executeUpdate();
+
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
 	}
 
 	/**
