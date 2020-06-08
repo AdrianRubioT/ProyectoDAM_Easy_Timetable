@@ -11,7 +11,7 @@ public interface Seleccionable {
 	/**
 	 * notifica a Seleccion que el objeto ha sido seleccionado
 	 */
-	public void notificarSeleccion(Seleccionable seleccion);
+	public void notificarSeleccion();
 
 }
 
