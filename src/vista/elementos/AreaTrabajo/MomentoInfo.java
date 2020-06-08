@@ -24,7 +24,7 @@ public class MomentoInfo extends JPanel implements Seleccionable {
 
 	private Slot momento;
 
-	
+
 	/**
 	 * Create the panel.
 	 */
@@ -165,5 +165,14 @@ public class MomentoInfo extends JPanel implements Seleccionable {
 		Seleccion.nuevoSeleccion(this);
 		
 	}
+	
+	
+	/**
+	 * @return the momento
+	 */
+	public Slot getMomento() {
+		return momento;
+	}
+
 
 }
