@@ -174,7 +174,7 @@
 	18:10 - 18:45 desarrollando la idea del area de trabajo necesito radiobuttons
 	18:45 - 20:00 implementando los radiobuttons y el string para filtrar
 
-2/6/2020 6.25
+4/6/2020 6.25
 	 9:45 - 10:55 modificar los objetos para obtener en el filtro el id
 	12:00 - 13:00 implementando metodo ActualizaAreaTrabajo.
 	16:30 - 18:20 implementando metodo obtenerListaMomentosAsignatura
@@ -182,9 +182,20 @@
 	19:30 - 20:30 afinando los metodos y corrigiendo pequeños fallos
 
 
-3/6/2020 3.75 + 
+5/6/2020 3.75 + 
 	 9:00 -  9:30 invesitgando porque no aparece el area de trabajo (ya funciona)
 	 9:30 - 10:40 terminando metodo Controlador.actualizarAreaTrabajo() de las partes faltantes y pequeñas correcciones
 	10:40 - 12:45 mejorando pequeños aspectos del programa
-	16:30 - 20:55 revisando documentacion FCT segun correo y ampliando
+	16:30 - 20:55 revisando documentacion FCT segun correo y ampliando memoria
 
+8/6/2020 7.75
+	 9:00 - 11:00 ampliando memoria
+	11:00 - 11:35 reunion clase
+	11:35 - 12:55 ampliando memoria
+	12:55 - 13:30 reorganizando diagrama clases
+	16:30 - 17:00 ampliando memoria
+	17:00 - 17:30 codigo: cambiado Seleccionable
+	17:30 - 17:50 codigo: eliminacion de un mometno
+	17:50 - 18:50 codigo: habilitar y deshabilitar botones
+	19:30 - 20:30 arreglando estilo letra y tamaño documento
+	
