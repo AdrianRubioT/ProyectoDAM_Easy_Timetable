@@ -13,10 +13,12 @@ import modelo.objetos.IntervaloTiempo;
 import modelo.objetos.Slot;
 import vista.InterfazPrincipal;
 import vista.elementos.AreaTrabajo.AreaTrabajo;
+import vista.elementos.AreaTrabajo.MomentoInfo;
 import vista.elementos.ListaTargetas.InfoPanel;
 import vista.elementos.ListaTargetas.ListaTarjetas;
 import vista.interfaces.crearMomentos.crearMomento;
 import vista.interfaces.popup.InputPopup;
+import vista.seleccion.Seleccion;
 
 /**
  * 
@@ -198,7 +200,7 @@ public class Controlador {
 			//Obtenemos el fichero seleccionado 
 			File fichero = fileChooser.getSelectedFile();
 			controladorBD.conecta( fichero.getPath(), fichero.exists() );
-
+			interfazPrincipal.habilitarBotones(true);
 		}
 
 
@@ -210,44 +212,46 @@ public class Controlador {
 	 */
 	public void eventoCargar() {
 
-		if ( controladorBD.isConected() ) {
+		//if ( controladorBD.isConected() ) {
+
+		JFileChooser fileChooser = new JFileChooser("./prueba");
+
+		//mostrar el dialogo para seleccionar la carpeta
+		int seleccion = fileChooser.showSaveDialog( interfazPrincipal );
+
+		//comprovacion que el usuario ha pulsado el boton guardar
+		if (seleccion == JFileChooser.APPROVE_OPTION)
+		{
+
+			//Obtenemos el fichero seleccionado 
+			File fichero = fileChooser.getSelectedFile();
+			controladorBD.conecta( fichero.getPath(), fichero.exists() );
+
+			//cargar listados
+			listaHabitaciones = controladorBD.obtenerListaHabitaciones();
+			interfazPrincipal.setListaHabitacion(listaHabitaciones);
+
+
+			listaAsignatura = controladorBD.obtenerListaAsignaturas();
+			interfazPrincipal.setListaAsignatura(listaAsignatura);
+
+			listaDocente = controladorBD.obtenerListaDocentes();
+			interfazPrincipal.setListaDocente(listaDocente);
+
+			listaGruposAlumnos = controladorBD.obtenerListaGrupoAlumnos();
+			interfazPrincipal.setListaGrupoAlumnos(listaGruposAlumnos);
+
+			listaIntervaloTiempo = controladorBD.obtenerListaIntervaloTiempo();
 			
-			JFileChooser fileChooser = new JFileChooser("./prueba");
-
-			//mostrar el dialogo para seleccionar la carpeta
-			int seleccion = fileChooser.showSaveDialog( interfazPrincipal );
-
-			//comprovacion que el usuario ha pulsado el boton guardar
-			if (seleccion == JFileChooser.APPROVE_OPTION)
-			{
-
-				//Obtenemos el fichero seleccionado 
-				File fichero = fileChooser.getSelectedFile();
-				controladorBD.conecta( fichero.getPath(), fichero.exists() );
-				
-				//cargar listados
-				listaHabitaciones = controladorBD.obtenerListaHabitaciones();
-				interfazPrincipal.setListaHabitacion(listaHabitaciones);
-
-
-				listaAsignatura = controladorBD.obtenerListaAsignaturas();
-				interfazPrincipal.setListaAsignatura(listaAsignatura);
-
-				listaDocente = controladorBD.obtenerListaDocentes();
-				interfazPrincipal.setListaDocente(listaDocente);
-
-				listaGruposAlumnos = controladorBD.obtenerListaGrupoAlumnos();
-				interfazPrincipal.setListaGrupoAlumnos(listaGruposAlumnos);
-
-				listaIntervaloTiempo = controladorBD.obtenerListaIntervaloTiempo();
-			}
+			interfazPrincipal.habilitarBotones(true);
 		}
-		
+		//}
+
 
 
 	}
-	
-	
+
+
 	/**
 	 * metodo para el evento de crear un objeto InfoPanel, con sus valores,
 	 * lo añade a la lista correspondiente y lo devuelve
@@ -345,8 +349,8 @@ public class Controlador {
 				break;
 			}
 
-//			String clas = infoPanel.getClass().getSimpleName();
-//			System.out.println(clas);
+			//			String clas = infoPanel.getClass().getSimpleName();
+			//			System.out.println(clas);
 		} catch (NullPointerException e) {
 			System.out.println("No hay nada seleccionado");
 		}
@@ -354,7 +358,7 @@ public class Controlador {
 	}
 
 
-	
+
 
 
 	/**
@@ -420,6 +424,23 @@ public class Controlador {
 
 		interfazPrincipal.setAreaTrabajo(new AreaTrabajo(listaMomentos, tipoObjeto) );
 
+
+	}
+
+
+	/**
+	 * elimina el momento seleccionado y actualiza el area de trabajo
+	 */
+	public void eliminarMomento() {
+
+		try {
+			controladorBD.eliminarSlot( ((MomentoInfo) Seleccion.getUltimoSeleccionado() ).getMomento().getId_BD() );
+		} catch (Exception e) {
+			System.out.println(e);
+
+		}
+
+		actualizarAreaTrabajo();
 
 	}
 
