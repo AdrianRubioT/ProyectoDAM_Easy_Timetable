@@ -3,11 +3,16 @@ package vista.elementos.AreaTrabajo;
 import javax.swing.JPanel;
 
 import modelo.objetos.Slot;
+import vista.seleccion.Seleccion;
+import vista.seleccion.Seleccionable;
 
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import javax.swing.JLabel;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
 
 /**
  * Clase para mostrar la informacion en dos paneles: a la izquierda se mostrara 
@@ -15,13 +20,22 @@ import javax.swing.JLabel;
  * @author adrian
  *
  */
-public class MomentoInfo extends JPanel {
+public class MomentoInfo extends JPanel implements Seleccionable {
 
+	private Slot momento;
+
+	
 	/**
 	 * Create the panel.
 	 */
 	public MomentoInfo(String puntoVista, Slot momento) {
-
+		addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				notificarSeleccion();
+			}
+		});
+		this.momento = momento;
 		
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[]{0, 0, 0};
@@ -142,6 +156,14 @@ public class MomentoInfo extends JPanel {
 
 		}
 
+	}
+
+
+	@Override
+	public void notificarSeleccion() {
+
+		Seleccion.nuevoSeleccion(this);
+		
 	}
 
 }
