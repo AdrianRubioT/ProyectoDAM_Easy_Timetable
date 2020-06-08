@@ -29,6 +29,7 @@ public class InfoPanel extends JPanel implements Seleccionable {
 	private String tipo;
 	
 	
+	
 	//TODO: quitar este atributo
 	private int id_BD;
 
@@ -42,9 +43,7 @@ public class InfoPanel extends JPanel implements Seleccionable {
 			addMouseListener(new MouseAdapter() {
 				@Override
 				public void mouseClicked(MouseEvent e) {
-					//obtener la instancia que proboca el evento
-					InfoPanel a = (InfoPanel) e.getSource();
-					notificarSeleccion(a);
+					notificarSeleccion();
 					
 					//... crear codigo
 				}
@@ -132,8 +131,10 @@ public class InfoPanel extends JPanel implements Seleccionable {
 		 * ha sido seleccionado
 		 */
 		@Override
-		public void notificarSeleccion(Seleccionable seleccion) {
-			Seleccion.nuevoSeleccion(seleccion);
+		public void notificarSeleccion() {
+			//obtener la instancia que proboca el evento
+			
+			Seleccion.nuevoSeleccion(this);
 		}
 		
 		/**
