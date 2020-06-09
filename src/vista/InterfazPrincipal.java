@@ -5,6 +5,7 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -64,6 +65,12 @@ public class InterfazPrincipal extends JFrame {
 	 * Initialize the contents of the frame
 	 */
 	private void initialize() {
+		
+		setTitle("Easy Time Table");
+		
+		ImageIcon img = new ImageIcon("./Recursos/IMG/icono.png");
+		setIconImage( img.getImage() );
+//		java.net.URL url = ClassLoader.getSystemResource("./Recursos/IMG/icono.png");
 		
 		setBounds(100, 100, 645, 414);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
