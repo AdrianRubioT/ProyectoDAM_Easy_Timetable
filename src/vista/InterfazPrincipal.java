@@ -256,7 +256,7 @@ public class InterfazPrincipal extends JFrame {
 	 * @param enabled 
 	 */
 	public void habilitarBotones(boolean enabled) {
-		tabAsignatura.setEnabled(enabled);
+		tabAsignatura.SetEnableButtons(enabled);
 		tabDocente.SetEnableButtons(enabled);
 		tabGrupoAlumnos.SetEnableButtons(enabled);
 		tabHabitaciones.SetEnableButtons(enabled);
