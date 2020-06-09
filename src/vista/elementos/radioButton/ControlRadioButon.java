@@ -41,6 +41,8 @@ public class ControlRadioButon {
 		if ( !labelradio.equals("") ) {
 			radio.setText(labelradio);
 		}
+		
+		
 		radio.setActionCommand(accion);
 		
 		radio.addActionListener(new ActionListener() {
@@ -51,8 +53,11 @@ public class ControlRadioButon {
 		
 		group.add(radio);
 		
-		return radio;
+		//estilos
+		radio.setOpaque(false);
 		
+		
+		return radio;
 	}
 	
 	/**
