@@ -46,6 +46,7 @@ public class MomentoInfo extends JPanel implements Seleccionable {
 		setLayout(gridBagLayout);
 
 		JPanel panel = new JPanel();
+		panel.setOpaque(false);
 		GridBagConstraints gbc_panel = new GridBagConstraints();
 		gbc_panel.insets = new Insets(0, 0, 0, 5);
 		gbc_panel.gridx = 0;
@@ -59,6 +60,7 @@ public class MomentoInfo extends JPanel implements Seleccionable {
 		panel.setLayout(gbl_panel);
 
 		JLabel horaInicio = new JLabel("Hora Inicio" + momento.getIntervalo().horaMinInicio() );
+		horaInicio.setOpaque(false);
 		GridBagConstraints gbc_horaInicio = new GridBagConstraints();
 		gbc_horaInicio.anchor = GridBagConstraints.NORTHWEST;
 		gbc_horaInicio.insets = new Insets(0, 0, 5, 0);
@@ -67,6 +69,7 @@ public class MomentoInfo extends JPanel implements Seleccionable {
 		panel.add(horaInicio, gbc_horaInicio);
 
 		JLabel horaFinal = new JLabel("Hora fin" + momento.getIntervalo().horaMinFin() );
+		horaFinal.setOpaque(false);
 		GridBagConstraints gbc_horaFinal = new GridBagConstraints();
 		gbc_horaFinal.anchor = GridBagConstraints.NORTHWEST;
 		gbc_horaFinal.gridx = 0;
@@ -74,6 +77,7 @@ public class MomentoInfo extends JPanel implements Seleccionable {
 		panel.add(horaFinal, gbc_horaFinal);
 
 		JPanel panel_1 = new JPanel();
+		panel_1.setOpaque(false);
 		GridBagConstraints gbc_panel_1 = new GridBagConstraints();
 		gbc_panel_1.fill = GridBagConstraints.BOTH;
 		gbc_panel_1.gridx = 1;
@@ -89,6 +93,7 @@ public class MomentoInfo extends JPanel implements Seleccionable {
 
 		if (!puntoVista.contentEquals("Docente")) {
 			JLabel lblDocente = new JLabel("Docente:");
+			lblDocente.setOpaque(false);
 			GridBagConstraints gbc_lblDocente = new GridBagConstraints();
 			gbc_lblDocente.anchor = GridBagConstraints.WEST;
 			gbc_lblDocente.insets = new Insets(0, 0, 5, 5);
@@ -97,6 +102,7 @@ public class MomentoInfo extends JPanel implements Seleccionable {
 			panel_1.add(lblDocente, gbc_lblDocente);
 
 			JLabel valorDocente = new JLabel( momento.getDocentes().getNombre() );
+			valorDocente.setOpaque(false);
 			GridBagConstraints gbc_valorDocente = new GridBagConstraints();
 			gbc_valorDocente.insets = new Insets(0, 0, 5, 0);
 			gbc_valorDocente.gridx = 1;
@@ -107,6 +113,7 @@ public class MomentoInfo extends JPanel implements Seleccionable {
 
 		if (!puntoVista.contentEquals("GrupoAlumnos")) {
 			JLabel lblGrupo = new JLabel("Grupo");
+			lblGrupo.setOpaque(false);
 			GridBagConstraints gbc_lblGrupo = new GridBagConstraints();
 			gbc_lblGrupo.anchor = GridBagConstraints.WEST;
 			gbc_lblGrupo.insets = new Insets(0, 0, 5, 5);
@@ -115,6 +122,7 @@ public class MomentoInfo extends JPanel implements Seleccionable {
 			panel_1.add(lblGrupo, gbc_lblGrupo);
 
 			JLabel valorGrupoalumno = new JLabel( momento.getGrupoAlumnos().getNombreGrupo() );
+			valorGrupoalumno.setOpaque(false);
 			GridBagConstraints gbc_valorGrupoalumno = new GridBagConstraints();
 			gbc_valorGrupoalumno.insets = new Insets(0, 0, 5, 0);
 			gbc_valorGrupoalumno.gridx = 1;
@@ -124,6 +132,7 @@ public class MomentoInfo extends JPanel implements Seleccionable {
 
 		if (!puntoVista.contentEquals("Habitacion")) {
 			JLabel lblHabitacion = new JLabel("Habitacion");
+			lblHabitacion.setOpaque(false);
 			GridBagConstraints gbc_lblHabitacion = new GridBagConstraints();
 			gbc_lblHabitacion.anchor = GridBagConstraints.WEST;
 			gbc_lblHabitacion.insets = new Insets(0, 0, 5, 5);
@@ -132,6 +141,7 @@ public class MomentoInfo extends JPanel implements Seleccionable {
 			panel_1.add(lblHabitacion, gbc_lblHabitacion);
 
 			JLabel valorHabitacion = new JLabel( momento.getHabitacion().getCodigoHabitacion() );
+			valorHabitacion.setOpaque(false);
 			GridBagConstraints gbc_valorHabitacion = new GridBagConstraints();
 			gbc_valorHabitacion.insets = new Insets(0, 0, 5, 0);
 			gbc_valorHabitacion.gridx = 1;
@@ -142,6 +152,7 @@ public class MomentoInfo extends JPanel implements Seleccionable {
 
 		if (!puntoVista.contentEquals("Asignatura")) {
 			JLabel lblAsignatura = new JLabel("Asignatura");
+			lblAsignatura.setOpaque(false);
 			GridBagConstraints gbc_lblAsignatura = new GridBagConstraints();
 			gbc_lblAsignatura.insets = new Insets(0, 0, 0, 5);
 			gbc_lblAsignatura.anchor = GridBagConstraints.WEST;
