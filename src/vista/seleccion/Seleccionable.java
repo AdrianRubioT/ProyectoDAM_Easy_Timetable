@@ -4,7 +4,7 @@ package vista.seleccion;
  * @author
  *
  */
-public interface Seleccionable {
+public interface Seleccionable extends ColorSeleccionado{
 
 
 
@@ -13,5 +13,6 @@ public interface Seleccionable {
 	 */
 	public void notificarSeleccion();
 
+	
 }
 
