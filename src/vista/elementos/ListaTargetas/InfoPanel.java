@@ -172,6 +172,18 @@ public class InfoPanel extends JPanel implements Seleccionable {
 	public void setId_BD(int id_BD) {
 		this.id_BD = id_BD;
 	}
+
+	@Override
+	public void cambiaColorSelecionado() {
+		setBackground( new Color(255, 218, 71) );
+		
+	}
+
+	@Override
+	public void cambiaColorDesseleccionado() {
+		setBackground( new Color(238, 238, 238) );
+		
+	}
 		
 }
 

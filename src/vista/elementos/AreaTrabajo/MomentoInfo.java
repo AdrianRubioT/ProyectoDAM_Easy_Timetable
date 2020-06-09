@@ -7,6 +7,7 @@ import vista.seleccion.Seleccion;
 import vista.seleccion.Seleccionable;
 
 import java.awt.GridBagLayout;
+import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import javax.swing.JLabel;
@@ -172,6 +173,19 @@ public class MomentoInfo extends JPanel implements Seleccionable {
 	 */
 	public Slot getMomento() {
 		return momento;
+	}
+
+
+	@Override
+	public void cambiaColorSelecionado() {
+		setBackground( new Color(255, 218, 71) );
+		
+	}
+
+	@Override
+	public void cambiaColorDesseleccionado() {
+		setBackground( new Color(238, 238, 238) );
+		
 	}
 
 
