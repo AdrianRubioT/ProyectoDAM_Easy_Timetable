@@ -15,7 +15,6 @@ import vista.elementos.radioButton.ControlRadioButon;
 import vista.seleccion.Seleccion;
 
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 
 /**
@@ -131,7 +130,7 @@ public class ListaTarjetas extends JPanel{
 	public void aniadir(InfoPanel object) {
 		
 		String text = object.getTipo() +" : "+ object.getId_BD();
-		object.addRadioButon(controlRadio.crearRadioButton("vista", text) );
+		object.addRadioButon(controlRadio.crearRadioButton("Vista", text) );
 		lista.add(object);
 		
 		//scrollLista.revalidate();

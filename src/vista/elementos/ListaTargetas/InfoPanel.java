@@ -84,7 +84,7 @@ public class InfoPanel extends JPanel implements Seleccionable {
 
 			//Key
 			for (int i = 0; i < campos.length; i++) {
-				JLabel jlKey = new JLabel( campos[i]);
+				JLabel jlKey = new JLabel( campos[i].toUpperCase() + ":" );
 				//guardar el JLabel en la lista
 				labelKey.add(jlKey);
 				GridBagConstraints gbc_lblLinea_3 = new GridBagConstraints();
