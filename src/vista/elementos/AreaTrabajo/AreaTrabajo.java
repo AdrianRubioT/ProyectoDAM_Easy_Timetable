@@ -60,7 +60,6 @@ public class AreaTrabajo extends JPanel {
 		gbl_config.rowHeights = new int[]{0, 0, 0};
 		gbl_config.columnWeights = new double[]{0.0, Double.MIN_VALUE};
 		gbl_config.rowWeights = new double[]{0.0, 0.0, Double.MIN_VALUE};
-		//panelTiempo.setLayout(gbl_config);
 		
 
 		if ( coleccionLunes.size() != 0 ) {
@@ -92,11 +91,11 @@ public class AreaTrabajo extends JPanel {
 			JPanel panMartes = new JPanel();
 			panMartes.setLayout(gbl_config);
 			
-			JLabel diaLunes = new JLabel("Martes");
+			JLabel diaMartes = new JLabel("Martes");
 			GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
 			gbc_lblNewLabel.gridx = rellenado;
 			gbc_lblNewLabel.gridy = 0;
-			panMartes.add(diaLunes, gbc_lblNewLabel);
+			panMartes.add(diaMartes, gbc_lblNewLabel);
 			
 			add(panMartes, gbc_lblNewLabel);
 			
@@ -112,11 +111,11 @@ public class AreaTrabajo extends JPanel {
 			JPanel panMiercoles = new JPanel();
 			panMiercoles.setLayout(gbl_config);
 			
-			JLabel diaMartes = new JLabel("Miercoles");
+			JLabel diaMiercoles = new JLabel("Miercoles");
 			GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
 			gbc_lblNewLabel.gridx = rellenado;
 			gbc_lblNewLabel.gridy = 0;
-			panMiercoles.add(diaMartes, gbc_lblNewLabel);
+			panMiercoles.add(diaMiercoles, gbc_lblNewLabel);
 			
 			add(panMiercoles, gbc_lblNewLabel);
 
@@ -132,11 +131,11 @@ public class AreaTrabajo extends JPanel {
 			JPanel panJueves = new JPanel();
 			panJueves.setLayout(gbl_config);
 			
-			JLabel diaMiercoles = new JLabel("Jueves");
+			JLabel diaJueves = new JLabel("Jueves");
 			GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
 			gbc_lblNewLabel.gridx = rellenado;
 			gbc_lblNewLabel.gridy = 0;
-			panJueves.add(diaMiercoles, gbc_lblNewLabel);
+			panJueves.add(diaJueves, gbc_lblNewLabel);
 			
 			add(panJueves, gbc_lblNewLabel);
 
@@ -152,11 +151,11 @@ public class AreaTrabajo extends JPanel {
 			JPanel panViernes= new JPanel();
 			panViernes.setLayout(gbl_config);
 			
-			JLabel diaJueves = new JLabel("Viernes");
+			JLabel diaViernes = new JLabel("Viernes");
 			GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
 			gbc_lblNewLabel.gridx = rellenado;
 			gbc_lblNewLabel.gridy = 0;
-			panViernes.add(diaJueves, gbc_lblNewLabel);
+			panViernes.add(diaViernes, gbc_lblNewLabel);
 
 			add(panViernes, gbc_lblNewLabel);
 			
