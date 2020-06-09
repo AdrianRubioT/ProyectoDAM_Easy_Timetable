@@ -74,7 +74,7 @@ public class MomentoInfo extends JPanel implements Seleccionable {
 		gbl_panelTiempo.rowHeights = new int[]{15, 0, 0};
 		gbl_panelTiempo.columnWeights = new double[]{0.0, Double.MIN_VALUE};
 		gbl_panelTiempo.rowWeights = new double[]{0.0, 0.0, Double.MIN_VALUE};
-		panelTiempo.setLayout(gbl_panel);
+		panelTiempo.setLayout(gbl_panelTiempo);
 		add(panelTiempo, gbc_panelTiempo);
 		
 		
