@@ -56,7 +56,7 @@ public class AreaTrabajo extends JPanel {
 		int rellenado = 0;
 
 		GridBagLayout gbl_config = new GridBagLayout();
-		gbl_config.columnWidths = new int[]{10, 10};
+		gbl_config.columnWidths = new int[]{2, 2};
 		gbl_config.rowHeights = new int[]{0, 0, 0};
 		gbl_config.columnWeights = new double[]{0.0, Double.MIN_VALUE};
 		gbl_config.rowWeights = new double[]{0.0, 0.0, Double.MIN_VALUE};
@@ -67,7 +67,7 @@ public class AreaTrabajo extends JPanel {
 
 			JPanel panLunes = new JPanel();
 			panLunes.setLayout(gbl_config);
-			panLunes.setBorder(new LineBorder(new Color(0, 0, 0), 2));
+			panLunes.setBorder(new LineBorder(new Color(0, 0, 0), 1));
 			
 			JLabel diaLunes = new JLabel("Lunes");
 			GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
@@ -91,7 +91,7 @@ public class AreaTrabajo extends JPanel {
 
 			JPanel panMartes = new JPanel();
 			panMartes.setLayout(gbl_config);
-			panMartes.setBorder(new LineBorder(new Color(0, 0, 0), 2));
+			panMartes.setBorder(new LineBorder(new Color(0, 0, 0), 1));
 			
 			
 			JLabel diaMartes = new JLabel("Martes");
@@ -114,7 +114,7 @@ public class AreaTrabajo extends JPanel {
 			
 			JPanel panMiercoles = new JPanel();
 			panMiercoles.setLayout(gbl_config);
-			panMiercoles.setBorder(new LineBorder(new Color(0, 0, 0), 2));
+			panMiercoles.setBorder(new LineBorder(new Color(0, 0, 0), 1));
 			
 			JLabel diaMiercoles = new JLabel("Miercoles");
 			GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
@@ -136,7 +136,7 @@ public class AreaTrabajo extends JPanel {
 			
 			JPanel panJueves = new JPanel();
 			panJueves.setLayout(gbl_config);
-			panJueves.setBorder(new LineBorder(new Color(0, 0, 0), 2));
+			panJueves.setBorder(new LineBorder(new Color(0, 0, 0), 1));
 			
 			JLabel diaJueves = new JLabel("Jueves");
 			GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
@@ -158,7 +158,7 @@ public class AreaTrabajo extends JPanel {
 			
 			JPanel panViernes= new JPanel();
 			panViernes.setLayout(gbl_config);
-			panViernes.setBorder(new LineBorder(new Color(0, 0, 0), 2));
+			panViernes.setBorder(new LineBorder(new Color(0, 0, 0), 1));
 			
 			JLabel diaViernes = new JLabel("Viernes");
 			GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
@@ -180,7 +180,7 @@ public class AreaTrabajo extends JPanel {
 			
 			JPanel panSabado = new JPanel();
 			panSabado.setLayout(gbl_config);
-			panSabado.setBorder(new LineBorder(new Color(0, 0, 0), 2));
+			panSabado.setBorder(new LineBorder(new Color(0, 0, 0), 1));
 			
 			JLabel diaSabado = new JLabel("Sabado");
 			GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
@@ -201,7 +201,7 @@ public class AreaTrabajo extends JPanel {
 			
 			JPanel panDomingo = new JPanel();
 			panDomingo.setLayout(gbl_config);
-			panDomingo.setBorder(new LineBorder(new Color(0, 0, 0), 2));
+			panDomingo.setBorder(new LineBorder(new Color(0, 0, 0), 1));
 			
 			JLabel diaDomingo = new JLabel("Domingo");
 			GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
@@ -232,6 +232,7 @@ public class AreaTrabajo extends JPanel {
 
 
 		MomentoInfo info = new MomentoInfo(puntoVista, momento);
+		info.setBorder( new LineBorder(new Color(0, 0, 0), 1) );
 		GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
 		gbc_lblNewLabel.gridx = col;
 		gbc_lblNewLabel.gridy = row+1;
