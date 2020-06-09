@@ -26,7 +26,7 @@ public class Docente extends InfoPanel{
 	 * @param apellido1
 	 * @param apellido2
 	 */
-	public Docente(String especialidad, String nombre, String apellido1, String apellido2) {
+	public Docente(String nombre, String apellido1, String apellido2, String especialidad) {
 		super(CAMPOS, "Docente");
 		this.especialidad = especialidad;
 		this.nombre = nombre;
