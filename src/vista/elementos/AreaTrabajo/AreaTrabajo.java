@@ -1,6 +1,8 @@
 package vista.elementos.AreaTrabajo;
 
 import java.util.ArrayList;
+
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import modelo.objetos.Slot;
 import java.awt.GridBagLayout;
@@ -53,6 +55,14 @@ public class AreaTrabajo extends JPanel {
 
 		if ( coleccionLunes.size() != 0 ) {
 			rellenado++;
+
+			JLabel diaLunes = new JLabel("Lunes");
+			GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
+			gbc_lblNewLabel.gridx = rellenado;
+			gbc_lblNewLabel.gridy = 0;
+			add(diaLunes, gbc_lblNewLabel);
+
+
 			for (int i = 0; i < coleccionLunes.size(); i++) {
 				anaidirSlot(rellenado, i, puntoVista, coleccionLunes.get(i) );
 			}
@@ -60,6 +70,14 @@ public class AreaTrabajo extends JPanel {
 
 		if ( coleccionMartes.size() != 0 ) {
 			rellenado++;
+
+			JLabel diaLunes = new JLabel("Martes");
+			GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
+			gbc_lblNewLabel.gridx = rellenado;
+			gbc_lblNewLabel.gridy = 0;
+			add(diaLunes, gbc_lblNewLabel);
+
+
 			for (int i = 0; i < coleccionMartes.size(); i++) {
 				anaidirSlot(rellenado, i, puntoVista, coleccionMartes.get(i) );
 			}
@@ -67,6 +85,14 @@ public class AreaTrabajo extends JPanel {
 
 		if ( coleccionMiercoles.size() != 0 ) {
 			rellenado++;
+			
+			JLabel diaMartes = new JLabel("Miercoles");
+			GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
+			gbc_lblNewLabel.gridx = rellenado;
+			gbc_lblNewLabel.gridy = 0;
+			add(diaMartes, gbc_lblNewLabel);
+
+			
 			for (int i = 0; i < coleccionMiercoles.size(); i++) {
 				anaidirSlot(rellenado, i, puntoVista, coleccionMiercoles.get(i) );
 			}
@@ -74,6 +100,14 @@ public class AreaTrabajo extends JPanel {
 
 		if ( coleccionJueves.size() != 0 ) {
 			rellenado++;
+			
+			JLabel diaMiercoles = new JLabel("Jueves");
+			GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
+			gbc_lblNewLabel.gridx = rellenado;
+			gbc_lblNewLabel.gridy = 0;
+			add(diaMiercoles, gbc_lblNewLabel);
+
+			
 			for (int i = 0; i < coleccionJueves.size(); i++) {
 				anaidirSlot(rellenado, i, puntoVista, coleccionJueves.get(i) );
 			}
@@ -81,6 +115,14 @@ public class AreaTrabajo extends JPanel {
 
 		if ( coleccionViernes.size() != 0 ) {
 			rellenado++;
+			
+			JLabel diaJueves = new JLabel("Viernes");
+			GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
+			gbc_lblNewLabel.gridx = rellenado;
+			gbc_lblNewLabel.gridy = 0;
+			add(diaJueves, gbc_lblNewLabel);
+
+			
 			for (int i = 0; i < coleccionViernes.size(); i++) {
 				anaidirSlot(rellenado, i, puntoVista, coleccionViernes.get(i) );
 			}
@@ -88,6 +130,14 @@ public class AreaTrabajo extends JPanel {
 
 		if ( coleccionSabado.size() != 0 ) {
 			rellenado++;
+			
+			JLabel diaSabado = new JLabel("Sabado");
+			GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
+			gbc_lblNewLabel.gridx = rellenado;
+			gbc_lblNewLabel.gridy = 0;
+			add(diaSabado, gbc_lblNewLabel);
+
+			
 			for (int i = 0; i < coleccionSabado.size(); i++) {
 				anaidirSlot(rellenado, i, puntoVista, coleccionSabado.get(i) );
 			}
@@ -95,11 +145,18 @@ public class AreaTrabajo extends JPanel {
 
 		if ( coleccionDomingo.size() != 0 ) {
 			rellenado++;
+			
+			JLabel diaDomingo = new JLabel("Domingo");
+			GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
+			gbc_lblNewLabel.gridx = rellenado;
+			gbc_lblNewLabel.gridy = 0;
+			add(diaDomingo, gbc_lblNewLabel);
+
 			for (int i = 0; i < coleccionDomingo.size(); i++) {
 				anaidirSlot(rellenado, i, puntoVista, coleccionDomingo.get(i) );
 			}
 		}
-		
+
 	}
 
 	/**
@@ -115,7 +172,7 @@ public class AreaTrabajo extends JPanel {
 		MomentoInfo info = new MomentoInfo(puntoVista, momento);
 		GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
 		gbc_lblNewLabel.gridx = col;
-		gbc_lblNewLabel.gridy = row;
+		gbc_lblNewLabel.gridy = row+1;
 		add(info, gbc_lblNewLabel);
 
 
