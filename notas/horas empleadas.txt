@@ -198,4 +198,14 @@
 	17:30 - 17:50 codigo: eliminacion de un mometno
 	17:50 - 18:50 codigo: habilitar y deshabilitar botones
 	19:30 - 20:30 arreglando estilo letra y tamaño documento
+
+9/6/2020
+	 9:15 - 9:40  corrigiendo tipo y tamanio letra del documento
+	 9:40 - 10:30 probando la camara en ubuntu
+	11:00 - 11:40 reunion tutor
+	11:40 - 11:55 corrigiendo rotacion de los JLabels en las tarjetas
+	11:55 - 12:40 dando color a lo las instancias seleccionadas
+	16:45 - 16:55 poniendo atributo opaco a los elementos que estan por encima de los paneles pintados
+	16:55 - 17:50 poniendo los dias de la semana en el horario
+	17:50 - refinando detalles
 	
