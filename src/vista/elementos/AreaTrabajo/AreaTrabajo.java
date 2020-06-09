@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
+import javax.swing.border.MatteBorder;
 
 import modelo.objetos.Slot;
 import java.awt.GridBagLayout;
@@ -56,7 +57,7 @@ public class AreaTrabajo extends JPanel {
 		int rellenado = 0;
 
 		GridBagLayout gbl_config = new GridBagLayout();
-		gbl_config.columnWidths = new int[]{2, 2};
+		gbl_config.columnWidths = new int[]{0, 0};
 		gbl_config.rowHeights = new int[]{0, 0, 0};
 		gbl_config.columnWeights = new double[]{0.0, Double.MIN_VALUE};
 		gbl_config.rowWeights = new double[]{0.0, 0.0, Double.MIN_VALUE};
@@ -232,7 +233,7 @@ public class AreaTrabajo extends JPanel {
 
 
 		MomentoInfo info = new MomentoInfo(puntoVista, momento);
-		info.setBorder( new LineBorder(new Color(0, 0, 0), 1) );
+		info.setBorder( new MatteBorder(1, 0, 1, 0, (Color) new Color(0, 0, 0)) );
 		GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
 		gbc_lblNewLabel.gridx = col;
 		gbc_lblNewLabel.gridy = row+1;
