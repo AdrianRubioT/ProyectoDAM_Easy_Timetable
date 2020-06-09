@@ -19,7 +19,19 @@ public abstract class Seleccion {
 	 * @param seleccion objeto que ha sido seleccionado
 	 */
 	public static void nuevoSeleccion(Seleccionable seleccion) {
+		System.out.println(seleccion.getClass());
+		//cambiamos color
+		try {
+			ultimoSeleccionado.cambiaColorDesseleccionado();
+		} catch (NullPointerException e) {
+			//falla por ser el primer seleccionado
+		}
+		seleccion.cambiaColorSelecionado();
+		
+		//guardamos la seleccion
 		ultimoSeleccionado = seleccion;
+		
+		
 		//System.out.println("seleccionado instancia de: " + seleccion.getClass() );
 	}
 	
