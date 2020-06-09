@@ -207,5 +207,5 @@
 	11:55 - 12:40 dando color a lo las instancias seleccionadas
 	16:45 - 16:55 poniendo atributo opaco a los elementos que estan por encima de los paneles pintados
 	16:55 - 17:50 poniendo los dias de la semana en el horario
-	17:50 - refinando detalles
+	17:50 - 20:30 refinando detalles
 	
