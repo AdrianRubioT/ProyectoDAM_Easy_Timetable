@@ -27,137 +27,137 @@ public class InfoPanel extends JPanel implements Seleccionable {
 	private ArrayList<JLabel> labelKey = new ArrayList<JLabel>();
 	private ArrayList<JLabel> labelValue= new ArrayList<JLabel>();
 	private String tipo;
-	
-	
-	
+
+
+
 	//TODO: quitar este atributo
 	private int id_BD;
 
-	
-
-		public InfoPanel(String[] campos, String tipo) {
-			
-			this.tipo = tipo;
-			
-			
-			addMouseListener(new MouseAdapter() {
-				@Override
-				public void mouseClicked(MouseEvent e) {
-					notificarSeleccion();
-					
-					//... crear codigo
-				}
-			});
-			//TODO: quitar mas adelante es muy feo
-			setBorder(new LineBorder(new Color(0, 0, 0), 2));
 
 
+	public InfoPanel(String[] campos, String tipo) {
 
-			GridBagLayout gridBagLayout = new GridBagLayout();
-			gridBagLayout.columnWidths = new int[]{81, 0, 0};
-			gridBagLayout.rowHeights = new int[]{0, 0};
-			gridBagLayout.columnWeights = new double[]{};
-			gridBagLayout.rowWeights = new double[]{};
-			setLayout(gridBagLayout);
+		this.tipo = tipo;
 
 
-			GridBagLayout gbl_panDescripcion = new GridBagLayout();
-			gbl_panDescripcion.columnWidths = new int[]{0};
-			gbl_panDescripcion.rowHeights = new int[]{0};
-			gbl_panDescripcion.columnWeights = new double[]{Double.MIN_VALUE};
-			gbl_panDescripcion.rowWeights = new double[]{Double.MIN_VALUE};
-			setLayout(gbl_panDescripcion);
+		addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				notificarSeleccion();
 
-
-			creteJLabels(campos);
-			
-			
-		}
-
-		/**
-		 * extrae del parametro objeto la informacion para crear los pares de JLabels
-		 * clave-valor
-		 * @param campos
-		 * @return void
-		 */
-		public void creteJLabels(String[] campos) {
-
-			//Key
-			for (int i = 0; i < campos.length; i++) {
-				JLabel jlKey = new JLabel( campos[i].toUpperCase() + ":" );
-				//guardar el JLabel en la lista
-				labelKey.add(jlKey);
-				GridBagConstraints gbc_lblLinea_3 = new GridBagConstraints();
-				gbc_lblLinea_3.insets = new Insets(0, 0, 0, 5);
-				gbc_lblLinea_3.gridx = 1;
-				gbc_lblLinea_3.gridy = i;
-				add(jlKey, gbc_lblLinea_3);
+				//... crear codigo
 			}
-			
-			//Value
-			for (int i = 0; i < campos.length; i++) {
-				JLabel jlValue = new JLabel();
-				labelValue.add(jlValue);
-				GridBagConstraints gbc_lin4 = new GridBagConstraints();
-				gbc_lin4.fill = GridBagConstraints.HORIZONTAL;
-				gbc_lin4.gridx = 2;
-				gbc_lin4.gridy = i;
-				add( jlValue, gbc_lin4);
-
-			}
+		});
+		//TODO: quitar mas adelante es muy feo
+		setBorder(new LineBorder(new Color(0, 0, 0), 2));
 
 
 
-		}
-		
+		GridBagLayout gridBagLayout = new GridBagLayout();
+		gridBagLayout.columnWidths = new int[]{81, 0, 0};
+		gridBagLayout.rowHeights = new int[]{0, 0};
+		gridBagLayout.columnWeights = new double[]{};
+		gridBagLayout.rowWeights = new double[]{};
+		setLayout(gridBagLayout);
 
 
-		
-		/**
-		 * metodo para actualizar los JLabels con los valores
-		 * @param newValores array con los nuevos valores, tiene que 
-		 * estar en el mismo orden y longitud que labelKey 
-		 */
-		public void actualizaValores(String[] newValores) {
-			
-			for (int i = 0; i < newValores.length; i++) {
-				labelValue.get(i).setText(newValores[i]);
-			}
-			
-		}
+		GridBagLayout gbl_panDescripcion = new GridBagLayout();
+		gbl_panDescripcion.columnWidths = new int[]{0};
+		gbl_panDescripcion.rowHeights = new int[]{0};
+		gbl_panDescripcion.columnWeights = new double[]{Double.MIN_VALUE};
+		gbl_panDescripcion.rowWeights = new double[]{Double.MIN_VALUE};
+		setLayout(gbl_panDescripcion);
 
-		/**
-		 * notifica a Seleccion que el objeto
-		 * ha sido seleccionado
-		 */
-		@Override
-		public void notificarSeleccion() {
-			//obtener la instancia que proboca el evento
-			
-			Seleccion.nuevoSeleccion(this);
-		}
-		
-		/**
-		 * agrega el radiobuton a la parte visible
-		 * @param radio
-		 */
-		public void addRadioButon(JRadioButton radio) {
-			
+
+		creteJLabels(campos);
+
+
+	}
+
+	/**
+	 * extrae del parametro objeto la informacion para crear los pares de JLabels
+	 * clave-valor
+	 * @param campos
+	 * @return void
+	 */
+	public void creteJLabels(String[] campos) {
+
+		//Key
+		for (int i = 0; i < campos.length; i++) {
+			JLabel jlKey = new JLabel( campos[i].toUpperCase() + ":" );
+			//guardar el JLabel en la lista
+			labelKey.add(jlKey);
 			GridBagConstraints gbc_lblLinea_3 = new GridBagConstraints();
 			gbc_lblLinea_3.insets = new Insets(0, 0, 0, 5);
-			gbc_lblLinea_3.gridx = 0;
-			gbc_lblLinea_3.gridy = 0;
-			add(radio, gbc_lblLinea_3);
-			
+			gbc_lblLinea_3.gridx = 1;
+			gbc_lblLinea_3.gridy = i;
+			add(jlKey, gbc_lblLinea_3);
 		}
 
-		/**
-		 * @return the tipo
-		 */
-		public String getTipo() {
-			return tipo;
+		//Value
+		for (int i = 0; i < campos.length; i++) {
+			JLabel jlValue = new JLabel();
+			labelValue.add(jlValue);
+			GridBagConstraints gbc_lin4 = new GridBagConstraints();
+			gbc_lin4.fill = GridBagConstraints.HORIZONTAL;
+			gbc_lin4.gridx = 2;
+			gbc_lin4.gridy = i;
+			add( jlValue, gbc_lin4);
+
 		}
-	
+
+
+
+	}
+
+
+
+
+	/**
+	 * metodo para actualizar los JLabels con los valores
+	 * @param newValores array con los nuevos valores, tiene que 
+	 * estar en el mismo orden y longitud que labelKey 
+	 */
+	public void actualizaValores(String[] newValores) {
+
+		for (int i = 0; i < newValores.length; i++) {
+			labelValue.get(i).setText(newValores[i]);
+		}
+
+	}
+
+	/**
+	 * notifica a Seleccion que el objeto
+	 * ha sido seleccionado
+	 */
+	@Override
+	public void notificarSeleccion() {
+		//obtener la instancia que proboca el evento
+
+		Seleccion.nuevoSeleccion(this);
+	}
+
+	/**
+	 * agrega el radiobuton a la parte visible
+	 * @param radio
+	 */
+	public void addRadioButon(JRadioButton radio) {
+
+		GridBagConstraints gbc_lblLinea_3 = new GridBagConstraints();
+		gbc_lblLinea_3.insets = new Insets(0, 0, 0, 5);
+		gbc_lblLinea_3.gridx = 0;
+		gbc_lblLinea_3.gridy = 0;
+		add(radio, gbc_lblLinea_3);
+
+	}
+
+	/**
+	 * @return the tipo
+	 */
+	public String getTipo() {
+		return tipo;
+	}
+
 
 	/**
 	 * @return the id_BD
@@ -176,14 +176,14 @@ public class InfoPanel extends JPanel implements Seleccionable {
 	@Override
 	public void cambiaColorSelecionado() {
 		setBackground( new Color(255, 218, 71) );
-		
+
 	}
 
 	@Override
 	public void cambiaColorDesseleccionado() {
 		setBackground( new Color(238, 238, 238) );
-		
+
 	}
-		
+
 }
 
