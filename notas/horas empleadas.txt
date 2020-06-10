@@ -208,4 +208,10 @@
 	16:45 - 16:55 poniendo atributo opaco a los elementos que estan por encima de los paneles pintados
 	16:55 - 17:50 poniendo los dias de la semana en el horario
 	17:50 - 20:30 refinando detalles
+
+10/6/2020
+	 9:10 - 10:00 aplicar y provar en Ubuntu 
+	10:00 - 10:20 cambiar el formato del margen horario a horas y minutos
+	10:20 - 10:30 corrigiendo espacio muerto de quitar horaInicio y Fin
+	10:30 - aplicando scroll a listaTarjetas
 	
