@@ -89,7 +89,7 @@ public class MomentoInfo extends JPanel implements Seleccionable {
 		JLabel horaInicioValor = new JLabel(momento.getIntervalo().horaMinInicio() + " h" );
 		horaInicioValor.setOpaque(false);
 		GridBagConstraints gbc_horaInicioValor = new GridBagConstraints();
-		gbc_horaInicioValor.gridx = 1;
+		gbc_horaInicioValor.gridx = 0;
 		gbc_horaInicioValor.gridy = 0;
 		panelTiempo.add(horaInicioValor, gbc_horaInicioValor);
 		
@@ -104,7 +104,7 @@ public class MomentoInfo extends JPanel implements Seleccionable {
 		JLabel horaFinalValor = new JLabel(momento.getIntervalo().horaMinFin() + " h" );
 		horaFinalValor.setOpaque(false);
 		GridBagConstraints gbc_horaFinalValor = new GridBagConstraints();
-		gbc_horaFinalValor.gridx = 1;
+		gbc_horaFinalValor.gridx = 0;
 		gbc_horaFinalValor.gridy = 1;
 		panelTiempo.add(horaFinalValor, gbc_horaFinalValor);
 
