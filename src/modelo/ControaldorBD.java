@@ -336,8 +336,8 @@ public class ControaldorBD {
 
 				habTemp.setNombre( rs.getString("nombre") );
 				habTemp.setApellido1( rs.getString("apellido1") );
-				habTemp.setApellido1( rs.getString("apellido2") );
-				habTemp.setApellido1( rs.getString("especialidad") );
+				habTemp.setApellido2( rs.getString("apellido2") );
+				habTemp.setEspecialidad( rs.getString("especialidad") );
 
 				//1 -> rowID from SQLite		no se porque no puedo acceder por el nombre
 				habTemp.setId_BD( rs.getInt(1) );
