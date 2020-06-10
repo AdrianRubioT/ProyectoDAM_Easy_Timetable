@@ -48,17 +48,12 @@ public class InfoPanel extends JPanel implements Seleccionable {
 				//... crear codigo
 			}
 		});
-		//TODO: quitar mas adelante es muy feo
+		
 		setBorder(new LineBorder(new Color(0, 0, 0), 2));
 
 
 
-		GridBagLayout gridBagLayout = new GridBagLayout();
-		gridBagLayout.columnWidths = new int[]{81, 0, 0};
-		gridBagLayout.rowHeights = new int[]{0, 0};
-		gridBagLayout.columnWeights = new double[]{};
-		gridBagLayout.rowWeights = new double[]{};
-		setLayout(gridBagLayout);
+
 
 
 		GridBagLayout gbl_panDescripcion = new GridBagLayout();
