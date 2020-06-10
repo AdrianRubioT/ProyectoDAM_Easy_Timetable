@@ -79,14 +79,14 @@ public class MomentoInfo extends JPanel implements Seleccionable {
 		
 		
 		
-		JLabel horaInicio = new JLabel("HORA INICIO");
-		horaInicio.setOpaque(false);
-		GridBagConstraints gbc_horaInicio = new GridBagConstraints();
-		gbc_horaInicio.gridx = 0;
-		gbc_horaInicio.gridy = 0;
-		panelTiempo.add(horaInicio, gbc_horaInicio);
+//		JLabel horaInicio = new JLabel("HORA INICIO");
+//		horaInicio.setOpaque(false);
+//		GridBagConstraints gbc_horaInicio = new GridBagConstraints();
+//		gbc_horaInicio.gridx = 0;
+//		gbc_horaInicio.gridy = 0;
+//		panelTiempo.add(horaInicio, gbc_horaInicio);
 
-		JLabel horaInicioValor = new JLabel(momento.getIntervalo().horaMinInicio() );
+		JLabel horaInicioValor = new JLabel(momento.getIntervalo().horaMinInicio() + " h" );
 		horaInicioValor.setOpaque(false);
 		GridBagConstraints gbc_horaInicioValor = new GridBagConstraints();
 		gbc_horaInicioValor.gridx = 1;
@@ -94,14 +94,14 @@ public class MomentoInfo extends JPanel implements Seleccionable {
 		panelTiempo.add(horaInicioValor, gbc_horaInicioValor);
 		
 		
-		JLabel horaFinal = new JLabel("HORA FIn");
-		horaFinal.setOpaque(false);
-		GridBagConstraints gbc_horaFinal = new GridBagConstraints();
-		gbc_horaFinal.gridx = 0;
-		gbc_horaFinal.gridy = 1;
-		panelTiempo.add(horaFinal, gbc_horaFinal);
+//		JLabel horaFinal = new JLabel("HORA FIn");
+//		horaFinal.setOpaque(false);
+//		GridBagConstraints gbc_horaFinal = new GridBagConstraints();
+//		gbc_horaFinal.gridx = 0;
+//		gbc_horaFinal.gridy = 1;
+//		panelTiempo.add(horaFinal, gbc_horaFinal);
 		
-		JLabel horaFinalValor = new JLabel(momento.getIntervalo().horaMinFin() );
+		JLabel horaFinalValor = new JLabel(momento.getIntervalo().horaMinFin() + " h" );
 		horaFinalValor.setOpaque(false);
 		GridBagConstraints gbc_horaFinalValor = new GridBagConstraints();
 		gbc_horaFinalValor.gridx = 1;
