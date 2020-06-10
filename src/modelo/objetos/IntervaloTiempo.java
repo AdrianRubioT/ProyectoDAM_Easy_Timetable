@@ -59,14 +59,14 @@ public class IntervaloTiempo  {
 	 * metodo para devolver la hora y minuto inicio
 	 */
 	public String horaMinInicio() {
-		return horaIncio + ":" + minutoInicio;
+		return horaIncio + ":" + String.format("%02d", minutoInicio) ;
 	}
 
 	/**
 	 * metodo para devolver la hora y minuto fin
 	 */
 	public String horaMinFin() {
-		return horaFin + ":" + minutoFin;
+		return horaFin + ":" + String.format("%02d", minutoFin);
 	}
 
 	/**
