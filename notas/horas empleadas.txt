@@ -213,5 +213,6 @@
 	 9:10 - 10:00 aplicar y provar en Ubuntu 
 	10:00 - 10:20 cambiar el formato del margen horario a horas y minutos
 	10:20 - 10:30 corrigiendo espacio muerto de quitar horaInicio y Fin
-	10:30 - aplicando scroll a listaTarjetas
-	
+	10:30 - 11:00 aplicando vertical scroll a listaTarjetas
+	12:30 - 13:10 aplicado scroll vertical a listaTarjetas
+	13:10 - 13:00 buscando la menera que los Jpanel no crezcan
