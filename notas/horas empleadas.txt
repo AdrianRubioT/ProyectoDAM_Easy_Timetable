@@ -216,3 +216,4 @@
 	10:30 - 11:00 aplicando vertical scroll a listaTarjetas
 	12:30 - 13:10 aplicado scroll vertical a listaTarjetas
 	13:10 - 13:00 buscando la menera que los Jpanel no crezcan
+	16:40 - 18:40 buscando la menera que los Jpanel no crezcan
