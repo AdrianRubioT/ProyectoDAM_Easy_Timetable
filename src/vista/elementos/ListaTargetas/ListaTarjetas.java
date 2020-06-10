@@ -108,7 +108,7 @@ public class ListaTarjetas extends JPanel{
 
 		lista = new JPanel();
 		//lista.setMaximumSize(new Dimension(100, 100000));
-		lista.setAutoscrolls(true);
+		
 
 		// con preferredSiza coloca los elemetos en vertical pero no muestra el scroll
 		//lista.setPreferredSize(new Dimension(listado.getWidth(), 0));
