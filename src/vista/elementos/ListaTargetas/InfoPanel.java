@@ -16,6 +16,7 @@ import vista.seleccion.Seleccionable;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.Component;
 
 /**
  * Pequeño JPanel con JLabels indicando las claves y sus valores
@@ -36,6 +37,7 @@ public class InfoPanel extends JPanel implements Seleccionable {
 
 
 	public InfoPanel(String[] campos, String tipo) {
+		setAlignmentY(Component.TOP_ALIGNMENT);
 
 		this.tipo = tipo;
 
@@ -59,8 +61,8 @@ public class InfoPanel extends JPanel implements Seleccionable {
 		GridBagLayout gbl_panDescripcion = new GridBagLayout();
 		gbl_panDescripcion.columnWidths = new int[]{0};
 		gbl_panDescripcion.rowHeights = new int[]{0};
-		gbl_panDescripcion.columnWeights = new double[]{Double.MIN_VALUE};
-		gbl_panDescripcion.rowWeights = new double[]{Double.MIN_VALUE};
+		gbl_panDescripcion.columnWeights = new double[]{0.0, Double.MIN_VALUE};
+		gbl_panDescripcion.rowWeights = new double[]{0.0, Double.MIN_VALUE};
 		setLayout(gbl_panDescripcion);
 
 
@@ -83,7 +85,9 @@ public class InfoPanel extends JPanel implements Seleccionable {
 			//guardar el JLabel en la lista
 			labelKey.add(jlKey);
 			GridBagConstraints gbc_lblLinea_3 = new GridBagConstraints();
-			gbc_lblLinea_3.insets = new Insets(0, 0, 0, 5);
+			//gbc_lblLinea_3.insets = new Insets(0, 0, 0, 5);
+			gbc_lblLinea_3.anchor = GridBagConstraints.NORTHWEST;
+			gbc_lblLinea_3.insets = new Insets(0, 0, 5, 5);
 			gbc_lblLinea_3.gridx = 1;
 			gbc_lblLinea_3.gridy = i;
 			add(jlKey, gbc_lblLinea_3);
@@ -94,7 +98,9 @@ public class InfoPanel extends JPanel implements Seleccionable {
 			JLabel jlValue = new JLabel();
 			labelValue.add(jlValue);
 			GridBagConstraints gbc_lin4 = new GridBagConstraints();
-			gbc_lin4.fill = GridBagConstraints.HORIZONTAL;
+			//gbc_lin4.fill = GridBagConstraints.HORIZONTAL;
+			gbc_lin4.anchor = GridBagConstraints.NORTHWEST;
+			gbc_lin4.insets = new Insets(0, 0, 5, 5);
 			gbc_lin4.gridx = 2;
 			gbc_lin4.gridy = i;
 			add( jlValue, gbc_lin4);
@@ -139,7 +145,7 @@ public class InfoPanel extends JPanel implements Seleccionable {
 	public void addRadioButon(JRadioButton radio) {
 
 		GridBagConstraints gbc_lblLinea_3 = new GridBagConstraints();
-		gbc_lblLinea_3.insets = new Insets(0, 0, 0, 5);
+		//gbc_lblLinea_3.insets = new Insets(0, 0, 0, 5);
 		gbc_lblLinea_3.gridx = 0;
 		gbc_lblLinea_3.gridy = 0;
 		add(radio, gbc_lblLinea_3);

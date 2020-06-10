@@ -48,8 +48,8 @@ public class ListaTarjetas extends JPanel{
 		this.controlRadio = conRadioButon;
 		
 		GridBagLayout gbl_panModulos = new GridBagLayout();
-		gbl_panModulos.columnWidths = new int[]{91, 0};
-		gbl_panModulos.rowHeights = new int[]{14, 27, 0, 0};
+		gbl_panModulos.columnWidths = new int[]{0, 0};
+		gbl_panModulos.rowHeights = new int[]{0, 0, 0, 0};
 		gbl_panModulos.columnWeights = new double[]{1.0, Double.MIN_VALUE};
 		gbl_panModulos.rowWeights = new double[]{0.0, 0.0, 1.0, Double.MIN_VALUE};
 		setLayout(gbl_panModulos);
@@ -102,6 +102,7 @@ public class ListaTarjetas extends JPanel{
 		listado = new JScrollPane();
 		GridBagConstraints gbc_listado = new GridBagConstraints();
 		gbc_listado.fill = GridBagConstraints.BOTH;
+		//gbc_listado.fill = GridBagConstraints.BOTH;
 		gbc_listado.gridx = 0;
 		gbc_listado.gridy = 2;
 		add(listado, gbc_listado);
