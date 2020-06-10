@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
+import java.awt.Toolkit;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -67,10 +68,8 @@ public class InterfazPrincipal extends JFrame {
 	private void initialize() {
 		
 		setTitle("Easy Time Table");
+		setIconImage(Toolkit.getDefaultToolkit().getImage(InterfazPrincipal.class.getResource("/Recursos/IMG/icono.png")));
 		
-		ImageIcon img = new ImageIcon("./Recursos/IMG/icono.png");
-		setIconImage( img.getImage() );
-//		java.net.URL url = ClassLoader.getSystemResource("./Recursos/IMG/icono.png");
 		
 		setBounds(100, 100, 645, 414);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
