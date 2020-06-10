@@ -16,6 +16,7 @@ import vista.seleccion.Seleccion;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.FlowLayout;
 
 /**
  * Clase para listar los objetos Habitacion, Clase, docente y grupo alumno
@@ -105,9 +106,13 @@ public class ListaTarjetas extends JPanel{
 		add(listado, gbc_listado);
 
 		lista = new JPanel();
+		lista.setPreferredSize(new Dimension(300, 10));
+		FlowLayout flowLayout = (FlowLayout) lista.getLayout();
+		flowLayout.setAlignment(FlowLayout.LEFT);
+		lista.setAutoscrolls(true);
 
 		// con preferredSiza coloca los elemetos en vertical pero no muestra el scroll
-		lista.setPreferredSize(new Dimension(listado.getWidth(), 0));
+		//lista.setPreferredSize(new Dimension(listado.getWidth(), 0));
 		//lista.setPreferredSize(listado.getSize());
 
 		listado.setViewportView(lista);
@@ -133,7 +138,7 @@ public class ListaTarjetas extends JPanel{
 		object.addRadioButon(controlRadio.crearRadioButton("Vista", text) );
 		lista.add(object);
 		
-		//scrollLista.revalidate();
+		listado.revalidate();
 		lista.updateUI();
 	}
 
