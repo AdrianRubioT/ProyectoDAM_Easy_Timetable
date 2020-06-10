@@ -61,11 +61,11 @@ public class InfoPanel extends JPanel implements Seleccionable {
 		GridBagLayout gbl_panDescripcion = new GridBagLayout();
 		gbl_panDescripcion.columnWidths = new int[]{0};
 		gbl_panDescripcion.rowHeights = new int[]{0};
-		gbl_panDescripcion.columnWeights = new double[]{0.0, Double.MIN_VALUE};
-		gbl_panDescripcion.rowWeights = new double[]{0.0, Double.MIN_VALUE};
+		gbl_panDescripcion.columnWeights = new double[]{0.0, 0.0, 1.0, Double.MIN_VALUE};
+		gbl_panDescripcion.rowWeights = new double[]{1.0, 1.0, Double.MIN_VALUE};
 		setLayout(gbl_panDescripcion);
 
-
+//		setAlignmentX(Component.LEFT_ALIGNMENT);
 		creteJLabels(campos);
 
 
@@ -86,10 +86,11 @@ public class InfoPanel extends JPanel implements Seleccionable {
 			labelKey.add(jlKey);
 			GridBagConstraints gbc_lblLinea_3 = new GridBagConstraints();
 			//gbc_lblLinea_3.insets = new Insets(0, 0, 0, 5);
-			gbc_lblLinea_3.anchor = GridBagConstraints.NORTHWEST;
+			gbc_lblLinea_3.anchor = GridBagConstraints.WEST;
 			gbc_lblLinea_3.insets = new Insets(0, 0, 5, 5);
 			gbc_lblLinea_3.gridx = 1;
 			gbc_lblLinea_3.gridy = i;
+			
 			add(jlKey, gbc_lblLinea_3);
 		}
 
@@ -97,9 +98,12 @@ public class InfoPanel extends JPanel implements Seleccionable {
 		for (int i = 0; i < campos.length; i++) {
 			JLabel jlValue = new JLabel();
 			labelValue.add(jlValue);
+//			jlValue.setAlignmentX(Component.LEFT_ALIGNMENT);
 			GridBagConstraints gbc_lin4 = new GridBagConstraints();
-			//gbc_lin4.fill = GridBagConstraints.HORIZONTAL;
-			gbc_lin4.anchor = GridBagConstraints.NORTHWEST;
+//			gbc_lin4.fill = GridBagConstraints.HORIZONTAL;
+//			gbc_lin4.anchor = GridBagConstraints.NORTHWEST;
+//			gbc_lin4.fill = GridBagConstraints.HORIZONTAL;
+			gbc_lin4.anchor = GridBagConstraints.WEST;
 			gbc_lin4.insets = new Insets(0, 0, 5, 5);
 			gbc_lin4.gridx = 2;
 			gbc_lin4.gridy = i;
