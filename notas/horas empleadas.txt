@@ -209,7 +209,8 @@
 	16:55 - 17:50 poniendo los dias de la semana en el horario
 	17:50 - 20:30 refinando detalles
 
-10/6/2020 4 2.5
+10/6/2020  6.75
+
 	 9:10 - 10:00 aplicar y provar en Ubuntu 
 	10:00 - 10:20 cambiar el formato del margen horario a horas y minutos
 	10:20 - 10:30 corrigiendo espacio muerto de quitar horaInicio y Fin
@@ -218,4 +219,9 @@
 	13:10 - 14:40 buscando la menera que los Jpanel no crezcan
 	16:40 - 18:40 buscando la menera que los Jpanel no crezcan
 	18:40 - 19:10 ajustando el tamaño de las tarjetas
-	19:10 - 20:20 desarrollando capitulo ampliando funciones del codigo
+	19:10 - 20:20 desarrollando capitulo adaptaciones
+
+11/6/2020
+	 9:15 - 10:10 desarrollando capitulo adaptaciones - abortado, estaba duplicando el contenido
+	10:10 - 10:50 corrigiendo estilos del doumento
+	12:00 - 13:00 corrigiendo estilos del doumento
