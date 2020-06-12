@@ -229,4 +229,8 @@
 
 12/6/2020 
 	 9:40 - 10:30 dando ultimos vistazos al documento antes de presentar
-	11:00 - provando compilado
+	11:00 - 12:30 provando compilado
+	12:30 - 13:30 ultimando detalles memoria
+	16:00 - 16:55 ultimando detalles memoria aniadiendo CV
+	16:55 - 19:00 ultimando detalles memoria cambiando entradas webgraficas
+	19:00 - 20:30 creando executable y organizando directorio de trabajo
