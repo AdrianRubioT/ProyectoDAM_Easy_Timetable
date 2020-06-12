@@ -226,3 +226,7 @@
 	10:10 - 10:50 corrigiendo estilos del doumento
 	12:00 - 13:00 corrigiendo estilos del doumento
 	16:40 - 21:15 corrigiendo estilos del doumento
+
+12/6/2020 
+	 9:40 - 10:30 dando ultimos vistazos al documento antes de presentar
+	11:00 - provando compilado
