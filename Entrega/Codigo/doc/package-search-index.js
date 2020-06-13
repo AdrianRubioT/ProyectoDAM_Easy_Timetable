@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"Controlador"},{"l":"modelo"},{"l":"modelo.BD.conexiones"},{"l":"modelo.objetos"},{"l":"vista"},{"l":"vista.elementos.AreaTrabajo"},{"l":"vista.elementos.ListaTargetas"},{"l":"vista.elementos.radioButton"},{"l":"vista.interfaces.crearMomentos"},{"l":"vista.interfaces.popup"},{"l":"vista.seleccion"}]
